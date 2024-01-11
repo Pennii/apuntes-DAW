@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+Mi primer documento xml 
+Matias Pennino
+
+Ejercicio 1:
+Pasar la estructura, sobre el libro del Quijote, mostrado en la pizarra a un 
+documento xml bien formado.
+
+Ejercicio 2:
+Basandote en libro.xml convierte isbn y genero en atributos. Ademas añade un 
+atributo 'edad' a cada personaje.
+-->
+
+<libro>
+    <titulo genero="burlesque">Don Quijote de la Mancha</titulo>
+    <autor>Miguel</autor>
+    <editorial isbn="999...">Francisco de roble</editorial>
+    <reparto>
+        <personaje edad="25">Dulcinea</personaje>
+        <personaje edad="30">Sancho</personaje>
+        <personaje edad="35">Rocinante</personaje>
+    </reparto>
+</libro>

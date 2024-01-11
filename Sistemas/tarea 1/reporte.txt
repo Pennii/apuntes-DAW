@@ -1,0 +1,17 @@
+Computer:      GIGABYTE A520M DS3H
+CPU:           AMD Ryzen 5 5500 (Cezanne, CZN-A0)
+               3600 MHz (36.00x100.0) @ 3393 MHz (34.00x99.8)
+Motherboard:   GIGABYTE A520M DS3H
+BIOS:          F16, 11/09/2022
+Chipset:       AMD A520 (Promontory PROM19 A)
+Memory:        16384 MBytes @ 1067 MHz, 15-15-15-36
+               - 8192 MB PC25600 DDR4 SDRAM - Corsair CMK16GX4M2E3200C16
+               - 8192 MB PC25600 DDR4 SDRAM - Corsair CMK16GX4M2E3200C16
+Graphics:      NVIDIA GeForce GTX 1650 (TU116) [Zotac]
+               NVIDIA GeForce GTX 1650, 4096 MB GDDR6 SDRAM
+Drive:         Fanxiang S101 1TB, 1000.2 GB, Serial ATA 6Gb/s @ 6Gb/s
+Sound:         NVIDIA TU116 - High Definition Audio Controller
+Sound:         ATI/AMD Renoir/Cezanne - Display HD Audio Controller
+Sound:         AMD Zen - Audio Processor - HD Audio Controller
+Network:       RealTek Semiconductor RTL8168/8111 PCI-E Gigabit Ethernet NIC
+OS:            Microsoft Windows 10 Professional (x64) Build 19045.3448 (22H2)

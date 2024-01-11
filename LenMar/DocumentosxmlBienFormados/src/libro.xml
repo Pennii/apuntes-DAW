@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+Mi primer documento xml 
+Matias Pennino
+
+Ejercicio 1:
+Pasar la estructura, sobre el libro del Quijote, mostrado en la pizarra a un 
+documento xml bien formado.
+-->
+
+<libro>
+    <titulo>Don Quijote de la Mancha</titulo>
+    <autor>Miguel</autor>
+    <genero>Burlesque</genero>
+    <editorial>F de roble</editorial>
+    <reparto>
+        <personaje>Dulcinea</personaje>
+        <personaje>Sancho</personaje>
+        <personaje>Rocinante</personaje>
+    </reparto>
+    <isbn>999...</isbn>
+</libro>

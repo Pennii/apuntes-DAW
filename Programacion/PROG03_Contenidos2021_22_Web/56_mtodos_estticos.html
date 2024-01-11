@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.6.- Métodos estáticos. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-51"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_utilizacin_de_objetos.html" class="daddy">4.- Utilización de objetos.</a>
+   <ul class="other-section">
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li><a href="45_manipulacin.html" class="no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li><a href="47_objetos_string_en_java.html" class="no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_mtodos.html" class="current-page-parent daddy">5.- Métodos.</a>
+   <ul>
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li><a href="52_uso_de_mtodos.html" class="no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li id="active"><a href="56_mtodos_estticos.html" class="active daddy">5.6.- Métodos estáticos.</a>
+      <ul>
+         <li><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul class="other-section">
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li><a href="84_formateado_de_fechas.html" class="no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li><a href="9_excepciones.html" class="daddy">9.- Excepciones.</a>
+   <ul class="other-section">
+      <li><a href="91_capturar_una_excepcin_con_try.html" class="no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.6.- Métodos estáticos.</h1></div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id179">
+<div class="iDevice emphasis0">
+<div id="ta179_73" class="block iDevice_content">
+<div class="elemento_derecha">
+<div class="elemento_centrado"><a title="Ampliar imagen para Objetos y Clases. (se abre en una nueva ventana)." href="PROG04_CONT_R37_ObjetosClases.png" target="_blank"><img alt="Esquema que muestra el contenido de un objeto (variables instancia y métodos instancia) y de una clase (variables de clase y métodos de clase)." class="imagen_ampliable" src="PROG04_CONT_R37_ObjetosClases_miniatura.png" title="Objetos y clases." width="192" height="148" /></a></div>
+</div>
+<p>Un <strong>método estático</strong> puede ser usado directamente desde la clase sin necesidad de hacer referencia a ninguna instancia.</p>
+<p>Estos métodos también son conocidos como <strong>métodos de clase</strong>, frente a los <strong>métodos de objeto</strong> o instancia (es necesario un objeto para poder invocarlos).</p>
+<p><strong>Los métodos estáticos no pueden manipular instancias (objetos)</strong> y suelen ser utilizados para realizar operaciones genéricas independientes de las posibles instancias que puedan existir de esa clase en un momento concreto. De hecho estos métodos pueden ser invocados sin necesidad de que existan objetos de la clase.</p>
+<p>La manera correcta de invocar a un método estático es escribiendo el nombre de la clase, seguido por el operador punto (<code>.</code>) más el nombre del método estático<strong></strong>:</p>
+<div class="highlighted-code language-java">
+<pre><code>NombreClase.nombreMetodoEstatico();</code>
+</pre>
+</div>
+<p>En alguna ocasión, es posible que te encuentres con programas donde se haya realizado la llamada a un método estático escribiendo el nombre del objeto, seguido por el operador punto (<code>.</code>) más el nombre del método estático. Esta forma de invocar a un método estático no es apropiada. ¿Por qué? Porque aunque en efecto puede hacerse esa llamada y va a funcionar, puede inducir a confusión a quien lea el código. Si se observa una llamada un método a partir de un objeto lo normal es pensar que se está llamando a un método de ese objeto para que realice operaciones teniendo en cuenta los atributos de ese objeto. Sin embargo en el caso de un método estático no es así, pues un método estático jamás podrá acceder ni alterar el estado de un objeto.</p>
+<p class="destacado" style="text-align: left;"><strong>Es muy importante que <em>cualquier método estático se invoque siempre referenciado por el nombre de la clase a la que pertenece</em>, justamente para hacer explícito que se trata de un método estático sin más que ver la sentencia donde se invoca, quedando claro que hace algo para la clase, y no para un objeto particular. Es decir, algo como:   <br /><br /><code class="elemento_centrado">NombreClase.nombreMetodoEstatico()</code><br /></strong></p>
+<p>En la <strong>biblioteca de Clases de la <acronym title="Application Programming Interface">API</acronym> <span lang="en">Java</span></strong> existen muchas clases que contienen métodos estáticos, ya los iremos viendo poco a poco según los vayamos necesitando.</p>
+<p>Un ejemplo típico de clase con muchos métodos estáticos es la clase <code>Math</code> que se encuentra en el paquete <code>java.lang</code> (clase <code>java.lang.Math</code>).</p>
+<p>Esta clase tiene además la particularidad de que no puede ser instanciada, es decir, que no se pueden tener objetos de ella. Por tanto todos sus métodos son obligatoriamente estáticos.</p>
+<p style="text-align: center;"><span class="destacado">Todos los métodos de la clase <code>Math</code> son estáticos.</span></p>
+<p>Esta clase podemos imaginarla como una especie de "<em>caja de herramientas</em>" (<em><span lang="en">toolbox</span></em>) que proporciona una serie de métodos para ser usados sin necesidad de objetos instancia de la clase. De hecho es para lo que se utiliza, para contener una extensa lista de funciones matemáticas a las que podemos invocar cuando nos haga falta.</p>
+<p>Aquí tienes algunos ejemplos de métodos de la clase (todos estáticos):</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>static double abs(double a)  // Calcula y devuelve el valor absoluto del parámetro 
+static double cos(double a)  // Calcula y devuelve el coseno trigonométrico del parámetro
+static double exp(double a)  // Calcula y devuelve el número e elevado a la potencia indicada por el parámetro
+static double log(double a)  // Calcula y devuelve el logaritmo neperiano del parámetro
+static double max(double a, double b)  // Calcula y devuelve el máximo de los dos parámetros
+static double pow(double a, double b)  // Calcula y devuelve el valor del primer parámetro elevado al segundo
+static double sqrt(double a)  // Calcula y devuelve la raíz cuadrada del parámetro
+static double random()  // Devuelve un valor aleatorio mayor o igual que 0.0 y menor que 1.0</code></pre>
+</div>
+</div>
+<p>Esta clase también proporciona algunos atributos públicos con algunas de las constantes más habituales en matemáticas:</p>
+<ul>
+<li>la constante "e" de Euler (<code>Math.E</code>);</li>
+<li>el número pi: π  (<code>Math.PI</code>.).</li>
+</ul>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>public static double  E   // El valor aproximado del número e (2,718281828459045)
+public static double  PI  // Un valor aproximado de pi (3.141592653589793)
+</code></pre>
+</div>
+</div>
+<p>Estos atributos, al igual que los métodos, son también estáticos (tienen existencia y valor independientemente de la existencia o no de objetos instancia de la clase) pues todos los miembros (métodos y atributos) de la clase <code>Math</code> son estáticos.</p>
+<p>Aquí tienes algunos ejemplos de uso de estos métodos y atributos estáticos:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Funciones trigonométricas
+double angulo = 45.0 * Math.PI/270.0;
+System.out.println("cos(" + angulo + ")= " + Math.cos(angulo));
+
+//La función exponencial devuelve el número e elevado a una potencia
+System.out.println("exp(10.0)= " + Math.exp(10.0));
+
+// Logaritmo natural (de base e) de un número
+System.out.println("log(10.0)= " + Math.log(10.0));
+System.out.println("log(Math.E)= " + Math.log(Math.E));
+
+// Elevar 10 a la potencia 2.5
+System.out.println("pow(10.0, 2.5)= " +  Math.pow(10.0,2.5));
+
+// Hallar la raíz cuadrada de un número
+System.out.println("Raíz cuadrada de 3= " + Math.sqrt(3));</code></pre>
+</div>
+</div>
+<p>La salida por pantalla debería dar algo así:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>cos(0.5235987755982988)= 0.8660254037844387
+exp(10.0)= 22026.465794806718
+log(10.0)= 2.302585092994046
+log(Math.E)= 1.0
+pow(10.0, 2.5)= 316.22776601683796
+Raíz cuadrada de 3= 1.7320508075688772</code></pre>
+</div>
+</div>
+<p>Otro ejemplo de clase con miembros estáticos que ya has utilizado es la clase <code>System</code> (de la que luego volveremos a hablar en la unidad), que se encuentra en el paquete <code>java.lang</code> y que contiene abudantes miembros estáticos. De hecho, al igual que sucede con <code>Math</code>, esta clase tampoco puede ser instanciada, así que todos sus miembros son estáticos.</p>
+<p>Veamos un pequeño ejemplo de acceso a algunos miembros estáticos (atributos y métodos)  de esta clase:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Hora actual en milisegundos
+long horaMiliseg = System.currentTimeMillis() ;
+System.out.println("Hora actual en milisegundos: " + horaMiliseg);
+
+// Separador en la ruta de archivos
+String separador = System.getProperty("file.separator") ;
+System.out.println("Separador de carpetas en las rutas: " + separador); 
+
+// Idioma
+String idioma = System.getProperty("user.language") ;
+System.out.println("Idioma: " + idioma); 
+
+// Versión de Java
+String versionJava = System.getProperty("java.version") ;
+System.out.println("Versión de Java: " + versionJava); 
+</code></pre>
+</div>
+</div>
+<p>Si ejecutáramos esas líneas, la salida del programa nos mostraría algo parecido a esto (dependiendo de las características de vuestro sistema):</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Hora actual en milisegundos: 1604375707426
+Separador de carpetas en las rutas: \
+Idioma: es
+Versión de Java: 1.8.0_151</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper VerdaderofalsofpdIdevice em_iDevice" id="id180">
+<div class="iDevice emphasis_autoevaluacionfpd" >
+<div class="iDevice_header" style="background-image:url(icon_autoevaluacionfpd.gif)"><h2 class="iDeviceTitle">Autoevaluación</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta180_54" class="block iDevice_content">
+
+</div>
+<div class="question">
+<form name="true-false-form-0b180" action="#" class="activity-form">
+<h3 class="js-sr-av">Pregunta 1</h3>
+<div id="taquestion0b180" class="block iDevice_content">
+<p><strong>Los métodos estáticos, también llamados métodos de clase, suelen utilizarse para realizar operaciones genéricas independientes a los objetos de la clase.</strong></p>
+</div>
+<p class="iDevice_answer js-required">
+<label for="true0b180"><input type="radio" name="option0b180" id="true0b180" class="exe-radio-option exe-radio-option-0-2-0b180-truefalse" /> Verdadero</label> 
+<label for="false0b180"><input type="radio" name="option0b180" id="false0b180" class="exe-radio-option exe-radio-option-1-2-0b180-truefalse" /> Falso</label>
+</p>
+</form>
+<div id="s0b180" class="feedback js-feedback js-hidden">
+<h4 class="js-sr-av">Retroalimentación</h4>
+<p><strong id="s0b180-result" class="right">Verdadero</strong></p>
+<p>Los <strong>métodos estáticos</strong> son también conocidos como <strong>métodos de clase</strong> porque son referenciados con el nombre de la clase a la que pertenecen (y no con el nombre de una referencia), sin necesidad de instanciar un objeto de la clase para ello.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice" id="id114">
+<div class="iDevice emphasis_parasabermasfpd" >
+<div class="iDevice_header" style="background-image:url(icon_parasabermasfpd.png)"><h2 class="iDeviceTitle">Para saber más</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta114_128" class="block iDevice_content">
+<p>Puedes consultar la documentación de esta clase y sus métodos en siguiente enlace:</p>
+<p style="text-align: center;"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html" title="Visitar enlace a la documentación javadoc de la clase Math de la API de Java (se abre en una nueva ventana)." target="_blank" class="html">Documentación de la clase Math de la <acronym title="Application Programming Interface">API</acronym> de Java</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

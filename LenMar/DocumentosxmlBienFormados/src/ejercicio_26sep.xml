@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Matias Pennino
+ 
+ejercicio: reservas
+-cliente
+-fecha
+-hora
+-mesa (1,N)
+-comentarios (1,N)
+
+atributos: -ubicación de la mesa
+-número de socio de cliente
+-->
+
+<!-- respetar atributos y elementos, si no pide nada extra no lo pongas, y si 
+pide algo especifico ponelo -->
+
+<reservas>
+    <reserva>
+        <cliente numeroSocio="SOC_01">Pedro Alvarez</cliente>
+        <fecha>28-09-2023</fecha>
+        <hora>11:05</hora>
+        <mesas>
+            <mesa ubicacion="salon">12</mesa>
+        </mesas>
+        <comentarios>
+            <comentario>No fumadores</comentario>
+        </comentarios>
+    </reserva>
+    <reserva>
+        <cliente numeroSocio="SOC_02">Juan Gomez</cliente>
+        <fecha>15-10-2023</fecha>
+        <hora>20:30</hora>
+        <mesas>
+            <mesa ubicacion="terraza">21</mesa>
+            <mesa ubicacion="terraza">22</mesa>
+            <mesa ubicacion="salon">15</mesa>
+            <mesa ubicacion="salon">16</mesa>
+            <mesa ubicacion="terraza">23</mesa>
+        </mesas>
+        <comentarios>
+            <comentario>Mucha gente</comentario>
+            <comentario>Buen servicio</comentario>
+            <comentario>Buena comida</comentario>
+        </comentarios>
+    </reserva>
+</reservas>
+

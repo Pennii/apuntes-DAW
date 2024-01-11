@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 14</title>
+    <link rel="stylesheet" href="style.css">
+    <script  src="borrame.js"></script>
+</head>
+
+<body>
+    <h1> IES Aguadulce</h1>
+    <p id="sub">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis corporis similique esse pariatur
+        accusantium
+        dolore temporibus accusamus rerum cupiditate assumenda consequuntur est numquam omnis sed, praesentium sequi,
+        nisi laboriosam fugit!</p>
+    <h2>Ciclos</h2>
+    <div id="figCont">
+        <figure>
+            <figcaption>SMR</figcaption>
+            <img src="imagenes/imagen1.jpg" alt="...">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis reiciendis earum eum ea odio sed
+                vero
+                maxime veniam numquam dignissimos voluptatum tempora est, natus eligendi nesciunt fugit voluptate! Quia,
+                tempora eum inventore et doloremque officia. Sunt aspernatur saepe amet consequatur!
+            </p>
+        </figure>
+        <figure>
+            <figcaption>DAW</figcaption>
+            <img src="imagenes/imagen2.jpg" alt="...">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi accusantium veniam eligendi quisquam
+                placeat
+                hic cumque? Deleniti debitis labore iste.
+            </p>
+        </figure>
+        <figure>
+            <figcaption>DAM</figcaption>
+            <img src="imagenes/imagen3.jpg" alt="...">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, officiis.
+            </p>
+        </figure>
+        <figure>
+            <figcaption>ASIR</figcaption>
+            <img src="imagenes/imagen4.jpg" alt="...">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque porro aliquid est quam cupiditate
+                veniam
+                molestias laborum hic pariatur aspernatur et ea quia, repellendus voluptate fugiat non cum officiis?
+                Praesentium?
+            </p>
+        </figure>
+    </div>
+    <h2>Matriculación</h2>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Mañana</th>
+                <th colspan="3">Tarde</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="smr" rowspan="3">SMR</td>
+                <td class="vacia"></td>
+                <td class="vacia"></td>
+                <td id="asir" colspan="3">ASIR</td>
+            </tr>
+            <tr>
+                <td id="daw" colspan="2">DAW</td>
+                <td class="vacia"></td>
+                <td class="vacia"></td>
+                <td class="smr" rowspan="2">SMR</td>
+            </tr>
+            <tr>
+                <td class="vacia"></td>
+                <td id="dam" colspan="2">DAM</td>
+                <td class="vacia"></td>
+            </tr>
+        </tbody>
+        <caption>Tabla de formación</caption>
+    </table>
+    <h2>Información</h2>
+    <form action="">
+        <fieldset>
+            <legend>Información de la matricula</legend>
+            <label for="nom">Nombre y apellidos:</label>
+            <input type="text" id="nom" placeholder="Escribe tu nombre..." required
+            
+            >
+            <input type="text" list="animales" placeholder="animales">
+            <datalist id="animales">
+                <option value="gato">
+                <option value="perro">
+            </datalist>
+            <input type="time" placeholder="00" min="12">
+            <br>
+            <br>
+            <label for="ciclo">Ciclo:</label>
+            <select name="" id="ciclo">
+                <option value="">DAW</option>
+                <option value="">DAM</option>
+                <option value="">SMR</option>
+                <option value="">ASIR</option>
+            </select>
+            <br>
+            <br>
+            <label>Elige modulos:</label>
+            <div id="check">
+                <input type="checkbox" id="lm">
+                <label for="lm" class="opcion">Lenguaje Marcas</label>
+                <input type="checkbox" id="prog">
+                <label for="prog" class="opcion">Programacion</label>
+                <input type="checkbox" id="bd">
+                <label for="bd" class="opcion">Baes de datos</label>
+                <br>
+                <input type="checkbox" id="si">
+                <label for="si" class="opcion">Sistemas Informaticos</label>
+                <input type="checkbox" id="ent">
+                <label for="ent" class="opcion">Entornos</label>
+                <input type="checkbox" id="fol">
+                <label for="fol" class="opcion">FOL</label>
+            </div>
+            <br>
+            <br>
+            <label for="">Elige horario:</label>
+            <input type="radio" name="horario" id="man">
+            <label for="man" class="op">Mañana</label>
+            <input type="radio" name="horario" id="tar">
+            <label for="tar" class="op">Tarde</label>
+            <input type="radio" name="horario" id="in">
+            <label for="in" class="op">Indistinto</label>
+            <br>
+            <br>
+            <label for="ob">Observaciones</label>
+            <textarea name="" id="ob" cols="30" rows="10"></textarea>
+        </fieldset>
+        <div id="botCont">
+            <button type="reset">Limpiar</button>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

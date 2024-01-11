@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.7.- Objetos String en Java. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-65"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_utilizacin_de_objetos.html" class="current-page-parent daddy">4.- Utilización de objetos.</a>
+   <ul>
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li><a href="45_manipulacin.html" class="no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li id="active"><a href="47_objetos_string_en_java.html" class="active no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mtodos.html" class="daddy">5.- Métodos.</a>
+   <ul class="other-section">
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li><a href="52_uso_de_mtodos.html" class="no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li><a href="56_mtodos_estticos.html" class="daddy">5.6.- Métodos estáticos.</a>
+      <ul class="other-section">
+         <li><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul class="other-section">
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li><a href="84_formateado_de_fechas.html" class="no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li><a href="9_excepciones.html" class="daddy">9.- Excepciones.</a>
+   <ul class="other-section">
+      <li><a href="91_capturar_una_excepcin_con_try.html" class="no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_mtodos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.7.- Objetos String en Java.</h1></div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id97">
+<div class="iDevice emphasis0">
+<div id="ta97_154" class="block iDevice_content">
+<p>Cuando veíamos los tipos de datos primitivos, indicábamos que <span lang="en">Java</span> proporcionaba un tipo de dato especial para los textos o cadenas de caracteres que era el tipo de dato <code>String</code>. Realmente este tipo de dato es un <strong>tipo referenciado</strong>, no un tipo primitivo. Para declarar una variable de este tipo de dato llamada por ejemplo <code>mensaje</code>, debemos escribir lo siguiente:</p>
+<div class="highlighted-code language-java" style="width: 14.25em;">
+<pre><code>String mensaje;</code></pre>
+</div>
+<p>Con lo que ya sabemos ahora podemos observar que <code>String</code> <strong>es realmente una clase</strong> que nos proporciona<span lang="en"> Java </span>para facilitar el trabajo con cadenas de texto a partir de la cual creamos nuestro objeto llamado <code>mensaje</code>.</p>
+<p class="destacado" align="justify"><strong>En Java, los nombres de las clases empiezan con mayúscula, como por ejemplo <em><code>String</code></em>, y los nombres de los objetos con minúscula, como por ejemplo <em><code>mensaje</code></em>. De este modo sabemos rápidamente de qué tipo de elemento estamos hablando (una clase o un objeto).</strong></p>
+<p>Como puedes observar, poco se diferencia esta declaración de las declaraciones de variables que hacíamos para los tipos primitivos. Antes decíamos que <code>mensaje</code> era una variable del tipo de dato <code>String</code><strong></strong>. Ahora realmente vemos que <code>mensaje</code> es una referencia a un objeto de la clase <code>String</code>, pero en la práctica la declaración no es diferente a como podría ser por ejemplo la declaración de una variable de tipo <code>int</code>.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>int numero;     // Declaración de una variable de tipo entero
+String mensaje; // Declaración de una variable de tipo referencia a un objeto de la clase String</code></pre>
+</div>
+</div>
+<p>Lo que sí es cierto es que <code>mensaje</code> aún no contiene una referencia a un objeto (una dirección a una zona de memoria donde se encuentren los atributos de una instancia de la clase <code>String</code>) de la misma manera que <code>numero</code> aún no contiene en su interior los bytes que representan a un número entero. Lo más probable es que en <code>mensaje</code> haya un valor <code>null</code> (de la misma manera que en <code>numero</code> haya un <code>0</code>), pero el compilador de Java, por seguridad, no nos dejará usar esas variables hasta que se les haya asignado explíciamente algún valor.</p>
+<p align="justify">Para instanciar un objeto <code>String</code> debemos invocar a su constructor, como ya hemos visto con ejemplos de otros objetos:</p>
+<div class="highlighted-code language-java" style="width: 17.55em;">
+<pre><code>String texto = new String();</code>
+</pre>
+</div>
+<p align="justify">Así estaríamos instanciando el objeto <code>texto</code>. Para ello utilizaríamos el operador <code>new</code> y el constructor de la clase <code>String</code>, que se llama igual que la clase (<code>String</code>).</p>
+<p align="justify">En el ejemplo anterior el objeto se crearía con la cadena vacía (<code>""</code>), si queremos que tenga un contenido debemos una versión del constructor que contenga parámetros. Por ejemplo:</p>
+<div class="highlighted-code language-java" style="width: 30.2em;">
+<pre><code>texto = new String ("El primer programa");</code>
+</pre>
+</div>
+<p class="destacado" align="justify"><strong>Aunque <code>String</code> es una clase, se trata de una clase muy especial.</strong><br /><br /><strong><span lang="en">Java</span> permite utilizar la clase <code>String</code> como si de un tipo de dato primitivo se tratara, por eso no hace falta utilizar el operador<code> new</code> para instanciar un objeto de la clase <code>String</code>, aunque también puede hacerse. Por tanto las sentencias <code>texto=new String("El primer programa"); </code>y <code>texto="El primer programa";</code> son totalmente equivalentes. Lo que hace Java cuando se encuentra una del segundo (sin invocación al constructor con <strong><code>new</code></strong>) tipo es "traducirla" al primer tipo (con <strong><code>new</code></strong> y el constructor).</strong> <br /><br /><strong>Queremos llamar también tu atención sobre el hecho de que no es lo mismo decir que una referencia de tipo <code>String</code> apunte a  la <a href="#tc5529e84-d198-6b96-bb43-adc24e5dee8a" id="linkc5529e84-d198-6b96-bb43-adc24e5dee8a" class="exe-tooltip definition-tt titled-tt" title="Cadena vacía | Ver la definición">cadena vacía</a> (objeto String de longitud cero, que no tiene ningún carácter) que decir que apunte a <code>null</code> (que no es un <code>String</code>, sino una forma de indicar que no apunta a ningún objeto). La cadena vacía sí es un objeto. El valor <strong><code>null</code></strong> no representa a ningún objeto sino a la referencia nula (es decir, que no se está apuntando a nada).<br /></strong></p>
+<p align="justify">Como ya hemos visto con otras variables de tipo referencia (y con los tipos primitivos), la <strong>declaración y asignación de un valor inicial</strong> a una variable de tipo <code>String</code> puede hacerse también en una misma línea o instrucción. Es decir, que podemos hacer:</p>
+<div class="highlighted-code language-java">
+<pre><code>String texto = new String ("El primer programa"); // Declaración + instanciación + asignación de valor inicial </code>
+</pre>
+</div>
+<p>donde se llevan a cabo la siguientes operaciones y en este orden:</p>
+<ol>
+<li>declaración de la variable <code>texto</code>, de tipo <code>String</code> (o de la clase <code>String</code>);</li>
+<li>instanciación de un objeto de la clase <code>String</code> mediante la llamada a su constructor con el parámetro "<em>el primer programa</em>" a través del operador <code>new</code>;</li>
+<li>asignación de la referencia al objeto recién creado (lo que devuelve <code>new</code>) a la variable <code>texto</code> para que a partir de ese momento la variable texto "referencie" o "apunte" a un objeto de la clase <code>String</code> con el contenido "<em>el primer programa</em>".</li>
+</ol>
+<p>Ahora bien, dado que Java nos ofrece la comodidad de poder instanciar objetos <code>String</code> sin necesidad de usar el operador <code>new</code> para invocar al constructor, lo normal es que la inicialización de un objeto de tipo <code>String</code> normalmente tenga el siguiente aspecto:</p>
+<div class="highlighted-code language-java">
+<pre><code>String texto = "El primer programa"; // Declaración + instanciación + asignación de valor inicial </code>
+</pre>
+</div>
+<p>donde se llevan a cabo las mismas acciones que en el ejemplo anterior.</p>
+<div id="tc5529e84-d198-6b96-bb43-adc24e5dee8a" class="exe-tooltip-text">
+<p>Valor para una cadena que consiste en una cadena con 0 caracteres. Sería algo así como el "cero" de las cadenas. Es representada habitualmente por dos comillas dobles "" sin nada en medio.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="5_mtodos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

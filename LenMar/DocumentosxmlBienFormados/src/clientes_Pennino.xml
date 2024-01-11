@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Matias Pennino
+
+atributos:
+- cod cliente identificador unico
+- tipo de saldo sera un valor entre: efectivo, banco, tarjeta. obligatorio
+- moneda para saldo sera fija en euros
+- moneda para presupuesto sera obligatorio
+- adjudicado para num_contrato sera una referencia a codigo de cliente
+-->
+
+<!DOCTYPE clientes [
+<!ELEMENT clientes (cliente+)>
+
+<!ELEMENT cliente (nombre_completo?,dni?,saldo?,razon_social?,num_contrato?,presupuesto*)>
+<!ELEMENT nombre_completo (#PCDATA)>
+<!ELEMENT dni (#PCDATA)>
+<!ELEMENT saldo (#PCDATA)>
+<!ELEMENT razon_social (#PCDATA)>
+<!ELEMENT presupuesto (#PCDATA)>
+<!ELEMENT num_contrato (#PCDATA)>
+
+<!ATTLIST cliente codigo ID #REQUIRED>
+<!ATTLIST saldo tipo (efectivo|banco|tarjeta) #REQUIRED>
+<!ATTLIST saldo moneda CDATA #FIXED "euro">
+<!ATTLIST presupuesto moneda CDATA #IMPLIED>
+<!ATTLIST num_contrato adjudicado IDREF #REQUIRED>
+]>
+
+<clientes>
+    <cliente codigo="M01">
+        <nombre_completo></nombre_completo>
+        <dni></dni>
+        <saldo tipo="efectivo" moneda="euro"></saldo>
+    </cliente>
+    <cliente codigo="F01">
+        <dni></dni>
+        <saldo tipo="banco" moneda="euro"></saldo>
+    </cliente>
+    <cliente codigo="M02">
+        <razon_social></razon_social>
+        <num_contrato adjudicado="M02"></num_contrato>
+        <presupuesto moneda="peso"></presupuesto>
+    </cliente>
+    <cliente codigo="M03">
+        <razon_social></razon_social>
+        <presupuesto moneda="euro"></presupuesto>
+        <presupuesto></presupuesto>
+        <presupuesto moneda="euro"></presupuesto>
+    </cliente>
+</clientes>
+

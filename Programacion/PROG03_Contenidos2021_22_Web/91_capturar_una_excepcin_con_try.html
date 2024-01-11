@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.1.- Capturar una excepción con try. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-43"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_utilizacin_de_objetos.html" class="daddy">4.- Utilización de objetos.</a>
+   <ul class="other-section">
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li><a href="45_manipulacin.html" class="no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li><a href="47_objetos_string_en_java.html" class="no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mtodos.html" class="daddy">5.- Métodos.</a>
+   <ul class="other-section">
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li><a href="52_uso_de_mtodos.html" class="no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li><a href="56_mtodos_estticos.html" class="daddy">5.6.- Métodos estáticos.</a>
+      <ul class="other-section">
+         <li><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul class="other-section">
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li><a href="84_formateado_de_fechas.html" class="no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="9_excepciones.html" class="current-page-parent daddy">9.- Excepciones.</a>
+   <ul>
+      <li id="active"><a href="91_capturar_una_excepcin_con_try.html" class="active no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="9_excepciones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="92_el_manejo_de_excepciones_con_catch.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">9.1.- Capturar una excepción con try.</h1></div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id81">
+<div class="iDevice emphasis0">
+<div id="ta81_69" class="block iDevice_content">
+<div class="elemento_derecha">
+<div class="elemento_centrado"><img src="PROG03_CONT_R17_atraparexcepcion.jpg" alt="Un gusano a punto de ser atrapado en el interior de una planta carnívora." title="Capturando excepción." style="float: right;" width="200" height="148" /></div>
+<div class="elemento_centrado credenciales"><a class="cc-by-sa" title="CC by-sa" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es" target="_blank"><span class="transparente">CC by-sa</span></a> <a title="Beatrice Murch" href="http://commons.wikimedia.org/wiki/File:Meal_worm_in_venus_fly_trap.jpg" target="_blank">Beatrice Murch</a></div>
+</div>
+<p>Para poder capturar excepciones, emplearemos la estructura de captura de excepciones <code>try</code>-<code>catch</code>-<code>finally</code>.</p>
+<p>Básicamente, para capturar una excepción lo que haremos será <strong>declarar bloques de código donde es posible que ocurra una excepción.</strong></p>
+<p>Esto lo haremos mediante un bloque <code>try</code> (intentar). Si ocurre una excepción dentro de estos bloques, se lanza una excepción. Estas excepciones lanzadas se pueden capturar por medio de bloques <code>catch</code>. Será dentro de este tipo de bloques donde se hará el manejo de las excepciones.</p>
+<p><strong>Su sintaxis es:</strong></p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>
+try{
+
+    código que puede generar excepciones;
+
+}catch (Tipo_excepcion_1 objeto_excepcion){
+
+    instrucciones para manejar excepción de Tipo_excepcion_1;
+
+}catch (Tipo_excepcion_2 objeto_excepcion){
+
+    instrucciones para manejar excepción de Tipo_excepcion_2;
+
+}catch (...){
+    ...
+}finally{
+
+    instrucciones que se ejecutan siempre
+
+}
+
+</code></pre>
+</div>
+</div>
+<p>En esta estructura, la parte <code>catch</code> puede repetirse tantas veces como excepciones diferentes se deseen capturar. La parte <code>finally</code> es opcional y, si aparece, solo podrá hacerlo una sola vez.</p>
+<p>Cada <code>catch</code> maneja un tipo de excepción. Cuando se produce una excepción, se busca el <code>catch</code> que posea el manejador de excepción adecuado, será el que utilice el mismo tipo de excepción que se ha producido. Esto puede causar problemas si no se tiene cuidado, ya que la clase <code>Exception</code> es la superclase de todas las demás. Por lo que si se produjo, por ejemplo, una excepción<code></code> de tipo <code>AritmethicException</code> y el primer <code>catch</code> captura el tipo genérico <code>Exception</code>, será ese <code>catch</code> el que se ejecute y no los demás.</p>
+<p>Por eso el último <code>catch</code> debe ser el que capture excepciones genéricas y los primeros deben ser los más específicos. Lógicamente si vamos a tratar a todas las excepciones (sean del tipo que sean) igual, entonces basta con un solo <code>catch</code> que capture objetos <code>Exception</code>.</p>
+<p>En la bibliografía sobre excepciones en <span lang="en">Java</span>, frecuentemente se cuestiona la utilidad de la cláusula <code>finally</code>, debido a que al ser instrucciones que se ejecutan siempre, bien podrían sacarse del bloque de manejo de la excepción. Es cierto que <code>finally</code> no aporta la posibilidad de hacer nada que no se pueda conseguir hacer de forma igualmente clara sin <code>finally</code>, por lo que en lo que a este curso respecta, su uso queda a criterio del gusto de quien programa. Eso sí, hay que saber que existe y cómo funciona.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper DebesconocerfpdIdevice em_iDevice" id="id84">
+<div class="iDevice emphasis_debesconocerfpd" >
+<div class="iDevice_header" style="background-image:url(icon_debesconocerfpd.png)"><h2 class="iDeviceTitle">Debes conocer</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta84_44" class="block iDevice_content">
+<p>Aquí tienes un vídeo con un ejemplo en el que puedes observar cómo se capturan y gestionan excepciones:</p>
+<div class="elemento_centrado">
+<div class="titulo elemento_centrado">Excepciones en <span lang="en">Java</span>.</div>
+<div class="elemento_centrado"><iframe width="560" height="315" src="//www.youtube.com/embed/nn-bpzTWpRQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div>
+<div class="credenciales elemento_centrado"><a title="Resumen textual alternativo para &quot;Excepciones en Java&quot;" href="PROG03_Descripcion_video_Excepciones_Java.html" target="_blank"><br />Resumen textual alternativo para el vídeo sobre excepciones <span lang="&quot;en">Java</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice" id="id93">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<div class="iDevice_header" style="background-image:url(icon_ejercicioresueltofpd.png)"><h2 class="iDeviceTitle">Ejercicio Resuelto</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta93_63" class="block story iDevice_content">
+
+</div>
+<div id="taquesQuestion0b93" class="block iDevice_content">
+<p>Realiza un programa que lea por teclado un n&uacute;mero entero empleando la clase <code>Scanner</code>. Utiliza la estructura try-catch para que en caso de que se introduzca un valor no esperado, como una letra y dado que saltar&aacute; una excepci&oacute;n, se capturen las posibles excepciones y se informe del error. Si la lectura se hizo sin problemas, se mostrar&aacute; el n&uacute;mero le&iacute;do.</p>
+</div>
+<form name="feedback-form-quesFeedback0b93" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b93text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b93" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback0b93" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>En el siguiente fichero tienes la clase que captura las excepciones con el bloque <code>try-catch</code>.</p>
+<div class="enlace_centrado"><a class="documento" title="Descargar captura de excepciones desde la entrada desde teclado mediante excepciones. [zip - 4KB]" href="EjemploExcepcion.java">Captura de la entrada desde teclado a través de excepciones.</a> <span class="tamano">(4KB)</span></div>
+<p>En el ejemplo que acabamos de ver se captura cualquier excepción mediante <code>Exception</code>. En esta modificación el fichero anterior, fíjate que se puede especificar según el tipo de excepción que se capture:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>package ejemploexcepcion;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+/**
+ * Clase para entender la captura de excepciones.
+ *
+ * @author JJBH
+ */
+public class EjemploExcepcion {
+    public static void main(String[] args){
+        
+                
+        System.out.println("Escriba un número entero: ");
+        try {
+            Scanner teclado = new Scanner(System.in) ;
+            int numero = teclado.nextInt() ;
+            System.out.println("El número tecleado es: " + numero);
+        
+        } catch (InputMismatchException ex2) {
+            System.err.println("Error: formato no válido.");
+        }  
+    }
+}</code></pre>
+</div>
+</div></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper VerdaderofalsofpdIdevice em_iDevice" id="id85">
+<div class="iDevice emphasis_autoevaluacionfpd" >
+<div class="iDevice_header" style="background-image:url(icon_autoevaluacionfpd.gif)"><h2 class="iDeviceTitle">Autoevaluación</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta85_50" class="block iDevice_content">
+
+</div>
+<div class="question">
+<form name="true-false-form-0b85" action="#" class="activity-form">
+<h3 class="js-sr-av">Pregunta 1</h3>
+<div id="taquestion0b85" class="block iDevice_content">
+<p><strong>Si en un programa no capturamos una excepci&oacute;n, ser&aacute; la m&aacute;quina virtual de <span lang="en">Java </span>la que lo har&aacute; por nosotros, pero inmediatamente detendr&aacute; la ejecuci&oacute;n del programa y mostrar&aacute; una <a class="glosario">traza<span><em>Traza</em>Secuencia de acciones de ejecuci&oacute;n, as&iacute; como, el valor de las variables del programa despu&eacute;s de cada acci&oacute;n.</span></a> y un mensaje de error.</strong></p>
+</div>
+<p class="iDevice_answer js-required">
+<label for="true0b85"><input type="radio" name="option0b85" id="true0b85" class="exe-radio-option exe-radio-option-0-2-0b85-truefalse" /> Verdadero</label> 
+<label for="false0b85"><input type="radio" name="option0b85" id="false0b85" class="exe-radio-option exe-radio-option-1-2-0b85-truefalse" /> Falso</label>
+</p>
+</form>
+<div id="s0b85" class="feedback js-feedback js-hidden">
+<h4 class="js-sr-av">Retroalimentación</h4>
+<p><strong id="s0b85-result" class="right">Verdadero</strong></p>
+<p>As&iacute; es, si un m&eacute;todo no gestiona las excepciones que se producen en &eacute;l, la excepci&oacute;n ser&aacute; pasada al m&eacute;todo que llam&oacute; al m&eacute;todo. Y as&iacute; ocurrir&aacute; sucesivamente si no existe gesti&oacute;n de las excepciones en niveles superiores, hasta llegar a la m&aacute;quina virtual de <span lang="en">Java, que informar&aacute; lo mejor que pueda de lo que ha ocurrido y&nbsp;</span> detendr&aacute; la ejecuci&oacute;n del programa de la manera m&aacute;s ordenada posible.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="9_excepciones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="92_el_manejo_de_excepciones_con_catch.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

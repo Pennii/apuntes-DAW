@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Matias Pennino
+
+Crea un documento XML válido de la estructura de datos de un gimnasio.
+El gimnasio tendrá socios. De cada socio se almacenará su nombre completo, su teléfono, su email y su DNI.
+También habrá clases. De cada clase se almacenará su nombre, un código de clase, su hora de inicio y su hora de fin. 
+Además cada socio tendrá cero o muchas inscripciones de las distintas clases.
+De cada inscripcion guardaremos el codigo de clase.
+El código de clase y el DNI deberán ser atributos.
+Añade los datos de dos socios y dos clases. Un socio con dos inscripciones y  el otro sin inscripciones.
+EXTRA:
+Añadir los siguientes atributos:
+Tipo de socio que solo podra tener los valores: amateur, profesional, premium.
+Tipo de email que será opcional y solo podra tener los valores: personal, trabajo.
+El elemento hora final sera opcional.
+El socio podra tener 0 o muchos telefonos
+Añadir al elemento clase el nobre del monitor o nombre de la sala donde se imparte.
+
+
+-->
+<!DOCTYPE gimnasio [
+
+<!ELEMENT gimnasio (socios, clases)>
+<!ELEMENT socios (socio+)>
+<!ELEMENT socio (nombre, telefonos?, email, inscripciones*)>
+<!ATTLIST socio 
+    dni ID #REQUIRED
+    tipo_socio (amateur|profesional|premium) "amateur">
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT telefonos (telefono+)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST email tipo_email (personal|trabajo) #IMPLIED>
+<!ELEMENT inscripciones EMPTY>
+<!ATTLIST inscripciones
+    numero NMTOKEN #REQUIRED
+    codigo_clase IDREFS #REQUIRED>
+<!ELEMENT clases (clase+)>
+<!ELEMENT clase (nombre, hora_inicio, hora_fin?,(monitor|sala))>
+<!ELEMENT hora_inicio (#PCDATA)>
+<!ELEMENT hora_fin (#PCDATA)>
+<!ELEMENT monitor (#PCDATA)>
+<!ELEMENT sala (#PCDATA)>
+<!ATTLIST clase codigo ID #REQUIRED>
+
+]>
+
+<gimnasio>
+    <socios>
+        <socio dni="M111222333" tipo_socio="premium">
+            <nombre>Juan Lopez</nombre>
+            <telefonos>
+                <telefono>111223344</telefono>
+                <telefono>222334455</telefono>
+            </telefonos>
+            <email tipo_email="trabajo">jpez@hotmail.com</email>
+            <inscripciones numero="2" codigo_clase="C123 C321"/>
+        </socio>
+        <socio dni="M111222444" tipo_socio="amateur">
+            <nombre>Luis Ramirez</nombre>
+            <email tipo_email="personal">luisito@gmail.com</email>
+        </socio>
+    </socios>
+    <clases>
+        <clase codigo="C123">
+            <nombre>Pumas</nombre>
+            <hora_inicio>10:30</hora_inicio>
+            <sala>Sala norte</sala>
+        </clase>
+        <clase codigo="C321">
+            <nombre>Zetas</nombre>
+            <hora_inicio>15:00</hora_inicio>
+            <hora_fin>16:00</hora_fin>
+            <monitor>Raul Molina</monitor>
+        </clase>
+    </clases>
+</gimnasio>
+

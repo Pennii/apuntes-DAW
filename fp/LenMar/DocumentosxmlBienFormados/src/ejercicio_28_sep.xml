@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Matias Pennino
+Ejercicio 6: Crea un documento XML bien formado para una biblioteca;
+Los datos de la biblioteca seran: Nombre, provincia y como atributo numero de  
+puestos de lectura.
+De cada libro almacenaremos: titulo, autor (se puede repetir), año (opcional)
+Como atributos queremos reflejar: Cantidad de cada libro y nacionalidad del 
+autor (opcional)
+poner 2 libros de ejemplo
+-->
+
+<biblioteca>
+    <nombre puestos="20">Biblioteca Martin</nombre>
+    <provincia>Almeria</provincia>
+    <!-- las listas se hacen para que este mas prolijo -->
+    <libros>
+        <libro>
+            <titulo cantidad="15">El señor de los anillos</titulo>
+            <!-- si el atributo es opcional se quita, lo mismo con los elementos
+            -->
+            <autor>Tolkien</autor>
+        </libro>
+        <libro>
+            <titulo cantidad="2">Harry Potter</titulo>
+            <autor nacionalidad="inglesa">J.K Rowling</autor>
+            <anno>1997</anno>
+        </libro>
+    </libros>
+</biblioteca>

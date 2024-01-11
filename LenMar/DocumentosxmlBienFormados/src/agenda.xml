@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- 26 de septiembre
+
+Matias Pennino
+
+ Ejercicio: Realizar una agenda donde se guarde el nombre completo, 
+dirección, (1,N) telefonos, (0,1) web, categoria.
+Dirección tiene que tener via, número, población y provincia.
+-->
+
+<agenda>
+    <registro categoria="familiar">
+        <nombreCompleto>Matias Pennino</nombreCompleto>
+        <direccion>
+            <nombreVia></nombreVia>
+            <numero></numero>
+            <poblacion cp=""></poblacion>
+<!--            <cp></cp>-->
+            <provincia></provincia>
+        </direccion>
+        <telefonos>
+            <telefono>111223344</telefono>
+        </telefonos>
+        <web></web>
+<!--        <categoria>Familiar</categoria>-->
+    </registro>
+    <registro categoria="empresa">
+        <nombreCompleto>Pizzeria lo de Susi</nombreCompleto>
+        <direccion>
+            <nombreVia></nombreVia>
+            <numero></numero>
+            <poblacion></poblacion>
+            <provincia></provincia>
+        </direccion>
+        <telefonos>
+            <telefono>222334455</telefono>
+            <telefono>333445566</telefono>
+        </telefonos>
+        <web>www.lodesusi.com</web>
+<!--        <categoria>Empresa</categoria>-->
+    </registro>
+</agenda>
+

@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 80%;
+    margin: 5% auto;
+}
+
+/* Titulo principal */
+h1 {
+    color: red;
+    padding: 10px;
+    background-color: #ccc;
+    border-left: 10px solid #000;
+    border-top: 15px solid #555;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+/* Enlaces */
+#linkConten {
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    width: 15%;
+    color: #000;
+    text-decoration: none;
+    border-top: 3px solid #555;
+    border-bottom: 3px solid #555;
+}
+
+a:hover {
+    transition: 1s;
+    border-top-color: red;
+    border-bottom-color: red;
+    
+}
+
+/* Parrafos */
+.primeraLetra {
+    color: red;
+}
+
+p {
+    border-left: 40px solid #ccc;
+    padding: 20px;
+}
+
+/* Tabla */
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+th {
+    border: 1px solid red;
+}
+
+td {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.tarA {
+    background-color: #ccc;
+}
+
+.tarB {
+    background-color: #555;
+}
+
+caption {
+    text-align: end;
+    color: red;
+}
+
+#roja {
+    background-color: red;
+}
+
+/* Grupo de imagenes */
+figure {
+    /* con un 33% las imagenes se muestran en filas de 2 cuando la pantalla
+    se hace mas pequeña, si se cambia por un 30% se muestran en filas de 3 */
+    width: 33%;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* Formulario */
+form {
+    background-color: #ccc;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 150px;
+    padding: 20px;
+    padding-right: 70px;
+}
+
+fieldset {
+    padding: 10px;
+}
+
+legend,
+fieldset,
+form {
+    border: 1px solid red;
+}
+
+legend,
+fieldset {
+    background-color: #fff;
+}
+
+label {
+    display: inline-block;
+    width: 40%;
+}
+
+input,
+select,
+textarea {
+    width: 50%;
+}
+
+#botones {
+    text-align: center;
+}
+
+button {
+    width: 40%;
+    margin: 10px 20px;
+}

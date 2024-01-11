@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.5.- Manipulación. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="4_utilizacin_de_objetos.html" class="current-page-parent daddy">4.- Utilización de objetos.</a>
+   <ul>
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li id="active"><a href="45_manipulacin.html" class="active no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li><a href="47_objetos_string_en_java.html" class="no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mtodos.html" class="daddy">5.- Métodos.</a>
+   <ul class="other-section">
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li><a href="52_uso_de_mtodos.html" class="no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li><a href="56_mtodos_estticos.html" class="daddy">5.6.- Métodos estáticos.</a>
+      <ul class="other-section">
+         <li><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul class="other-section">
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li><a href="84_formateado_de_fechas.html" class="no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li><a href="9_excepciones.html" class="daddy">9.- Excepciones.</a>
+   <ul class="other-section">
+      <li><a href="91_capturar_una_excepcin_con_try.html" class="no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="44_referencias_a_objetos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">4.5.- Manipulación.</h1></div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id28">
+<div class="iDevice emphasis0">
+<div id="ta28_73" class="block iDevice_content">
+<p>Una vez creado e instanciado un objeto ¿cómo accedemos a su contenido o le enviamos un mensaje?</p>
+<p>Para acceder a los <strong>atributos y métodos del objeto</strong> utilizaremos el nombre del objeto seguido del <strong>operador punto (.) </strong>y el nombre del atributo o método que queremos utilizar. Cuando utilizamos el operador punto se dice que estamos enviando un mensaje al objeto. La forma general de enviar un mensaje a un objeto es:</p>
+<div class="highlighted-code language-java" style="width: 17.55em;">
+<div class="texto_izquierda">
+<pre><code>nombreObjeto.mensaje</code>
+</pre>
+</div>
+</div>
+<p>Por ejemplo, para acceder a los atributos o variables instancia del objeto se utiliza la siguiente sintaxis:</p>
+<div class="highlighted-code language-java" style="width: 18.1em;">
+<div class="texto_izquierda">
+<pre><code>nombreObjeto.nombreAtributo</code>
+</pre>
+</div>
+</div>
+<p>Y para acceder a los métodos o funciones miembro del objeto se utiliza la sintaxis:</p>
+<div class="highlighted-code language-java" style="width: 33.85em;">
+<div class="texto_izquierda">
+<pre><code>nombreObjeto.nombreMetodo ( lista de parámetros )</code>
+</pre>
+</div>
+</div>
+<p align="left">La lista de parámetros consiste en una lista de valores (puede ser una lista vacía) que cada método espera que se le pasen.</p>
+<p>Ahora bien, para poder acceder a cualquier miembro de un objeto (ya sea un atributo o un método) debe de tratarse de un <strong>miembro accesible</strong>, es decir, que tengamos permiso para acceder a él. Si no tenemos acceso a ese miembro desde fuera del objeto es como si no existiera. De hecho, ni siquiera sabremos que existe, pues será un elemento estructural de la clase que como usuarios de ella desconoceremos. En ese sentido podemos imaginar la clase como una "caja negra" que define con qué miembros del objeto (atributos y/o métodos) nos podemos comunicar. Cuando escribamos programas que utilicen objetos de una determinada clase, no todo el contenido de esos objetos será accesible directamente desde nuestro código mediante el operador punto. Sólo tendremos acceso a aquellos elementos a los que se nos permita acceder. Son los elementos que definen la <strong>interfaz de la clase</strong>. A esos elementos también se les suele llamar <strong>miembros públicos</strong> del objeto.</p>
+<p>Para entender mejor cómo se pueden manipular objetos vamos a continuar con nuestro ejemplo de los objetos de la clase <code>Rectangle</code>. En primer lugar instanciamos el objeto invocando al <strong>método constructor, que se llama igual que la clase</strong>, a través del operador <code>new</code> e indicando los parámetros correspondientes a la posición y a las dimensiones del rectángulo como ya hemos hecho en anteriores ocasiones:</p>
+<div class="highlighted-code language-java" style="width: 32.95em;">
+<div class="texto_izquierda">
+<pre><code>Rectangle rectangulo = new Rectangle(50, 50, 150, 150);</code>
+</pre>
+</div>
+</div>
+<p>La sentencia anterior declara la variable <code>rectangulo</code> como una referencia de tipo <code>Rectangle</code>, y hace que apunte a un nuevo objeto que se crea al invocar al constructor con el operador <code>new</code>. El constructor recibe como parámetros las coordenadas de la esquina superior izquierda, que sería el punto <code>(50, 50) </code>en la pantalla, y el ancho y alto del mismo (longitud de la base y la altura), que sería 150 en ambos casos. </p>
+<p>Una vez que hemos instanciado un objeto de tipo <code>Rectangle</code> y que disponemos de una variable referencia a él llamada <code>rectangulo</code>, si queremos cambiar el valor de los atributos utilizamos el operador punto. Por ejemplo, para cambiar la dimensión del rectángulo, para que tanto su altura como su base sean 100, en lugar de los 150 que le habíamos asignado, podría hacerse modificando directamente el valor de sus atributos así:</p>
+<div class="highlighted-code language-java" style="width: 14.8em;">
+<div class="texto_izquierda">
+<pre><code>rectangulo.height = 100 ;</code>
+</pre>
+<pre><code>rectangulo.width = 100 ;</code>
+</pre>
+</div>
+</div>
+<p>Esto hemos podido hacerlo porque los atributos <code>height</code> (altura) y <code>width</code> (anchura o base) de la clase <code>Rectangle</code> son <strong>públicos</strong> (accesibles desde fuera del objeto) y por tanto manipulables desde nuestro programa. Si no, no habríamos podido acceder a ellos.</p>
+<p>Otra posibilidad habría sido utilizar un método para hacer algo similar a lo anterior. Por ejemplo, la siguiente línea de código fija el tamaño del rectángulo a 200 por 200, tanto de base como de altura. El método utilizado se llama <code>setSize</code>:</p>
+<div class="highlighted-code language-java" style="width: 18.65em;">
+<div class="texto_izquierda">
+<pre><code>rectangulo.setSize(200,200) ;</code>
+</pre>
+</div>
+</div>
+<p>Lo más habitual será proceder de esta segunda manera, pues normalmente los atributos suelen ser privados dentro del objeto y no se pueden manipular desde fuera. Para ello se nos proporcionarán métodos (como por ejemplo <code>setSize</code>) que nos permitirán llevar a cabo esas manipulaciones pero de forma "controlada".</p>
+<p>Aquí tienes un ejemplo completo donde se prueba todo lo anterior:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Instanciamos un nuevo objeto de la clase Rectangle 
+// y apuntamos a él mediante la variable r1
+// Ubicación en (0,0) y dimiensiones 10 de base, 5 de altura   
+System.out.print   ("Creando objeto instancia de la clase Rectangle ");
+System.out.println ("y referenciado desde la variable r1.");
+Rectangle r1= new Rectangle (0,0, 10, 5);
+System.out.println ();
+
+// Mostramos los atributos o propiedades del objeto al que apunta r1
+System.out.println ("Rectángulo r1:");
+System.out.println ("Ubicación: x=" + r1.x + " y=" + r1.y);
+System.out.println ("Dimensiones: base= " + r1.width+ " altura= " + r1.height);
+
+// Modificamos los atributos o propiedades del objeto al que apunta r1
+
+// 1. Accediendo directamente a sus atributos y modificándolos (pues son públicos)
+r1.height= 20;
+r1.width= 100;
+System.out.println ();
+System.out.println ("Rectángulo r1 modificado mediante manipulación de atributos:");
+System.out.println ("Ubicación: x=" + r1.x + " y=" + r1.y);
+System.out.println ("Dimensiones: base= " + r1.width+ " altura= " + r1.height);
+
+// 2. Utilizando un método para modificar algunos de sus atributos: setSize
+r1.setSize(200, 50);
+System.out.println ();
+System.out.println ("Rectángulo r1 modificado mediante llamada a un método:");
+System.out.println ("Ubicación: x=" + r1.x + " y=" + r1.y);
+System.out.println ("Dimensiones: base= " + r1.width+ " altura= " + r1.height);</code></pre>
+</div>
+</div>
+<p>La salida debería ser algo similar a lo siguiente:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Creando objeto instancia de la clase Rectangle y referenciado desde la variable r1.
+
+Rectángulo r1:
+Ubicación: x=0 y=0
+Dimensiones: base= 10 altura= 5
+
+Rectángulo r1 modificado mediante manipulación de atributos:
+Ubicación: x=0 y=0
+Dimensiones: base= 100 altura= 20
+
+Rectángulo r1 modificado mediante llamada a un método:
+Ubicación: x=0 y=0
+Dimensiones: base= 200 altura= 50</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice" id="id102">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<div class="iDevice_header" style="background-image:url(icon_ejercicioresueltofpd.png)"><h2 class="iDeviceTitle">Ejercicio Resuelto</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta102_148" class="block story iDevice_content">
+<p>Disponemos de tres variables de tipo referencia a objetos de la clase <code>Rectangle</code>: <code>r1</code>, <code>r2</code>, <code>r3</code>.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Rectangle r1, r2, r3;</code></pre>
+</div>
+</div>
+</div>
+<div id="taquesQuestion0b102" class="block iDevice_content">
+<p>Instancia un objeto <code>Rectangle</code> con ubicación en las coordenadas (10,10), de base 10 y altura 5. Asigna a la variable <code>r1</code> la referencia a ese objeto recién creado.</p>
+</div>
+<form name="feedback-form-quesFeedback0b102" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b102text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b102" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback0b102" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Bastaría con llamar al <strong>constructor</strong> de la clase utilizando el operador <code>new</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>r1= new Rectangle (10,10, 10, 5);</code></pre>
+</div>
+</div></div>
+</form>
+<div id="taquesQuestion1b102" class="block iDevice_content">
+<p>Asigna a la variable <code>r2</code> la misma referencia a la que apunta <code>r1</code>. Es decir, que <code>r1</code><code></code> y <code>r2</code> hagan referencia al mismo objeto. Muestra por pantalla el contenido de los atributos de los objetos a los que apuntan <code>r1</code><code></code> y <code>r2</code> (deberían ser el mismo objeto y por tanto tener los mismos valores).</p>
+</div>
+<form name="feedback-form-quesFeedback1b102" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback1b102text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback1b102" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback1b102" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Bastaría con asignar a <code>r2</code> el valor actual de <code>r1</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>r2= r1;</code></pre>
+</div>
+</div>
+<p>Ahora podríamos decir que <code>r1</code> y <code>r2</code> apuntan al mismo objeto. Por tanto, cualquier modificación que se realice en <code>r2</code> a través de los miembros del objeto en realidad se está haciendo también en <code>r2</code>. En realidad la modificación no se realiza ni en <code>r1</code> ni en <code>r2</code>, sino en el objeto al que apuntan ambos, que es el mismo. <strong>Recuerda que en tanto en <code>r1</code> como en <code>r2</code> no se guarda realmente el objeto sino una referencia (un número, también conocido como dirección de memoria o puntero) al objeto</strong>.</p>
+<p>Para mostrar el contenido de sus atributos podríamos hacer algo así como:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Mostramos los atributos o propiedades del objeto al que apunta r1
+System.out.println ("Rectángulo r1:");
+System.out.println ("Ubicación: x=" + r1.x + " y=" + r1.y);
+System.out.println ("Dimensiones: base= " + r1.width+ " altura= " + r1.height);
+System.out.println ();
+
+// Mostramos los atributos o propiedades del objeto al que apunta r2
+System.out.println ("Rectángulo r2:");
+System.out.println ("Ubicación: x=" + r2.x + " y=" + r2.y);
+System.out.println ("Dimensiones: base= " + r2.width+ " altura= " + r2.height);
+System.out.println ();</code></pre>
+</div>
+</div>
+<p>Y la salida debería ser algo así como:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Rectángulo r1:
+Ubicación: x=10 y=10
+Dimensiones: base= 10 altura= 5
+
+Rectángulo r2:
+Ubicación: x=10 y=10
+Dimensiones: base= 10 altura= 5</code></pre>
+</div>
+</div>
+<p></p></div>
+</form>
+<div id="taquesQuestion2b102" class="block iDevice_content">
+<p>Modifica la altura del rectángulo al que apunta <code>r2</code> poniéndola al valor 6. Recuerda que el atributo público para consultar y modificar la altura de un objeto de la clase <code>Rectangle</code> es <code>height</code>.<code></code></p>
+<p>A continuación muestra por pantalla de nuevo el valor de los atributos de los objetos a los que apuntan tanto <code>r1</code> como <code>r2</code>. ¿Qué modificaciones observas?</p>
+</div>
+<form name="feedback-form-quesFeedback2b102" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback2b102text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback2b102" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback2b102" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Para modificar la altura del rectángulo al que apunta <code>r2</code> basta con modificar el valor el atributo <code>height</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>r2.height= 6;</code></pre>
+</div>
+</div>
+<p>Si mostramos en pantalla de nuevo el valor de los atributos de <code>r1</code> y <code>r2</code> deberíamos observar algo como:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Rectángulo r1:
+Ubicación: x=10 y=10
+Dimensiones: base= 10 altura= 6
+
+Rectángulo r2:
+Ubicación: x=10 y=10
+Dimensiones: base= 10 altura= 6</code></pre>
+</div>
+</div>
+<p>Es decir, que las modificaciones realizadas sobre el objeto al que hace referencia <code>r2</code> también han tenido efecto sobre el objeto al que apunta <code>r1</code> pues ambas variables "apuntan" (o "hacen referencia") a la misma instancia (objeto) en memoria.</p></div>
+</form>
+<div id="taquesQuestion3b102" class="block iDevice_content">
+<p>Instancia ahora un segundo objeto <code>Rectangle</code> con ubicación en las coordenadas (0,0), de base 100 y altura 20 asignando a la variable <code>r3</code> la referencia a ese objeto recién creado. Utiliza la versión del constructor que sólo requiere dos parámetros (base y altura).</p>
+<p>A continuación, muestra por pantalla el valor de los atributos el objeto al que apunta <code>r3</code>.</p>
+</div>
+<form name="feedback-form-quesFeedback3b102" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback3b102text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback3b102" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback3b102" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Para crear un nuevo objeto <code>Rectangle</code> con menos datos iniciales basta con utilizar el constructor apropiado. En esta ocasión utilizamos uno que sólo recibe dos parámetros (<code>width</code> y <code>height</code>), sin coordenadas. Este constructor establecerá las coordenadas por omisión (0,0).</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>r3= new Rectangle (100, 20);</code></pre>
+</div>
+</div>
+<p>La información que tendría aparecer por pantalla debería ser similar a la siguiente:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Rectángulo r3:
+Ubicación: x=0 y=0
+Dimensiones: base= 100 altura= 20</code></pre>
+</div>
+</div></div>
+</form>
+<div id="taquesQuestion4b102" class="block iDevice_content">
+<p>Modifica ahora el valor de la variable <code>r3</code> asignándole el valor de la variable <code>r2</code>. A continuación modifica la base y la altura de <code>r3</code> (en realidad del objeto rectángulo al que apunta <code>r3</code>) al valor 50 en ambos casos. Por último muestra por pantalla el contenido de los atributos de los objetos a los que apuntan <code>r1,</code><code></code> <code>r2</code> y <code>r3</code>. ¿Qué conclusiones puedes obtener de lo que observas por la pantalla?</p>
+</div>
+<form name="feedback-form-quesFeedback4b102" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback4b102text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback4b102" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback4b102" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Para dar el nuevo valor a <code>r3</code> bastaría con asignar a <code>r3</code> el valor actual de <code>r2</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>r3= r2;</code></pre>
+</div>
+</div>
+<p>Para modificar la base y altura del rectángulo al que apunta <code>r3</code> podemos el método <code>setSize</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>r3.setSize(50,50);</code></pre>
+</div>
+</div>
+<p>Aunque también podríamos haberlo hecho mediante la asignación directa a los atributos de base y altura.</p>
+<p>Por último, si mostramos por pantalla el valor de los atributos de los objetos a los que apuntan cada una de las variables referencia <code>r1,</code><code></code> <code>r2</code> y <code>r3</code> , deberíamos obtener algo similar a lo siguiente:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Rectángulo r1:
+Ubicación: x=10 y=10
+Dimensiones: base= 50 altura= 50
+
+Rectángulo r2:
+Ubicación: x=10 y=10
+Dimensiones: base= 50 altura= 50
+
+Rectángulo r3:
+Ubicación: x=10 y=10
+Dimensiones: base= 50 altura= 50</code></pre>
+</div>
+</div>
+<p>¿Qué conclusiones podemos extraer de aquí? Está claro que ahora mismo <strong>las tres variables apuntan al mismo objeto en memoria</strong> (el primero que se instanció y al que apuntaba inicialmente sólo <code>r1</code>) y por tanto <strong>cualquier manipulación que hagamos desde cualquier de las tres va tener efecto sobre ese mismo objeto</strong> y va a ser reflejado de igual manera desde esas tres variables mientra sigan conteniendo la misma referencia (apuntando al mismo objeto). En el momento en que alguna de ellas apunte a otro objeto, cualquier modificación que se realice ya no afectará a las otras.</p></div>
+</form>
+<div id="taquesQuestion5b102" class="block iDevice_content">
+<p>¿Qué crees que acabará sucediendo a medio/largo plazo con el segundo objeto que se ha creado y al que apuntaba inicialmente <code>r3</code>?</p>
+</div>
+<form name="feedback-form-quesFeedback5b102" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback5b102text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback5b102" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback5b102" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Dado que ya no hay ninguna variable que apunte a ese objeto (no está "referenciado" desde ninguna variable de tipo referencia), el recolector de basura acabará descubriendo que se trata de un objeto inaccesible y por tanto considerándolo como "basura" en el sistema, de manera que lo borrará liberando el espacio ocupado para que pueda ser reutilizado. ¿Cuándo lo borrará? Cuando el recolector de basura lo considere oportuno teniendo en cuenta la carga del sistema en cada momento.</p></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="44_referencias_a_objetos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

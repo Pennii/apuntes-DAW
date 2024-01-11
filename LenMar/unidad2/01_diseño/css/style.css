@@ -1,0 +1,36 @@
+h1 {
+    background-color: black;
+    color: white;
+    border-bottom: 10px solid red;
+    border-right: 10px solid red;
+    padding: 100px;
+    padding-left: 50px;
+}
+
+img {
+    padding-left: 100px;
+    background-color: grey;
+}
+
+h2 {
+    border-top: 5px solid grey;
+    border-bottom: 5px solid grey;
+}
+
+.izquierdo {
+    border-left: 100px solid grey;
+    padding-left: 100px;
+}
+
+#derecho {
+    border-right: 100px solid grey;
+    padding-right: 100px;
+}
+
+.tit_izquierdo {
+    padding-left: 100px;
+}
+
+#tit_derecho {
+    padding-right: 100px;
+}

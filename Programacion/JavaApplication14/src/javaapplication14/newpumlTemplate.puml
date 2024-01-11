@@ -1,0 +1,9 @@
+@startuml
+actor Foo1
+boundary Foo2
+control Foo3
+entity Foo4
+Foo1-> Foo2 : to boundary
+Foo1-> Foo3 : to control
+Foo1-> Foo4 : to entity
+@enduml

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Matias Agustin Pennino
+
+Crea un documento XML bien válido para una estructura de datos de un colegio
+El colegio tiene profesores y grupos.
+De los profesores se almacenará su nombre completo, su DNI y su teléfono de 
+contacto o su correo electrónico, pero no ambos valores. El DNI será un atributo
+obligatorio de tipo identificador único.
+De cada grupo se almacenará: el código de su nombre (1DAW, 2DAW...), el número
+de aula, opcionalmente el nombre del/a delegado/a y los alumnos/as. El código
+de grupo será un atributo que solamente tomará los valores: 1DAW, 2DAW, 1DAM,
+2DAM, con el valor por defecto 1DAW.
+De cada alumno se almacenará: su nombre completo, uno o muchos teléfonos de 
+contacto y cero o muchas notas. 
+Las notas tendrán un atributo opcional con el nombre de la asignatura. 
+Añade los datos de dos profesores y dos grupos. Un grupo con dos alumnos y el
+otro sin alumnos.
+
+Añade un comentario con tu nombre y apellidos y el enunciado.
+-->
+
+<!DOCTYPE colegio [ 
+<!ELEMENT colegio (profesores, grupos)>
+<!ELEMENT profesores (profesor+)>
+<!ELEMENT profesor (nombre, apellido, (telefono | email))>
+<!ELEMENT grupos (grupo+)>
+<!ELEMENT grupo (num_aula, delegado?, alumnos*)>
+<!ELEMENT alumnos (alumno*)>
+<!ELEMENT alumno (nombre, apellido, telefono+, notas?)>
+<!ELEMENT notas (nota*)>
+<!ELEMENT delegado (nombre, apellido)>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT nota (#PCDATA)>
+<!ELEMENT num_aula (#PCDATA)>
+
+<!ATTLIST profesor dni ID #REQUIRED>
+<!ATTLIST grupo codigo (1DAW|2DAW|1DAM|2DAM) "1DAW">
+<!ATTLIST nota asignatura CDATA #IMPLIED>
+]>
+
+<colegio>
+    <profesores>
+        <profesor dni="M111">
+            <nombre>Mario</nombre>
+            <apellido>Santos</apellido>
+            <telefono>111223344</telefono>
+        </profesor>
+        <profesor dni="M112">
+            <nombre>Gabriel</nombre>
+            <apellido>Medina</apellido>
+            <email>gabimedina@gmail.com</email>
+        </profesor>
+    </profesores>
+    <grupos>
+        <grupo codigo="1DAW">
+            <num_aula>12</num_aula>
+            <delegado>
+                <nombre>Rodrigo</nombre>
+                <apellido>Fernandez</apellido>
+            </delegado>
+            <alumnos>
+                <alumno>
+                    <nombre>Carlos</nombre>
+                    <apellido>Martinez</apellido>
+                    <telefono>123456789</telefono>
+                    <telefono>234567891</telefono>
+                    <notas>
+                        <nota asignatura="lengua">8</nota>
+                        <nota>7</nota>
+                    </notas> 
+                </alumno>
+                <alumno>
+                    <nombre>Julian</nombre>
+                    <apellido>Rodriguez</apellido>
+                    <telefono>789456123</telefono>
+                </alumno>
+            </alumnos>
+        </grupo>
+        <grupo codigo="2DAW">
+            <num_aula>10</num_aula>
+        </grupo>
+    </grupos>
+</colegio>
+

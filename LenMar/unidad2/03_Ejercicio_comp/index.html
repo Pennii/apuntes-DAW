@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>LMGSI</h1>
+    <div id="linkConten">
+        <a href="#inicio">Inicio</a>
+        <a href="#unidades">Unidades</a>
+        <a href="#tareas">Tareas</a>
+        <a href="#proyectos">Proyectos</a>
+    </div>
+    <h2 id="inicio"><span class="primeraLetra">I</span>nicio</h2>
+    <p>Lorem, ipsum <b>dolor</b> sit amet <i>consectetur</i> adipisicing elit. <u>Animi</u> sapiente tenetur impedit
+        neque dolorum.
+        Dignissimos Lorem, ipsum dolor.veritatis a minus deleniti repellendus magni sint soluta, ut cupiditate quae ea,
+        <abbr title="Ejemplo de abreviación">similique</abbr> ad
+        quidem.</p>
+    <h2 id="unidades"><span class="primeraLetra">U</span>nidades</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste consequatur ab fuga iusto sint, dolores provident
+        explicabo saepe voluptas maxime officia cum assumenda eaque aliquid nostrum nemo atque dolor odit distinctio non
+        labore a, ad corporis sapiente. Beatae, numquam blanditiis?
+    </p>
+    <!-- Cada figure debe ocupar 30% la imagen debe ocupar el 100% de figure -->
+    <figure>
+        <img src="https://picsum.photos/id/1076/600/400" alt="">
+        <figcaption>Unidad 1</figcaption>
+    </figure>
+    <figure>
+        <img src="https://picsum.photos/id/1081/600/400" alt="">
+        <figcaption>Unidad 2</figcaption>
+    </figure>
+    <figure>
+        <img src="https://picsum.photos/id/743/600/400" alt="">
+        <figcaption>Unidad 3</figcaption>
+    </figure>
+    <figure>
+        <img src="https://picsum.photos/id/945/600/400" alt="">
+        <figcaption>Unidad 4</figcaption>
+    </figure>
+    <figure>
+        <img src="https://picsum.photos/id/972/600/400" alt="">
+        <figcaption>Unidad 5</figcaption>
+    </figure>
+    <h2 id="tareas"><span class="primeraLetra">T</span>areas</h2>
+    <table>
+        <caption>Tabla de tareas</caption>
+        <thead>
+            <tr>
+                <td id="roja"></td>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>8:00</th>
+                <td rowspan="3" class="tarA">Tarea A</td>
+                <td colspan="3" class="tarB">Tarea B</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>9:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>10:00</th>
+                <td rowspan="2" class="tarA">Tarea A</td>
+                <td></td>
+                <td colspan="2" class="tarB">Tarea B</td>
+            </tr>
+            <tr>
+                <th>11:00</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 id="proyectos"><span class="primeraLetra">P</span>royectos</h2>
+    <!-- Opciones de select: optgropu label -->
+    <form action="#inicio">
+        <fieldset>
+            <legend>Datos del proyecto</legend>
+            <label for="nom">Nombre del proyecto:</label>
+            <input type="text" id="nom">
+            <br>
+            <br>
+            <label for="aut">Autor/a:</label>
+            <input type="text" id="aut">
+            <br>
+            <br>
+            <label for="mod">Módulo:</label>
+            <select name="" id="mod">
+                <optgroup label="Primero">
+                    <option>LM</option>
+                    <option>BBDD</option>
+                    <option>Entornos</option>
+                    <option>SI</option>
+                    <option>FOL</option>
+                </optgroup>
+                <optgroup label="Segundo">
+                    <option>DWES</option>
+                    <option>DWEC</option>
+                    <option>HLC</option>
+                    <option>Despliegue</option>
+                    <option>Diseño</option>
+                    <option>Empresa</option>
+                </optgroup>
+            </select>
+            <br>
+            <br>
+            <label for="obs">Observaciones:</label>
+            <textarea name="" id="obs" rows="10"></textarea>
+        </fieldset>
+        <div id="botones">
+            <button type="reset">Limpiar</button>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+
+</html>

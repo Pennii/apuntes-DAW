@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Matias Pennino
+
+Documento XML para almacenar la siguientes estructuras de datos de un catering:
+
+fecha: 20/2/2022
+num_ticket: 20AB1000
+cantidad 3, producto: bocadillo
+cantidad 2, producto: refresco
+cantidad 1, producto: café
+precio
+
+fecha 11/1/2022
+num_ticket: 30AB2000
+servicio de cocina: 2h
+servicio de mesa: 1h
+cantidad 2, producto: café
+cantidad 2, producto: tostada
+precio
+
+ademas:
+el num_ticket tendra un atributo opcional: pagado (si o no)
+-->
+
+<!DOCTYPE catering [
+
+<!ELEMENT catering (servicios)>
+<!ELEMENT servicios (servicio+)>
+<!ELEMENT servicio (fecha, num_ticket, productos, servicio_cocina?, servicio_mesa?)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT num_ticket (#PCDATA)>
+<!ATTLIST num_ticket pago CDATA #IMPLIED>
+<!ELEMENT productos (producto+)>
+<!ELEMENT producto (nombre, cantidad, precio)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT cantidad (#PCDATA)>
+<!ELEMENT servicio_cocina (#PCDATA)>
+<!ELEMENT servicio_mesa (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+
+]>
+
+<catering>
+    <servicios>
+        <servicio>
+            <fecha>20/2/2022</fecha>
+            <num_ticket pago="si">20AB1000</num_ticket>
+            <productos>
+                <producto>
+                    <nombre>bocadillo</nombre>
+                    <cantidad>3</cantidad>
+                    <precio>150</precio>
+                </producto>
+                <producto>
+                    <nombre>refresco</nombre>
+                    <cantidad>2</cantidad>
+                    <precio>50</precio>
+                </producto>
+                <producto>
+                    <nombre>café</nombre>
+                    <cantidad>1</cantidad>
+                    <precio>10</precio>
+                </producto>
+            </productos>
+        </servicio>
+        <servicio>
+            <fecha>11/1/2022</fecha>
+            <num_ticket>30AB2000</num_ticket>
+            <productos>
+                <producto>
+                    <nombre>café</nombre>
+                    <cantidad>2</cantidad>
+                    <precio>10</precio>
+                </producto>
+                <producto>
+                    <nombre>tostada</nombre>
+                    <cantidad>2</cantidad>
+                    <precio>15</precio>
+                </producto>
+            </productos>
+            <servicio_cocina>2 horas</servicio_cocina>
+            <servicio_mesa>1 hora</servicio_mesa>
+        </servicio>
+    </servicios>
+</catering>

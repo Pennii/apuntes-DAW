@@ -1,0 +1,17 @@
+form{
+    max-width: 40%;
+    margin: auto;
+    border: 1px solid red;
+    padding: 10px;
+}
+fieldset{
+    color: grey;
+}
+input{
+    width: 60%;
+    display: inline-block;
+}
+label{
+    width: 10%;
+    display: inline-block;
+}

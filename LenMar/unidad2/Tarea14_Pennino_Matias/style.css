@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px auto;
+    width: 80%;
+}
+
+h1 {
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px 20px 10px 20px;
+}
+
+#sub {
+    margin-left: 20%;
+}
+
+figure {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 2% 0 0;
+}
+
+figcaption {
+    font-weight: bold;
+}
+
+figure:hover {
+    color: red;
+}
+
+#figCont {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    width: 60%;
+
+}
+
+th {
+    text-align: center;
+    font-weight: bold;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    padding-top: 20px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px 40px 10px 40px;
+}
+
+.vacia {
+    background-color: gray;
+}
+
+#asir {
+    background-color: lightgreen;
+}
+
+#dam {
+    background-color: lightpink;
+}
+
+#daw {
+    background-color: lightyellow;
+}
+
+.smr {
+    background-color: lightblue;
+}
+
+caption {
+    caption-side: bottom;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 4px solid black;
+    width: 50%;
+}
+
+form {
+    background-color: gray;
+    padding: 20px;
+}
+
+fieldset {
+    background-color: white;
+}
+
+legend {
+    background-color: black;
+    color: white;
+    width: 50%;
+    text-align: center;
+}
+
+label {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 60%;
+}
+
+#check {
+    width: 70%;
+    display: inline-block;
+}
+
+
+.op {
+    width: 20%;
+}
+
+button {
+    text-align: center;
+    display: inline-block;
+    width: 40%;
+}
+
+#botCont {
+    text-align: center;
+    margin-top: 10px;
+}

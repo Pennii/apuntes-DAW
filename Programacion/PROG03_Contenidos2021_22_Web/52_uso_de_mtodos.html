@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.2.- Uso de métodos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-66"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_utilizacin_de_objetos.html" class="daddy">4.- Utilización de objetos.</a>
+   <ul class="other-section">
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li><a href="45_manipulacin.html" class="no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li><a href="47_objetos_string_en_java.html" class="no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_mtodos.html" class="current-page-parent daddy">5.- Métodos.</a>
+   <ul>
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li id="active"><a href="52_uso_de_mtodos.html" class="active no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li><a href="56_mtodos_estticos.html" class="daddy">5.6.- Métodos estáticos.</a>
+      <ul class="other-section">
+         <li><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul class="other-section">
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li><a href="84_formateado_de_fechas.html" class="no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li><a href="9_excepciones.html" class="daddy">9.- Excepciones.</a>
+   <ul class="other-section">
+      <li><a href="91_capturar_una_excepcin_con_try.html" class="no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="51_parmetros_y_valores_devueltos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53_documentacin_de_una_clase.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.2.- Uso de métodos</h1></div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id105">
+<div class="iDevice emphasis0">
+<div id="ta105_154" class="block iDevice_content">
+<p>Una vez que hemos visto el aspecto de la interfaz de un método, vamos a ver algunos ejemplos de cómo utilizar algunos de ellos. Para ello vamos a volver a la clase <code>Rectangle</code> que ya hemos usado en varias ocasiones. Podemos observar en la siguiente tabla algunos ejemplos de los métodos que incorpora:</p>
+<table style="width: 100%;" class="tabla" summary="Tabla de dos columnas donde se muestran ejemplos de métodos de la clase Rectangle. En la primera columna aparece la cabecera de los métodos y en la segunda columna su descripción." border="1"><caption>Algunos métodos de la clase <code>Rectangle</code></caption>
+<tbody>
+<tr>
+<td style="width: 40%;"><strong>Método</strong></td>
+<td style="width: 60%;"><strong>Descripción</strong></td>
+</tr>
+<tr>
+<td><code>public boolean contains(int x, int y)</code></td>
+<td>Indica si el rectángulo contiene al punto (x,y). Devuelve un <code>boolean</code>.</td>
+</tr>
+<tr>
+<td><code>public Rectangle intersection(Rectangle r)</code></td>
+<td>Calcula el rectángulo resultante de realizar la intersección con el rectángulo <code>r</code> que se pasa como parámetro. Devuelve una referencia a un nuevo objeto <code>Rectangle</code>.</td>
+</tr>
+<tr>
+<td><code>public boolean intersects(Rectangle r)</code></td>
+<td>Indica si el objeto rectángulo y el rectángulo r que se pasa como parámetro tienen algún punto en común (hacen intersección). Devuelve un <code>boolean</code>.</td>
+</tr>
+<tr>
+<td><code>public void setLocation(int x, int y)</code></td>
+<td>Se desplaza la ubicación del rectángulo a las coordenadas (x,y) pasadas como parámetros. No devuelve ningún valor.</td>
+</tr>
+<tr>
+<td><code>public void setSize(int width, int height)</code></td>
+<td>Se establece un nuevo tamaño para el rectángulo a partir de la nueva anchura (base) y altura pasadas como parámetros. No devuelve nada.</td>
+</tr>
+<tr>
+<td><code>public Rectangle union(Rectangle)</code></td>
+<td>Calcula un nuevo rectángulo resultado de realizar la unión con el rectángulo <code>r</code> que se pasa como parámetro. Devuelve una referencia a un nuevo objeto <code>Rectangle</code>.</td>
+</tr>
+<tr>
+<td><code>public double getHeight()</code></td>
+<td>Obtiene la altura actual del objeto rectángulo. Devuelve un <code>double</code>.</td>
+</tr>
+<tr>
+<td><code>public double getWidth()</code></td>
+<td>Obtiene la anchura (longitud de la base) actual del objeto rectángulo. Devuelve un <code>double</code>.</td>
+</tr>
+<tr>
+<td><code><code>public double getX()</code></code></td>
+<td>Obtiene la posición x del rectángulo (esquina inferior izquierda). Devuelve un <code>double</code>.</td>
+</tr>
+<tr>
+<td><code>public double getY()</code></td>
+<td>Obtiene la posición y del rectángulo (esquina inferior izquierda). Devuelve un <code>double</code>.</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p>La forma en la que estos métodos han sido implementados "por dentro" (el cuerpo o "interior" de los métodos) es algo que por el momento no nos interesa. Los objetos que instanciemos de la clase <code>Rectangle</code> son algo así como "cajas cerradas" con las cuales nos podemos comunicar a través de sus métodos sin conocer su mecanismo interior. Su implementación interna ha sido la labor de otro programador o programadora que se encargó de codificar y probar apropiadamente cada uno esos métodos y que nosotros vamos a utilizar sin preocuparnos acerca de cómo están desarrollados internamente. A ese efecto nos podemos considerar como "usuarios" de los objetos de esta clase, pues no tenemos acceso a su código fuente ni es nuestra misión conocer su interior. Nos vamos a limitar a usarlos.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper DestacadofpdIdevice" id="id106">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta106_151" class="block iDevice_content">
+<p>Cuando se nos proporcione una clase que no hemos desarrollado nosotros (por ejemplo las de la bibliteca de la API de Java), lo único que debemos conocer de ella es su "interfaz", es decir, aquellos miembros de la clase que sean públicos.</p>
+<p>Esta interfaz consistirá en una lista atributos públicos (a veces ninguno) y una lista de métodos y constructores donde se indicará para cada uno con qué parámetros debe ser "alimentado" y qué tipo devuelve (su interfaz).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id103">
+<div class="iDevice emphasis0">
+<div id="ta103_154" class="block iDevice_content">
+<p>Vamos ahora a ver algunos ejemplos de uso los métodos anteriores <a href="Rectangulos00.png" title="Rectángulos (se abre en una nueva ventana)." target="_blank"><img src="Rectangulos00.png" alt="Dos rectángulos en el plano con una zona en común" title="Rectángulos" class="imagen_ampliable" style="float: right;" width="240" height="202" /></a>dados un par de objetos de tipo <code>Rectangle</code> recién creados:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Rectangle rec1= new Rectangle (1,2, 5, 4);
+Rectangle rec2= new Rectangle (5,3, 4, 6);</code></pre>
+</div>
+</div>
+<p><strong>1.- Comprobamos si los rectángulos contienen el punto (3,3)</strong>:</p>
+<p>Para ello podemos utilizar el método <code>contains</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Comprobamos si los rectángulos contienen al punto (3,3)
+System.out.println ("rec1 contiene el punto (3,3): " + (rec1.contains(3,3) ? "sí":"no") );
+System.out.println ("rec2 contiene el punto (3,3): " + (rec2.contains(3,3) ? "sí":"no") );
+</code></pre>
+</div>
+</div>
+<p>cuyo resultado debería ser el siguiente:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>rec1 contiene el punto (3,3): sí
+rec2 contiene el punto (3,3): no</code></pre>
+</div>
+</div>
+<p><strong>2.- Comprobamos si ambos rectángulos tienen alguna zona en común (su intersección es no nula)</strong>:</p>
+<p>Para ello podemos utilizar el método <code>intersects</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Comprobamos si ambos rectángulos tienen alguna zona en común (su intersección es no nula)
+System.out.println ("rec1 tiene alguna zona en común con rec2: " + 
+        (rec1.intersects(rec2) ? "sí":"no"));</code></pre>
+</div>
+</div>
+<p>cuyo resultado debería ser:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>rec1 tiene alguna zona en común con rec2: sí</code></pre>
+</div>
+</div>
+<p>Si hubiéramos hecho la operación a la inversa: <code>rec2.intersects(rec1)</code>, ¿habríamos obtenido el mismo resultado?</p>
+<p><strong>3. Calculamos el área en común de ambos rectángulos (un nuevo rectángulo)</strong>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Calculamos el área en común de ambos rectángulos (un nuevo rectángulo "intersección")
+Rectangle rec3= rec1.intersection(rec2);</code></pre>
+</div>
+</div>
+<p>Observa que en este caso estamos obteniendo una tercera instancia de la clase <code>Rectangle</code> (un nuevo objeto) sin utilizar el constructor.</p>
+<p></p>
+<p><span class="destacado"><strong>Pueden obtenerse objetos instancia de una clase a través de métodos que no sean el constructor</strong>.</span></p>
+<p></p>
+<p>Si quieres observar los atributos de este nuevo rectángulo, basta con mostrarlos en pantalla:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Mostramos los atributos de ese nuevo rectángulo 
+System.out.println ("Rectángulo rec3 intersección de rec1 y rec2:");
+System.out.println ("Ubicación: x=" + rec3.x + " y=" + rec3.y);
+System.out.println ("Dimensiones: base= " + rec3.width+ " altura= " + rec3.height);</code></pre>
+</div>
+</div>
+<p>debiéndose obtener lo siguiente:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Rectángulo rec3 intersección de rec1 y rec2:
+Ubicación: x=5 y=3
+Dimensiones: base= 1 altura= 3</code></pre>
+</div>
+</div>
+<p>Y en este caso, si hubiéramos realizado la operación a la inversa: <code>rec1.intersects(rec2)</code>, ¿se habría obtenido también el mismo resultado?</p>
+<p><strong>4.- Reubicamos el rectángulo rec1 en la posición (2,2)</strong>:</p>
+<p>Para ello podemos utilizar el método <code>setLocation</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Reubicamos el rectángulo rec1 en la posición (2,2)
+rec1.setLocation(2, 2);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice" id="id104">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<div class="iDevice_header" style="background-image:url(icon_ejercicioresueltofpd.png)"><h2 class="iDeviceTitle">Ejercicio Resuelto</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta104_148" class="block story iDevice_content">
+<p>Dados los dos rectángulos anteriores <code>rec1</code>  y <code>rec2</code>, objetos de la clase <code>Rectangle</code>, vamos a seguir probando algunos de métodos.</p>
+</div>
+<div id="taquesQuestion0b104" class="block iDevice_content">
+<p>Calcula el rectángulo que se obtendría como <strong>unión</strong> de ambos rectángulos <code>rec1</code> y <code>rec2</code>:</p>
+<p><a href="Rectangulos01_union_interseccion.png" title="Unión e intersección (se abre en una nueva venetana)." target="_blank"><img src="Rectangulos01_union_interseccion.png" alt="Dos rectángulos en el plano con una zona en común señalando áreas de unión y de intersección" title="Unión e intersección (se abre en una nueva venetana)." style="display: block;" class="imagen_ampliable" width="480" height="360" /></a>El rectángulo resultante debería tener las siguientes características:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Rectángulo unión de rec1 y rec2:
+Ubicación: x=1 y=2
+Dimensiones: base= 8 altura= 7</code></pre>
+</div>
+</div>
+</div>
+<form name="feedback-form-quesFeedback0b104" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b104text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b104" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback0b104" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Para ello podemos usar el operador <code>union</code>, obteniendo una referencia a un nuevo objeto instancia de la clase <code>Rectangle</code> que habrá que almacenar en alguna variable de tipo referencia a <code>Rectangle</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Calculamos la unión área ocupada por ambos rectángulos (un nuevo rectángulo "unión")
+Rectangle recUnion= rec1.union (rec2);</code></pre>
+</div>
+</div>
+<p>Y mostramos por pantalla los atributos de ese nuevo objeto:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Mostramos los atributos de ese nuevo rectángulo 
+System.out.println ("Rectángulo rec3 unión de rec1 y rec2:");
+System.out.println ("Ubicación: x=" + recUnion.x + " y=" + recUnion.y);
+System.out.println ("Dimensiones: base= " + recUnion.width+ " altura= " + recUnion.height);<br style="clear: both;" /></code></pre>
+</div>
+</div>
+<p>Fíjate que éste es un nuevo caso en el que la aplicación de un método a un objeto tiene como resultado la obtención de un nuevo objeto que estará ubicado en otra zona de memoria y que por tanto necesitamos una nueva variable de tipo referencia para poder "apuntar" a él. Con esto podemos observar que <strong>la invocación al constructor con el operador <code>new</code> no tiene por qué ser la única forma de obtener nuevos objetos sino que pueden existir métodos que también devuelven referencias a nuevas instancias</strong>.</p></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="51_parmetros_y_valores_devueltos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="53_documentacin_de_una_clase.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

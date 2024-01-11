@@ -1,0 +1,26 @@
+table{
+    border-collapse: collapse;
+    caption-side: bottom;
+    margin: auto;
+}
+caption{
+    color: green;
+    text-align: right;
+    font-weight: bold;
+}
+thead{
+    color: white;
+    background-color: green;
+    border-bottom: 1px solid black;
+    height: 100px;
+}
+
+tr:nth-of-type(even){
+    background-color: grey;
+}
+tr:hover{
+    background-color: rgb(90, 90, 90);
+}
+td{
+    border-bottom: 1px solid black;
+}

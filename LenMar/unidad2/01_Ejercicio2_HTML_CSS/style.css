@@ -1,0 +1,75 @@
+body {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: red;
+}
+
+.primera_letra {
+    color: red;
+    font-size: 50px;
+}
+
+a {
+    display: inline-block;
+    background-color: green;
+    border: 5px solid green;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: 1s;
+}
+
+a:hover {
+    transition: 1s;
+    background-color: white;
+    color: green;
+}
+
+div p:nth-of-type(odd) {
+    color: green;
+}
+
+div p:nth-of-type(even) {
+    color: red;
+}
+
+#final {
+    border: 3px solid red;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 100px 0 100px;
+    transition: 5s;
+}
+
+#final:hover {
+    background-color: red;
+    color: white;
+    transition: 5s;
+}
+#ejemplo{
+    border: 5px solid red;
+    border-collapse: collapse;
+    margin: auto;
+    width: 300px;
+}
+th, td{
+    border: 3px solid red;
+    text-align: center;
+    padding: 5px;
+}
+th{
+    background-color: chocolate;
+}
+tbody{
+    background-color: rgba(210, 105, 30, 0.596);
+}
+tfoot{
+    background-color: chocolate;
+}

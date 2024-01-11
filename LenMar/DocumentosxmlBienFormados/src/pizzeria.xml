@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Crea un documento XML bien formado para transmitir pedidos de una pizzería. De cada pedido
+
+necesitamos guardar: el nombre de contacto, su teléfono, opción de entrega o recogida, precio total y la
+
+lista de pizzas encargadas. De cada pizza guardaremos: el tipo de base, la lista de ingredientes y el precio.
+
+Como identiﬁcaremos los pedidos por el número de teléfono, indicaremos en este, el tipo de cliente:
+
+nuevo, habitual o premiun. De cada ingrediente indicaremos obligatoriamente si es alérgeno o no. Añade
+
+un comentario inicial con tu nombre y apellidos. De ejemplo crea dos pedidos, el primero con una sola
+
+pizzas de dos ingredientes y el segundo con dos pizzas de un solo ingrediente.-->
+
+<!DOCTYPE pizzeria [
+
+<!ELEMENT pizzeria (pedidos)>
+<!ELEMENT pedidos (pedido+)>
+<!ELEMENT pedido (contacto,telefono,entrega,precio_total,pizzas)>
+<!ELEMENT contacto (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ATTLIST telefono cliente CDATA "habitual">
+<!ELEMENT entrega (#PCDATA)>
+<!ELEMENT precio_total (#PCDATA)>
+<!ELEMENT pizzas (pizza+)>
+<!ELEMENT pizza (base,ingrediente+,precio)>
+<!ELEMENT base (#PCDATA)>
+<!ELEMENT ingrediente (#PCDATA)>
+<!ATTLIST ingrediente alergeno CDATA "si">
+<!ELEMENT precio (#PCDATA)>
+]>
+
+<pizzeria>
+    <pedidos>
+        <pedido>
+            <contacto>Juan Martinez</contacto>
+            <telefono cliente="habitual">111223344</telefono>
+            <entrega>recogida</entrega>
+            <precio_total>20</precio_total>
+            <pizzas>
+                <pizza>
+                    <base>tomate</base>
+                    <ingrediente alergeno="no">queso</ingrediente>
+                    <precio>20</precio>
+                </pizza>
+            </pizzas>
+        </pedido>
+        <pedido>
+            <contacto>Pedro Rodriguez</contacto>
+            <telefono cliente="nuevo">444556677</telefono>
+            <entrega>envio</entrega>
+            <precio_total>40</precio_total>
+            <pizzas>
+                <pizza>
+                    <base>tomate</base>
+                    <ingrediente alergeno="si">queso</ingrediente>
+                    <ingrediente alergeno="no">morron</ingrediente>
+                    <precio>20</precio>
+                </pizza>
+                <pizza>
+                    <base>cebolla</base>
+                    <ingrediente>queso</ingrediente>
+                    <ingrediente>huevo</ingrediente>
+                    <precio>20</precio>
+                </pizza>
+            </pizzas>
+        </pedido>
+    </pedidos>
+</pizzeria>
+

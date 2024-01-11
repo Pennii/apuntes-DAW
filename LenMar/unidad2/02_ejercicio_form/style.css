@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 80%;
+    margin: 4% auto;
+}
+
+form {
+    padding: 2%;
+    box-shadow: 10px 10px 10px 5px lightcoral;
+}
+
+
+legend {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+label {
+    width: 20%;
+    display: inline-block;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 75%;
+}
+
+textarea {
+    vertical-align: top;
+}
+
+button,
+input[type=reset],
+input[type=submit] {
+    width: 40%;
+    cursor: pointer;
+    margin-left: 5%;
+
+    border-radius: 10px;
+}
+
+input[type=text]:hover {
+    background-color: orange;
+}
+
+input[type=text]:focus,
+textarea:focus {
+    background-color: red;
+    color: white;
+}
+
+form,
+legend,
+select,
+fieldset,
+input[type=text],
+input[type=reset],
+input[type=submit],
+button,
+textarea {
+    border: 2px dotted red;
+    border-radius: 10px;
+}
+
+select {
+    background-color: rgb(214, 212, 212);
+}

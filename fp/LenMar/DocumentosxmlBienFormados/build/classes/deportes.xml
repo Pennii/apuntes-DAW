@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Matias Pennino
+
+Documento XML Válido para almacenar las siguentes estructuras de datos de una competición deportiva:
+
+Evento: Tenis Almería 2023
+fecha inicio: 20-3-2023
+fecha finalización: 30-3-2023
+
+participante: Paco
+nivel: master
+puntuación: 1000
+
+equipo: Las estrellas
+participante: María
+nivel: juvenil
+puntuación: 200
+participante: Ana
+nivel: juvenil
+puntuación: 300
+
+participante: José
+nivel: senior
+puntuación: 5000
+premios: "CUP2020", "TorneoPeloteo 2021"
+-->
+
+<!DOCTYPE evento [
+
+<!ELEMENT evento (info, participantes)>
+<!ELEMENT info (nombre_evento, fecha_inicio, fecha_fin)>
+<!ELEMENT nombre_evento (#PCDATA)>
+<!ELEMENT fecha_inicio (#PCDATA)>
+<!ELEMENT fecha_fin (#PCDATA)>
+<!ELEMENT participantes (participante|equipo)+>
+<!ELEMENT participante (nombre, nivel, puntuacion, premio*)>
+<!ELEMENT equipo (nombre, participante+)>
+<!ELEMENT premio (#PCDATA)>
+<!ELEMENT torneo (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT nivel (#PCDATA)>
+<!ELEMENT puntuacion (#PCDATA)>
+
+
+]>
+
+<evento>
+    <info>
+        <nombre_evento>Tenis Almería 2023</nombre_evento>
+        <fecha_inicio>20-3-2023</fecha_inicio>
+        <fecha_fin>30-3-2023</fecha_fin>
+    </info>
+    <participantes>
+        <participante>
+            <nombre>Paco</nombre>
+            <nivel>master</nivel>
+            <puntuacion>1000</puntuacion>
+        </participante>
+        <equipo>
+            <nombre>Las estrellas</nombre>
+            <participante>
+                <nombre>Maria</nombre>
+                <nivel>juvenil</nivel>
+                <puntuacion>200</puntuacion>
+            </participante>
+            <participante>
+                <nombre>ana</nombre>
+                <nivel>juvenil</nivel>
+                <puntuacion>300</puntuacion>
+            </participante>
+        </equipo>
+        <participante>
+            <nombre>Jose</nombre>
+            <nivel>senior</nivel>
+            <puntuacion>5000</puntuacion>
+            <premio>CUP2020</premio>
+            <premio>TorneoPeloteo 2021</premio>
+        </participante>
+    </participantes>
+</evento>

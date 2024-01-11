@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8.4.- Formateado de fechas </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-60"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_utilizacin_de_objetos.html" class="daddy">4.- Utilización de objetos.</a>
+   <ul class="other-section">
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li><a href="45_manipulacin.html" class="no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li><a href="47_objetos_string_en_java.html" class="no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mtodos.html" class="daddy">5.- Métodos.</a>
+   <ul class="other-section">
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li><a href="52_uso_de_mtodos.html" class="no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li><a href="56_mtodos_estticos.html" class="daddy">5.6.- Métodos estáticos.</a>
+      <ul class="other-section">
+         <li><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="current-page-parent daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul>
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li id="active"><a href="84_formateado_de_fechas.html" class="active no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li><a href="9_excepciones.html" class="daddy">9.- Excepciones.</a>
+   <ul class="other-section">
+      <li><a href="91_capturar_una_excepcin_con_try.html" class="no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="83_localdatetime.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="85_chronounit.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">8.4.- Formateado de fechas</h1></div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id199">
+<div class="iDevice emphasis0">
+<div id="ta199_155" class="block iDevice_content">
+<div class="exe-figure exe-image float-right license-copyright" style="width: 200px;"><img src="iso.png" alt="Se lee ISO dentro de un diujo de la bola del mundo." title="ISO" style="float: right;" width="200" height="198" />
+<div class="figcaption"><a href="https://pixabay.com/es/vectors/iso-est%C3%A1ndar-s%C3%ADmbolo-global-154533/" target="_blank" class="author">OpenClipart-Vectors</a><span class="license"><span class="sep">. Pixabay License</span><span class="sep"></span></span></div>
+</div>
+<p><br />Nos puede interesar dar formato a las fechas, y en ese caso usaremos la clase <code>DateTimeFormatter</code>.</p>
+<p>Comentamos anteriormente que la norma <acronym title="Organización Internacional de Normalización">ISO</acronym> 8601 establece el formato predeterminado en las fechas y horas. Esto significa que, al imprimirlas vamos a obtener una fecha u hora con este formato.</p>
+<p>Hay que tener en cuenta lo siguiente, hay unas constantes que podemos usar con la clase y que son:</p>
+<ul>
+<li class="lista_verificacion"><code>ISO_LOCAL_DATE</code> puede utilizarse con <code>LocalDate</code> y <code>LocalDateTime</code> (contienen una fecha).</li>
+<li class="lista_verificacion"><code>ISO_LOCAL_TIME</code> puede utilizarse con <code>LocalTime</code> y <code>LocalDateTime</code> (contienen una hora).</li>
+<li class="lista_verificacion"><code>ISO_LOCAL_DATE_TIME</code> puede utilizarse solo con <code>LocalDateTime</code> (contiene una fecha y una hora).</li>
+</ul>
+<p>Valiéndonos de un ejemplo, veamos algunas cosas:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+/**
+ * Probando el formateo en el tiempo, con Java
+ * @author jjber
+ */
+public class Formateando {
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        LocalDateTime fecha = LocalDateTime.now();
+        
+        DateTimeFormatter isoFecha = DateTimeFormatter.ISO_LOCAL_DATE;
+        System.out.println("Sin formato: " + fecha);
+        System.out.println("Con formato: " + fecha.format(isoFecha));
+      
+        DateTimeFormatter isoHora = DateTimeFormatter.ISO_LOCAL_TIME;
+        System.out.println(fecha.format(isoHora));
+        
+        LocalTime hora = LocalTime.now();
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("'Son las' h 'y' mm");
+        //System.out.println(hora);
+        System.out.println(hora.format(f));
+        
+        
+        LocalDateTime otraHora = LocalDateTime.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("hh:MM");
+        System.out.println("Hora:mes = " + otraHora.format(formato));
+        DateTimeFormatter formato2 = DateTimeFormatter.ofPattern("hh:mm");
+        System.out.println("Hora:minutos = " + otraHora.format(formato2));
+    }
+    
+}
+</code></pre>
+</div>
+</div>
+<p>cuyo resultado por consola da:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>run:
+Sin formato: 2019-09-09T17:58:10.454
+Con formato: 2019-09-09
+17:58:10.454
+Son las 5 y 58
+Hora:mes = 05:09
+Hora:minutos = 05:58
+BUILD SUCCESSFUL (total time: 0 seconds)</code></pre>
+</div>
+</div>
+<p></p>
+<p>Fíjate en el uso del método <code>ofPattern</code> que acepta un <code>String</code> y permite darle cualquier formato a un objeto de tipo <code>LocalDate</code>, <code>LocalTime</code> o <code>LocalDateTime</code> (date cuenta cómo si usamos m en minúsculas se refiere a minutos y si es en mayúsculas se refiere a mes). En la cadena de texto que utilizamos como patrón puede haber letras que simbolizan un elemento temporal. La lista completa podemos verla en <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html" title="Acceder a la API de DateTimeFormatter" target="_blank" class="html"> API de la clase</a> o texto entre comillas simples, que aparece tal cual al imprimir.</p>
+<p></p>
+<p>El método <code>parse</code> se utiliza para crear un objeto de tipo <code>LocalDate</code>, <code>LocalTime</code> o <code>LocalDateTime</code> a partir de una cadena de texto. Este método admite dos argumentos:</p>
+<ul>
+<li class="lista_verificacion">El primero es la cadena de texto que quieres transformar en un objeto del tipo temporal que quieras.</li>
+<li class="lista_verificacion">El segundo es el objeto de tipo <code>DateTimeFormatter</code> con el que le vas a decir al método <code>parse</code> cómo aparece la fecha expresada en la cadena de texto, para que la entienda.</li>
+</ul>
+<p>El primer argumento se ha de corresponder con el formato que se vaya a utilizar para "traducirlo" a una instancia de alguna clase relativa al tiempo en Java. El método <code>parse</code> puede aceptar un único argumento si la cadena de texto se corresponde con el formato <acronym title="Organización Internacional de Normalización">ISO</acronym> predeterminado.</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+/**
+ *
+ * @author Profesor
+ */
+public class EjemploParse {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        LocalDateTime hora = LocalDateTime.parse("2019-03-27T18:14:01.184");
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("'Hoy es' d 'del mes' M 'del año' yyyy. 'Y son las' kk 'horas'.");
+        System.out.println(hora.format(formato));
+    }
+    
+}</code></pre>
+</div>
+</div>
+<p>que mostrará por consola:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>run:
+Hoy es 27 del mes 3 del año 2019. Y son las 18 horas.
+BUILD SUCCESSFUL (total time: 0 seconds)</code></pre>
+</div>
+</div>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="83_localdatetime.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="85_chronounit.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Realizado por Matias Agustin Pennino
+-->
+
+<rss version = "2.0">
+    <channel>
+        <title>Aguadulce Informatica 2023, SA</title>
+        <link>https://www.aguadulceinformatica2023.es</link>
+        <description>
+            Somos una empresa informatica que busca dar a 
+            conocer noticias relacionadas con nuestros porductos y 
+            servicios
+        </description>
+        <language>es-es</language>
+        <managingEditor>matiasspennino@gmail.com (Matias Pennino)</managingEditor>
+        <pubDate>sun, 22 Oct 2023 13:00:00 GMT</pubDate>
+        <category>software</category>
+        <category>hardware</category>
+        <category>ofertas</category>
+        <!--primera noticia-->
+        <item>
+            <title>
+                Aguadulce Informática 2023 SA, crea web con servicio de
+                sindicación de contenidos.
+            </title>
+            <category>novedades</category>
+            <pubDate>Sat, 18 Dec 2021 10:30:00 +0100</pubDate>
+            <description>
+                Aguadulce Informática 2023 SA, añade a su web el 
+                servicio de sindicación de contenidos con los estándares RSS y 
+                Atom.
+            </description>
+            <link>https://www.aguadulceinformatica2023.es/noticias/nuevo_servicio_de_sindicacion</link>           
+        </item>
+        <!--segunda noticia-->
+        <item>
+            <title>Tipos de conectores y estándares de USB</title>
+            <enclosure 
+            url = "https://img.pccomponentes.com/pcblog/170/there-are-various-cords-and-plugs-in-the-hand-of-man-opt-1.jpg"
+            length = "37732" type = "image/jpg"/>
+            <pubDate>Thu, 30 May 2019 00:00:00 GMT</pubDate>
+            <description>
+                ¿Conoces todos los tipos de USB que existen? Aquí te
+                hablamos de todos los conectores y estándares que hay para que 
+                aprendas a identificarlos.
+            </description>
+        </item>
+        <!--tercera noticia-->
+        <item>
+            <title>
+                WiFi 7 vs WiFi 6: así volarán las conexiones en cuestión de 
+                meses
+            </title>
+            <link>https://www.adslzone.net/noticias/redes/wifi-7-vs-wifi-6-caracteristicas-cambios-mejoras-ventajas/</link>
+            <pubDate>Mon, 07 Nov 2022 07:02:00 GMT </pubDate>
+            <description>
+                El WiFi 7 ya está llamando a la puerta. La séptima generación de
+                conexiones inalámbricas llegará en cuestión de meses y es tiempo
+                de que vayamos preparando el terreno para su llegada.
+            </description>
+            <enclosure
+            url = "https://www.adslzone.net/app/uploads-adslzone.net/2022/11/wifi-7-vs-wifi-6.jpg"
+            length = "37732" type = "image/jpg"/>
+        </item>
+    </channel>
+</rss>
+

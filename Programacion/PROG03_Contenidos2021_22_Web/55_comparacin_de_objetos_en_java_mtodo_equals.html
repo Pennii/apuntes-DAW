@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.5.- Comparación de objetos en Java: método equals. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-68"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_utilizacin_de_objetos.html" class="daddy">4.- Utilización de objetos.</a>
+   <ul class="other-section">
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li><a href="45_manipulacin.html" class="no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li><a href="47_objetos_string_en_java.html" class="no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_mtodos.html" class="current-page-parent daddy">5.- Métodos.</a>
+   <ul>
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li><a href="52_uso_de_mtodos.html" class="no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li id="active"><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="active no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li><a href="56_mtodos_estticos.html" class="daddy">5.6.- Métodos estáticos.</a>
+      <ul class="other-section">
+         <li><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul class="other-section">
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li><a href="84_formateado_de_fechas.html" class="no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li><a href="9_excepciones.html" class="daddy">9.- Excepciones.</a>
+   <ul class="other-section">
+      <li><a href="91_capturar_una_excepcin_con_try.html" class="no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="54_objetos_inmutables.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="56_mtodos_estticos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.5.- Comparación de objetos en Java: método equals.</h1></div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id111">
+<div class="iDevice emphasis0">
+<div id="ta111_154" class="block iDevice_content">
+<p>En algunas ocasiones necesitarás comparar dos objetos para saber si son iguales. Cuando comparábamos dos variables de tipo primitivo (reales, enteros, caracteres, booleanos, <abbr title="etcétera">etc.</abbr>) teníamos muy claro qué significaba que dos elementos sean iguales. Sin embargo, cuando hablamos de objetos, quizá la cosa no esté tan clara.</p>
+<p>Dado que un objeto suele estar caracterizado por un conjunto de valores que conforman su estado (atributos o propiedades), ¿cuál es el criterio para decidir si dos objetos son iguales o no? Por ejemplo podríamos decidir que dos objetos instancias de la misma clase son iguales sin tienen el mismo estado (mismos valores en cada uno de sus atributos comparados uno a uno). Eso parece bastante razonable y es lo que se suele hacer.</p>
+<p>Por ejemplo, para el caso de objetos de la clase <code>Rectangle</code> que hemos estado utilizando, podríamos decir que dos rectángulos son iguales si coinciden los valores de sus atributos de <strong>ubicación</strong> (<code>x</code>, <code>y</code>), <strong>base</strong> (<code>width</code>) y <strong>altura</strong> (<code>height</code>). ¿Y cómo llevamos a cabo esa comparación? ¿debemos nosotros escribir el código que vaya comparando uno a uno cada uno de sus atributos? Obviamente no. La idea es disponer de algún mecanismo de comparación que nos facilite esa labor de la misma manera que hacíamos con los tipos primitivos cuando utilizábamos el operador relacional <code>==</code> para obtener <code>true</code> si dos valores del mismo tipo eran iguales o <code>false</code> si no lo eran.</p>
+<p>En Java ese mecanismo de comparación se realiza mediante el método <code>equals</code>. Todo objeto en Java dispone de un método <code>equals</code> que permite compararlo con otro objeto del mismo tipo. Veamos un ejemplo de comparación de varios objetos instancia de la clase <code>Rectangle</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>// Declaración de tres referencias a objetos Rectangle 
+// Instanciación de tres objetos Rectangle mediante el constructor
+// Y asignación de las referencias devueltas por el operador new a cada una de 
+// las tres variables declaradas
+Rectangle r1= new Rectangle (1,2, 5, 4);
+Rectangle r2= new Rectangle (5,3, 4, 6);
+Rectangle r3= new Rectangle (5,3, 4, 6);
+
+// Comparación de los tres objetos mediante el uso del método equals
+// sobre las variable referencia que apuntan a los objetos
+System.out.println ("Ejemplos de comparación de objetos rectángulo:");
+System.out.println ("Comparación r1 con r2 -&gt; r1.equals(r2): " + r1.equals(r2));
+System.out.println ("Comparación r1 con r3 -&gt; r1.equals(r3): " + r1.equals(r3));
+System.out.println ("Comparación r2 con r3 -&gt; r2.equals(r3): " + r2.equals(r3));</code></pre>
+</div>
+</div>
+<p>El resultado de esas comparaciones debería ser el siguiente:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Ejemplos de comparación de objetos rectángulo:
+Comparación r1 con r2 -&gt; r1.equals(r2): false
+Comparación r1 con r3 -&gt; r1.equals(r3): false
+Comparación r2 con r3 -&gt; r2.equals(r3): true</code></pre>
+</div>
+</div>
+<p>Lo cual es razonable dado que <code>r2</code> y <code>r3</code> tienen exactamente los mismos valores en sus atributos (son rectángulos idénticos), mientras que <code>r1</code> es diferente.</p>
+<p>Del mismo modo que el operador <code>==</code> para tipos primitivos cumplía la <strong>propiedad conmutativa</strong> (daba igual qué valor estuviera a la izquierda o a la derecha), en el caso del método <code>equals</code> también sucede lo mismo: vamos a obtener el mismo resultado tanto si hacemos <code>r1.equals(r2)</code> como si  hacemos <code>r2.equals(r1)</code>.</p>
+<p>Es posible que ahora te preguntes, ¿y no podrá haber utilizado directamente el operador == para llevar a cabo esas comparaciones en lugar de tener que usar el método equals? Te retamos a que lo pruebes tú mismo:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>System.out.println ("Comparación r1 con r2 -&gt; r1 == r2: " + (r1 == r2) );
+System.out.println ("Comparación r1 con r3 -&gt; r1 == r3: " + (r1 == r3) );
+System.out.println ("Comparación r2 con r3 -&gt; r2 == r3: " + (r2 == r3) );</code></pre>
+</div>
+</div>
+<p>¿Qué has obtenido?</p>
+<p>Lo más probable es que todas las comparaciones te hayan salido como <code>false</code>, ¿verdad? ¿Por qué? Porque lo que estás comparando con el operador <code>==</code> es el contenido de las variables referencia <code>r1</code>, <code>r2</code> y <code>r3</code> y no el contenido de los valores de los atributos de cada uno de los objetos a los que apuntan esas referencias. Cada una de esas variables apunta a una zona de memoria diferente (un objeto diferente) y por tanto contendrán un valor (dirección de memoria) diferente haciendo que su comparación de igualdad resulte como <code>false</code>.</p>
+<p>El método <code>equals</code> sirve para evitar precisamente eso: para comprobar si dos objetos son iguales (tienen los mismos valores en sus atributos), independientemente de que sean objetos diferentes. Sin embargo el operador <code>==</code> está comprobando si las referencias son las mismas (mismo valor para la referencia o dirección de memoria), es decir si se apunta desde dos variables referencia al mismo objeto.</p>
+<p>Si en el ejemplo anterior, realizamos la siguiente asignación:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>r1= r3;</code></pre>
+</div>
+</div>
+<p>y a continuación volvemos a repetir las comparaciones anteriores:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>System.out.println ("Comparación de objetos rectángulo:");
+System.out.println ("Comparación r1 con r2 -&gt; r1.equals(r2): " + r1.equals(r2));
+System.out.println ("Comparación r1 con r3 -&gt; r1.equals(r3): " + r1.equals(r3));
+System.out.println ("Comparación r2 con r3 -&gt; r2.equals(r3): " + r2.equals(r3));
+System.out.println ();
+System.out.println ("Comparación de referencias a objetos rectángulo:");
+System.out.println ("Comparación r1 con r2 -&gt; r1 == r2: " + (r1 == r2) );
+System.out.println ("Comparación r1 con r3 -&gt; r1 == r3: " + (r1 == r3) );
+System.out.println ("Comparación r2 con r3 -&gt; r2 == r3: " + (r2 == r3) );</code></pre>
+</div>
+</div>
+<p>deberíamos obtener los siguientes resultados:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Comparación de objetos rectángulo:
+Comparación r1 con r2 -&gt; r1.equals(r2): true
+Comparación r1 con r3 -&gt; r1.equals(r3): true
+Comparación r2 con r3 -&gt; r2.equals(r3): true
+
+Comparación de referencias a objetos rectángulo:
+Comparación r1 con r2 -&gt; r1 == r2: false
+Comparación r1 con r3 -&gt; r1 == r3: true
+Comparación r2 con r3 -&gt; r2 == r3: false</code></pre>
+</div>
+</div>
+<p>En este caso las comparaciones entre objetos (uso del método <code>equals</code>) devuelven todas <code>true</code>, pues <code>r1</code> y <code>r3</code> en realidad apuntan al mismo rectángulo y el rectángulo al que apunta <code>r2</code> tiene los mismos valores en sus atributos que el rectángulo al que apuntan <code>r1</code> y <code>r3</code>. Por tanto todos los rectángulos son iguales. Podríamos tener la "ilusión" de que existen tres objetos rectángulo aunque en realidad existen sólo dos para los cuales hay dos variables referencia que apuntan a uno de ellos (<code>r1</code> y <code>r3</code>) y una variable referencia que apunta al otro (<code>r2</code>).</p>
+<p>Sin embargo las comparaciones entre las propias referencias (uso del operador <code>==</code>) algunas devuelven <code>true</code> y otras devuelven <code>false</code>:</p>
+<ul class="lista_verificacion">
+<li>si comparamos <code>r1</code> y <code>r3</code> obtenemos <code>true</code> pues ambas variables almacenan la misma dirección de memoria o referencia (una referencia al mismo objeto rectángulo);</li>
+<li>si comparamos <code>r2</code> con alguna de las otras dos obtenemos <code>false</code>, pues <code>r2</code> contiene una referencia (dirección de memoria) diferente ya que apunta a otro objeto rectángulo.</li>
+</ul>
+<p>En conclusión:</p>
+<ul class="lista_verificacion">
+<li><strong>el método <code>equals</code> nos indica si dos referencias apuntan a objetos que son iguales (tienen los mismos valores, aunque sean objetos distintos)</strong>;<strong> </strong></li>
+<li><strong>el operador <code>==</code> nos indica si dos referencias apuntan al mismo objeto</strong>.</li>
+</ul>
+<p>Lo habitual será por tanto que utilicemos el método <code>equals</code>.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper DestacadofpdIdevice" id="id112">
+<div class="iDevice emphasis0" >
+<div class="iDevice_destacadofpd">
+<div id="ta112_151" class="block iDevice_content">
+<p>En Java, <strong>siempre que queramos comparar dos objetos debemos utilizar el método <code>equals</code></strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="54_objetos_inmutables.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="56_mtodos_estticos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

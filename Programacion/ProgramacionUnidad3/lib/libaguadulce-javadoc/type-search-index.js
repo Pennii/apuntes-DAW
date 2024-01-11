@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"aguadulce","l":"Bombilla"},{"p":"aguadulce","l":"Bombo"},{"p":"aguadulce","l":"CuentaBancaria"},{"p":"aguadulce","l":"Dado"},{"p":"aguadulce","l":"Utilidades"}]

@@ -1,0 +1,34 @@
+h1{
+    display: inline;
+    font-size: 70px;
+}
+
+img{
+    vertical-align: middle;
+    width: 25%;
+}
+
+header{
+    background-color:  brown;
+    padding: 5px;
+}
+
+nav{
+    background-color:  rgb(139, 92, 3);
+    padding: 5px;
+}
+
+article{
+    background-color:  green;
+    padding: 5px;
+}
+
+section{
+    background-color:  gray;
+    padding: 5px;
+}
+
+footer{
+    background-color: lightblue;
+    padding: 5px;
+}

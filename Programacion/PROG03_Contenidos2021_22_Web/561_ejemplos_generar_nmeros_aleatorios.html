@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.6.1.- Ejemplos: generar números aleatorios. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-53"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_utilizacin_de_objetos.html" class="daddy">4.- Utilización de objetos.</a>
+   <ul class="other-section">
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li><a href="45_manipulacin.html" class="no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li><a href="47_objetos_string_en_java.html" class="no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="5_mtodos.html" class="current-page-parent daddy">5.- Métodos.</a>
+   <ul>
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li><a href="52_uso_de_mtodos.html" class="no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li class="current-page-parent"><a href="56_mtodos_estticos.html" class="current-page-parent daddy">5.6.- Métodos estáticos.</a>
+      <ul>
+         <li id="active"><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="active no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul class="other-section">
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li><a href="84_formateado_de_fechas.html" class="no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li><a href="9_excepciones.html" class="daddy">9.- Excepciones.</a>
+   <ul class="other-section">
+      <li><a href="91_capturar_una_excepcin_con_try.html" class="no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="56_mtodos_estticos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">5.6.1.- Ejemplos: generar números aleatorios.</h1></div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id184">
+<div class="iDevice emphasis0">
+<div id="ta184_69" class="block iDevice_content">
+<div class="exe-figure exe-image float-right license-copyright" style="width: 233px;"><img src="0y1.png" alt="Un corchete izquierdo, un cero, una coma y un uno, y se cierra un paréntesis." title="Intervalo" style="float: right;" width="233" height="157" />
+<div class="figcaption"><span class="author">José Javier Bermúdez Hernández. Uso educativo-nc.</span><span class="license"><span class="sep"></span></span></div>
+</div>
+<p>En Java podemos generar números <a href="#t485db9e3-0054-c98d-d39e-908b6ad00062" id="link485db9e3-0054-c98d-d39e-908b6ad00062" class="exe-tooltip definition-tt titled-tt">pseudoaleatorio</a>s de dos formas:</p>
+<ul>
+<li class="lista_verificacion">Utilizando el método estático <code>random</code> de la clase <code>Math</code>.</li>
+<li class="lista_verificacion">Utilizando métodos la clase <code>Random</code>.</li>
+</ul>
+<p>El método <code>random</code> de la clase <code>Math</code> devuelve un número aleatorio de tipo <code>double</code> mayor o igual que <strong>0.0</strong> y menor que <strong>1.0</strong>.</p>
+<p>Para generar un número entre 0 y el número que deseemos, basta con hacer un simple cambio de escala multiplicando por el factor de escala que necesitemos. Por ejemplo para escalar el rango de [0,1[ a [0,25[, podríamos escribir: <code>Math.random()*25</code>. Ésto generaría un número entre 0 y 25, donde este último no se incluye. El máximo sería 24,99999…</p>
+<p>Si lo que queremos generar es un <strong>número entero</strong>, entonces debemos truncar el resultado anterior quedándonos sólo con la parte entera. Para hacerlo podemos por ejemplo realizar un casting o conversión explícita a <code>int</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>(int)(Math.random()*25); // El resultado final es convertido a tipo int</code></pre>
+</div>
+</div>
+<p>En este caso generaremos un número entero aleatorio entre 0 y 25 pero que nunca llegará a ser 25. Otra forma de hacerlo podría ser mediante el uso del método <code>Math.floor</code>, aunque como este método devuelve un número real (<code>double</code>) también tendríamos que volver a hacer una conversión explícita si lo que necesitamos es un tipo entero:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Math.floor((Math.random()*25)); // El resultado final es de tipo double
+(int) Math.floor((Math.random()*25)) // El resultado final es convertido a tipo int</code></pre>
+</div>
+</div>
+<p>Aquí tienes un ejemplo del proceso paso a paso:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>double aleatorioReal;
+double aleatorioRealEscalado;
+int aleatorioEntero1;
+int aleatorioEntero2;
+
+aleatorioReal= Math.random();
+aleatorioRealEscalado= aleatorioReal*25;
+aleatorioEntero1= (int)aleatorioRealEscalado;
+aleatorioEntero2= (int) Math.floor (aleatorioRealEscalado);
+System.out.println ("Aleatorio real: " + aleatorioReal);
+System.out.println ("Aleatorio real escalado al intervalo [0,25[: " + aleatorioRealEscalado);
+System.out.println ("Aleatorio entero con casting (int): " + aleatorioEntero1);
+System.out.println ("Aleatorio entero con Math.floor: " + aleatorioEntero2);</code></pre>
+</div>
+</div>
+<p>donde el resultado podría ser por ejemplo algo así:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Aleatorio real: 0.7318010261640145
+Aleatorio real escalado al intervalo [0,25[: 18.295025654100364
+Aleatorio entero con casting (int): 18
+Aleatorio entero con Math.floor: 18</code></pre>
+</div>
+</div>
+<p>Si quisiéramos también alcanzar el 25, podríamos por ejemplo escalar entre 0 y 26 (25+1):</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>(int)( Math.random() * (25+1) ); // Aleatorio entero entre 0 y 25, ambos incluidos</code></pre>
+</div>
+</div>
+<p>En general, se trataría de sumar 1 al máximo si deseamos que el máximo esté incluido. Por ejemplo, si queremos generar aleatorios en el rango  [0, N], es decir entre 0 y N, donde ambos extremos están incuidos, podríamos hacer algo como:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>(int)( Math.random() * (N+1) ); // Aleatorio entero entre 0 y N, ambos incluidos</code></pre>
+</div>
+</div>
+<p>Otra opción podría ser utilizar el método <code>round</code> de la clase <code>Math</code>, que nos permite redondear un número, eso haría que:</p>
+<ol>
+<li>si el número aleatorio generado y escalado (multiplicado por 25) fuera 24,5 o superior (hasta 24,99999...), entonces el resultado final sería 25;</li>
+<li>el número aleatorio generado y escalado fuera 25,499999... o inferior (hasta 24,0), entonces el resultadofinal sería 24.</li>
+</ol>
+<p>La forma de generar el número quedaría entonces así:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Math.round(Math.random() * N); // Aleatorio entero entre 0 y N, ambos incluidos</code></pre>
+</div>
+</div>
+<p>Si al experimento anterior le añadimos esa línea:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>double aleatorioReal;
+double aleatorioRealEscalado;
+int aleatorioEntero1;
+int aleatorioEntero2;
+
+aleatorioReal= Math.random();
+aleatorioRealEscalado= aleatorioReal*25;
+aleatorioEntero1= (int)aleatorioRealEscalado;
+aleatorioEntero2= (int) Math.floor (aleatorioRealEscalado);
+System.out.println ("Aleatorio real: " + aleatorioReal);
+System.out.println ("Aleatorio real escalado al intervalo [0,25[: " + aleatorioRealEscalado);
+System.out.println ("Aleatorio entero con casting (int): " + aleatorioEntero1);
+System.out.println ("Aleatorio entero con Math.floor: " + aleatorioEntero2);
+System.out.println ("Aleatorio real escalado y redondeado a entero: " + Math.round(aleatorioRealEscalado));
+</code></pre>
+</div>
+</div>
+<p>Podríamos obtener algo así:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Aleatorio real: 0.3908175527635215
+Aleatorio real escalado al intervalo [0,25[: 9.770438819088037
+Aleatorio entero con casting (int): 9
+Aleatorio entero con Math.floor: 9
+Aleatorio real escalado y redondeado a entero: 10 --&gt; Pasa a 10</code></pre>
+</div>
+</div>
+<p>O bien así:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Aleatorio real: 0.688931852993666
+Aleatorio real escalado al intervalo [0,25[: 17.223296324841648
+Aleatorio entero con casting (int): 17
+Aleatorio entero con Math.floor: 17
+Aleatorio real escalado y redondeado a entero: 17 --&gt; Se queda en 17</code></pre>
+</div>
+</div>
+<p>Según el número aleatorio generado y escalado este por encima o por debajo del .5.</p>
+<p>Otra alternativa para generar números aleatorios fácilmente en Java es mediante el uso de la clase <code>Random</code>, que se encuentra en el paquete <code>java.util</code>.</p>
+<p>Para generar números aleatorios con esta clase se debe crear una instancia de la clase <code>Random</code>. El algoritmo de generación trabaja con un valor semilla. Si se usa el constructor sin parámetro, el valor de la semilla se obtiene del valor de tiempo en nanosegundos que maneja la máquina virtual Java, así tenemos dos <strong>constructores</strong> en la clase:</p>
+<ul>
+<li class="lista_verificacion"><code>Random()</code>: crea un nuevo generador aleatorio. En cada invocación Java se encarga de que la semilla para generar los números sea siempre distinta.</li>
+<li class="lista_verificacion"><code>Random(long semilla)</code>: crea un nuevo generador aleatorio con una semilla especificada.</li>
+</ul>
+<p>La clase clase <code>Random</code> brinda cierta flexibilidad o posibilidades adicionales a <code>Math.random</code>, como se puede comprobar en la <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html" title="APi de la clase Random (Se abre en ventana nueva)" target="_blank" class="html"><acronym title="interfaz de programación de aplicaciones">referencia de esta clase en la Documentación de la API de Java</acronym></a>, pues dispone de bastantes métodos. Por ejemplo, tenemos disponibles varios métodos para generar números aleatorios de tipo <code>int</code>, <code>long</code>, <code>double</code>, etcétera.</p>
+<ul>
+<li class="lista_verificacion"><code>nextBoolean()</code>: devuelve un valor <span class="exe-tooltip definition-tt titled-tt">pseudoaleatorio</span> booleano.</li>
+<li class="lista_verificacion"><code>nextDouble()</code>: devuelve un valor pseudoaleatorio de tipo <code>double</code> entre 0.0 y 1.0.</li>
+<li class="lista_verificacion"><code>nextFloat()</code>: el mismo caso que el anterior pero de tipo <code>float</code>.</li>
+<li class="lista_verificacion"><code>nextInt()</code>: devuelve un pseudoaleatorio de tipo <code>int</code> con valores entre 0 y 2<sup>32</sup> producidos con aproximadamente la misma probabilidad.</li>
+<li class="lista_verificacion"><code>nextInt(int n)</code>: devuelve un número pseudoaleatorio de tipo <code>int</code> comprendido entre cero y el valor especificado (excluido).</li>
+</ul>
+<p>Aquí tienes un ejemplo de uso de algunos de esos métodos:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Random objetoRandom= new Random();
+System.out.println ("Aleatorio entero con Random: " + objetoRandom.nextInt());
+System.out.println ("Otro aleatorio entero con Random: " + objetoRandom.nextInt());
+System.out.println ("Aleatorio entero entre 0 y 25 con Random (sin contar el 25): " + objetoRandom.nextInt(25));
+</code></pre>
+</div>
+</div>
+<p>Cuyo resultado obviamente es impredecible. Un ejemplo de salida podría ser:</p>
+<div class="highlighted-code code-style-2 language-latex">
+<div>
+<pre><code>Aleatorio entero con Random: -72400602
+Otro aleatorio entero con Random: 59409490
+Aleatorio entero entre 0 y 25 con Random (sin contar el 25): 19</code></pre>
+</div>
+</div>
+<p></p>
+<div id="t485db9e3-0054-c98d-d39e-908b6ad00062" class="exe-tooltip-text">
+<p>Un generador pseudoaleatorio de números produce una sucesión de números que es una muy buena aproximación a un conjunto aleatorio de números</p>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice" id="id185">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<div class="iDevice_header" style="background-image:url(icon_ejercicioresueltofpd.png)"><h2 class="iDeviceTitle">Ejercicio Resuelto</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta185_63" class="block story iDevice_content">
+<p>Supongamos que queremos obtener un <strong>número entero aleatorio entre el 1 y el 10 incluyendo ambos</strong>.</p>
+</div>
+<div id="taquesQuestion0b185" class="block iDevice_content">
+<p>Hacerlo usando el método estático <code>random</code>. de la clase <code>Math</code>.</p>
+</div>
+<form name="feedback-form-quesFeedback0b185" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b185text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b185" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback0b185" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Lo primero que debemos hacer es transformar el tamaño de la escala [0,1[ (tamaño 1) al tamaño la escala que necesitamos. La escala que necesitamos es de 1 a 10, ambos incluidos. Eso significa que tenemos que "ampliar" (multiplicar) el número obtenido a una escala de tamaño (10-1+1) (el máximo menos el mínimo más 1, si queremos que ambos estén incluidos).</p>
+<p>Por tanto, a partir del aleatorio "básico" en el rango [0,1[:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Math.random()</code></pre>
+</div>
+</div>
+<p>habrá que pasar al nuevo rango [0, 1*10[:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Math.random() * (10-1+1)</code></pre>
+</div>
+</div>
+<p>o simplemente:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Math.random() * 10</code></pre>
+</div>
+</div>
+<p>Con eso obtendríamos un número real en el intervalo [0,10[. Si queremos que sea entero basta con llevar a cabo una conversión explícta o casting:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>(int) (Math.random() * 10)</code></pre>
+</div>
+</div>
+<p>Ahora bien, dado que nosotros queremos el número en el intervalo [1,10], hay que llevar a cabo un cambio de origen, desplazando (sumando) al origen (valor mínimo) la cantidad de desplazamiento (+1):</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>1 + (int) (Math.random() * 10)</code></pre>
+</div>
+</div>
+<p>De este modo obtendremos un número entero en el intervalo [1,11[ (incluyendo 1 y sin incluir 11) o bien [1,10] (incluyendo 1 y 10).</p></div>
+</form>
+<div id="taquesQuestion1b185" class="block iDevice_content">
+<p>Hacerlo ahora usando la clase <code>Random</code>.</p>
+</div>
+<form name="feedback-form-quesFeedback1b185" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback1b185text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback1b185" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<div id="feedback-quesFeedback1b185" class="feedback js-feedback js-hidden">
+<h3 class="js-sr-av">Retroalimentación</h3>
+<p>Podrías crear un objeto <code>Random</code>:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>Random objetoRandom= new Random();</code></pre>
+</div>
+</div>
+<p>y a continuación usar el método <code>nextInt</code> con el parámetro 10:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>objetoRandom.nextInt(10)</code></pre>
+</div>
+</div>
+<p>Pero comprobarás que te falta algo más. ¿Se te ocurre qué?</p></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice" id="id117">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<div class="iDevice_header" style="background-image:url(icon_ejercicioresueltofpd.png)"><h2 class="iDeviceTitle">Ejercicio Propuesto</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta117_148" class="block story iDevice_content">
+<p>Deseamos generar números enteros aleatorios entre 10 y 20, ambos inclusive. ¿Cómo lo harías?</p>
+</div>
+<div id="taquesQuestion0b117" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice" id="id186">
+<div class="iDevice emphasis_parasabermasfpd" >
+<div class="iDevice_header" style="background-image:url(icon_parasabermasfpd.png)"><h2 class="iDeviceTitle">Para saber más</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta186_43" class="block iDevice_content">
+<p>En el siguiente documento puedes ver algún ejemplo de generación de números aleatorios con la clase Random.</p>
+<p class="enlace_centrado"><a class="pdf" title="Descargar documento sobre números aleatorios [pdf - 101 KB]" href="https://mariajosemendozad.files.wordpress.com/2014/09/cu00907c-ejercicios-resueltos-ejemplos-numeros-aleatorios-clase-random-java.pdf" target="_blank">Generando números aleatorios </a><span class="tamano">(101 KB)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="56_mtodos_estticos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.- Excepciones. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-42"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="emptyHeader"></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Utilización de objetos.</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1.- Introducción.</a></li>
+   <li><a href="2_fundamentos_de_la_programacin_orientada_a_objetos.html" class="daddy">2.- Fundamentos de la Programación Orientada a Objetos.</a>
+   <ul class="other-section">
+      <li><a href="21_conceptos.html" class="no-ch">2.1.- Conceptos.</a></li>
+      <li><a href="22_beneficios.html" class="no-ch">2.2.- Beneficios.</a></li>
+      <li><a href="23_caractersticas.html" class="no-ch">2.3.- Características.</a></li>
+      <li><a href="24_lenguajes_de_programacin_orientados_a_objetos.html" class="no-ch">2.4.- Lenguajes de programación orientados a objetos.</a></li>
+   </ul>
+   </li>
+   <li><a href="3_clases_y_objetos_caractersticas_de_los_objetos.html" class="daddy">3.- Clases y Objetos. Características de los objetos.</a>
+   <ul class="other-section">
+      <li><a href="31_propiedades_y_mtodos_de_los_objetos.html" class="no-ch">3.1.- Propiedades y métodos de los objetos.</a></li>
+      <li><a href="32_interaccin_entre_objetos.html" class="no-ch">3.2.- Interacción entre objetos.</a></li>
+      <li><a href="33_clases.html" class="no-ch">3.3.- Clases.</a></li>
+   </ul>
+   </li>
+   <li><a href="4_utilizacin_de_objetos.html" class="daddy">4.- Utilización de objetos.</a>
+   <ul class="other-section">
+      <li><a href="41_ciclo_de_vida_de_los_objetos.html" class="no-ch">4.1.- Ciclo de vida de los objetos.</a></li>
+      <li><a href="42_declaracin.html" class="no-ch">4.2.- Declaración.</a></li>
+      <li><a href="43_instanciacin.html" class="daddy">4.3.- Instanciación.</a>
+      <ul class="other-section">
+         <li><a href="431_concepto_de_constructor.html" class="no-ch">4.3.1.- Concepto de constructor</a></li>
+      </ul>
+      </li>
+      <li><a href="44_referencias_a_objetos.html" class="no-ch">4.4.- Referencias a objetos</a></li>
+      <li><a href="45_manipulacin.html" class="no-ch">4.5.- Manipulación.</a></li>
+      <li><a href="46_destruccin_de_objetos_y_liberacin_de_memoria.html" class="no-ch">4.6.- Destrucción de objetos y liberación de memoria.</a></li>
+      <li><a href="47_objetos_string_en_java.html" class="no-ch">4.7.- Objetos String en Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="5_mtodos.html" class="daddy">5.- Métodos.</a>
+   <ul class="other-section">
+      <li><a href="51_parmetros_y_valores_devueltos.html" class="no-ch">5.1.- Parámetros y valores devueltos.</a></li>
+      <li><a href="52_uso_de_mtodos.html" class="no-ch">5.2.- Uso de métodos</a></li>
+      <li><a href="53_documentacin_de_una_clase.html" class="no-ch">5.3.- Documentación de una clase</a></li>
+      <li><a href="54_objetos_inmutables.html" class="no-ch">5.4.- Objetos inmutables.</a></li>
+      <li><a href="55_comparacin_de_objetos_en_java_mtodo_equals.html" class="no-ch">5.5.- Comparación de objetos en Java: método equals.</a></li>
+      <li><a href="56_mtodos_estticos.html" class="daddy">5.6.- Métodos estáticos.</a>
+      <ul class="other-section">
+         <li><a href="561_ejemplos_generar_nmeros_aleatorios.html" class="no-ch">5.6.1.- Ejemplos: generar números aleatorios.</a></li>
+         <li><a href="562_mtodos_fbrica_o_pseudoconstructores.html" class="no-ch">5.6.2.- Métodos "fábrica" o pseudoconstructores</a></li>
+      </ul>
+      </li>
+      <li><a href="57_clases_envoltorio_en_java.html" class="no-ch">5.7.- Clases envoltorio en Java.</a></li>
+      <li><a href="58_representacin_textual_de_un_objeto_en_java_mtodo_tostring.html" class="no-ch">5.8.- Representación textual de un objeto en Java: método toString.</a></li>
+   </ul>
+   </li>
+   <li><a href="6_bibliotecas_de_clases_paquetes.html" class="daddy">6.- Bibliotecas de clases (paquetes).</a>
+   <ul class="other-section">
+      <li><a href="61_sentencia_import.html" class="no-ch">6.1.- Sentencia import.</a></li>
+      <li><a href="62_bibliotecas_java.html" class="no-ch">6.2.- Bibliotecas Java.</a></li>
+   </ul>
+   </li>
+   <li><a href="7_programacin_de_la_consola_entrada_y_salida_de_la_informacin.html" class="daddy">7.- Programación de la consola: entrada y salida de la información.</a>
+   <ul class="other-section">
+      <li><a href="71_conceptos_sobre_la_clase_system.html" class="no-ch">7.1.- Conceptos sobre la clase System.</a></li>
+      <li><a href="72_entrada_por_teclado_clase_system.html" class="no-ch">7.2.- Entrada por teclado. Clase System.</a></li>
+      <li><a href="73_entrada_por_teclado_clase_scanner.html" class="no-ch">7.3.- Entrada por teclado. Clase Scanner.</a></li>
+      <li><a href="74_salida_por_pantalla.html" class="no-ch">7.4.- Salida por pantalla.</a></li>
+      <li><a href="75_salida_de_error.html" class="no-ch">7.5.- Salida de error.</a></li>
+   </ul>
+   </li>
+   <li><a href="8_manipulacin_de_la_fecha_y_la_hora_en_java.html" class="daddy">8.- Manipulación de la fecha y la hora en Java.</a>
+   <ul class="other-section">
+      <li><a href="81_localdate.html" class="no-ch">8.1.- LocalDate</a></li>
+      <li><a href="82_localtime.html" class="no-ch">8.2.- LocalTime</a></li>
+      <li><a href="83_localdatetime.html" class="no-ch">8.3.- LocalDateTime</a></li>
+      <li><a href="84_formateado_de_fechas.html" class="no-ch">8.4.- Formateado de fechas</a></li>
+      <li><a href="85_chronounit.html" class="no-ch">8.5.- ChronoUnit</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="9_excepciones.html" class="active daddy">9.- Excepciones.</a>
+   <ul>
+      <li><a href="91_capturar_una_excepcin_con_try.html" class="no-ch">9.1.- Capturar una excepción con try.</a></li>
+      <li><a href="92_el_manejo_de_excepciones_con_catch.html" class="no-ch">9.2.- El manejo de excepciones con catch.</a></li>
+   </ul>
+   </li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="85_chronounit.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="91_capturar_una_excepcin_con_try.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">9.- Excepciones.</h1></div>
+<div class="iDevice_wrapper CasopracticofpdIdevice em_iDevice" id="id79">
+<div class="iDevice emphasis_casopracticofpd" >
+<div class="iDevice_header" style="background-image:url(icon_casopracticofpd.png)"><h2 class="iDeviceTitle">Caso práctico</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta79_62" class="block iDevice_content">
+<div class="elemento_izquierda">
+<div class="elemento_centrado"><img src="LS011333.png" alt="Primer plano de un hombre con cara de desesperación, se lleva las manos a la cabeza." title="Excepciones y errores." style="float: left;" width="200" height="144" /></div>
+<div class="elemento_centrado credenciales">Stockbyte. Uso educativo no comercial</div>
+<div class="elemento_centrado credenciales">para plataformas públicas de</div>
+<div class="elemento_centrado credenciales">Formación Profesional a distancia.</div>
+<div class="elemento_centrado credenciales">CD-DVD Num. V43</div>
+</div>
+<p>Para que las aplicaciones desarrolladas por <strong>BK Programación</strong> mantengan una valoración positiva a lo largo del tiempo por parte de sus clientes, es necesario que éstas no se vean comprometidas durante su ejecución. Hay innumerables ocasiones en las que programas que aparentemente son formidables (por su interfaz, facilidad de uso, <abbr title="etcétera.">etc</abbr>.) comienzan a generar errores en tiempo de ejecución que hacen que el usuario desconfíe de ellos día a día.</p>
+<p>Para evitar estas situaciones, <strong>Ada</strong> va a fomentar en <strong>María</strong> y <strong>Juan</strong> la cultura de la detección, control y solución de errores a través de las poderosas herramientas que <span lang="en">Java</span> les ofrece.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextfpdIdevice" id="id80">
+<div class="iDevice emphasis0">
+<div id="ta80_69" class="block iDevice_content">
+<p>A lo largo de nuestro aprendizaje de <span lang="en">Java</span> nos hemos topado en alguna ocasión con <strong>errores</strong>, pero éstos suelen ser los que nos ha indicado el compilador. Un punto y coma que falta por aquí, un nombre de variable incorrecto por allá, pueden hacer que nuestro compilador nos avise de estos descuidos. Cuando los vemos, se corrigen y obtenemos nuestra clase compilada correctamente.</p>
+<p>Pero, ¿sólo existe este tipo de errores? ¿Podrían existir errores no sintácticos en nuestros programas?</p>
+<div class="elemento_derecha">
+<div class="elemento_centrado"><img src="PROG03_CONT_R15_throw.jpg" alt="Atleta con camiseta de tirantes roja lanzando una jabalina." title="Lanzando excepción." style="float: right;" /></div>
+<div class="elemento_centrado credenciales">GNU Free Documentation License <a title="Erik van Leeuwen" href="http://commons.wikimedia.org/wiki/File:20100620-Tom_Goyvaerts-EK_Landenteams_2010.jpg" target="_blank">Erik van Leeuwen</a></div>
+</div>
+<p>Está claro que sí, un programa perfectamente compilado en el que no existen errores de sintaxis, y que no se detectan por tanto en <strong>tiempo de compilación</strong>, puede generar otro tipo de errores que quizá aparezcan cuando estamos usando nuestro programa, en <strong>tiempo de ejecución</strong>. A estos errores se les conoce como <strong>excepciones, </strong>y seguramente has experimentado ya los efectos de este tipo de errores en algún pequeño programa que, por ejemplo, reciba un número real o una cadena de caracteres como entrada, cuando el código está esperando un número entero. Si todavía no has experimentado esto, es un buen momento para probarlo y ver qué pasa. <strong><br /></strong></p>
+<p>Aprenderemos a gestionar de manera adecuada estas excepciones y tendremos la oportunidad de utilizar el potente sistema de manejo de errores que <span lang="en">Java</span> incorpora. La potencia de este sistema de manejo de errores radica en que:</p>
+<ol class="lista_esquema">
+<li>El código que se encarga de manejar los errores, es perfectamente identificable en los programas. Este código puede estar separado del código que maneja la aplicación.</li>
+<li><span lang="en">Java</span> tiene una <strong>gran cantidad de errores estándar</strong> asociados a multitud de fallos comunes, como por ejemplo divisiones por cero, fallos de entrada de datos, formato numérico erróneo, índice fuera de rango en un array o en una cadena, argumentos no válidos en un método, y un largo <abbr title="etcétera.">etc</abbr>. Al tener tantas excepciones localizadas, podemos gestionar de manera específica cada uno de los errores que se produzcan.</li>
+</ol>
+<p>En <span lang="en">Java</span> se pueden preparar los fragmentos de código que pueden provocar errores de ejecución para que si se produce una excepción, el flujo del programa sea alterado, transfiriendo el control hacia ciertas zonas o rutinas que han sido creadas previamente por el programador y cuya finalidad será el tratamiento efectivo de dichas excepciones. Estas rutinas son lanzadas (<code>throw</code>), y toman el control de la situación, de forma que permiten capturar (<code>catch</code>) la excepción producida, y darle un tratamiento adecuado, o al menos terminar lo más ordenadamente posible la ejecución del programa, en caso de que se tratara de un error irrecuperable. Si no se captura la excepción, el programa se detendrá con toda probabilidad, aunque al menos podrá dar una información precisa y detallada de qué tipo de error se ha producido, en qué línea de código, qué secuencia de instrucciones se han ejecutado hasta llegar a esa situación. Todo ello es información útil a la hora de corregir el error.</p>
+<p>En <span lang="en">Java</span>, las excepciones están representadas por <a class="glosario">clases<span><em>Clase</em>Es una construcción que se utiliza como un modelo (o plantilla) para crear objetos de ese tipo. El modelo describe el estado y el comportamiento que todos los objetos de la clase comparten. En este caso, la clase que encapsula una excepción contiene información sobre una situación "excepcional", fuera del funcionamiento normal previsto, que se ha producido en nuestro programa. </span></a>. La clase <strong><span lang="en">java.lang.<code>Exception </code></span></strong>contiene todos los tipos de excepciones. Todas las excepciones derivarán de la clase <strong><code>Throwable</code></strong>, existiendo clases más específicas. Por debajo de la clase <strong><code>Throwable </code></strong>existen las clases <strong><code>Error</code></strong> y <strong><code>Exception</code></strong>.</p>
+<ul class="lista_verificacion">
+<li>La clase <code>Error</code> se encargará de los errores que se produzcan en la máquina virtual, no en nuestros programas, y que por tanto, quedan fuera del alcance de lo que nosotros podemos corregir.</li>
+<li>La clase <code>Exception</code> será la que nos interese conocer, pues gestiona los errores provocados en nuestros programas.</li>
+</ul>
+<p><span lang="en">Java</span> lanzará una excepción en respuesta a una situación poco usual. Cuando se produce un error se genera un objeto asociado a esa excepción. Este objeto es de la clase <code>Exception </code>o de alguna de sus herederas. Este objeto se pasa al código que se ha definido para manejar la excepción. Dicho código puede manipular las propiedades del objeto <code>Exception</code>.</p>
+<p class="destacado">El programador también <strong>puede lanzar sus propias excepciones.</strong> Para ello se usa la cláusula <code>throw</code> (sin s, no confundir con <code>throws</code>, con s, y que se verá en el epígrafe dedicado a delegación de excepciones). El usuario puede definir excepciones como subclases de la clase <code>Exception</code>, o de alguna de alguna de sus subclases, y la cláusula <code>throw</code> fuerza la generación del error invocando al método constructor de un nuevo objeto del tipo de la excepción que se quiere lanzar... Todo ello, para ser bien entendido, requiere conocimientos de programación orientada a objetos que todavía no se han abordado en este curso, por lo que se explicará nuevamente y ya con más detalle en próximas unidades.</p>
+<p>Las excepciones en <span lang="en">Java</span> serán objetos de clases derivadas de la clase base <code>Exception</code>. Existe toda una jerarquía de clases derivada de la clase base <code>Exception</code>, que se dividen en dos grupos principales:</p>
+<ul class="lista_verificacion">
+<li>Las excepciones en tiempo de ejecución, que ocurren cuando el programador no ha tenido cuidado al escribir su código.</li>
+<li>Las excepciones que indican que ha sucedido algo inesperado o fuera de control.</li>
+</ul>
+<p>En la siguiente imagen te ofrecemos una aproximación a la jerarquía de las excepciones en <span lang="en">Java</span>.</p>
+<div>
+<div class="elemento_centrado"><a title="Jerarquía de excepciones Java. (se abre en una nueva ventana)." href="PROG03_CONT_R16_jerarquia_excepciones.jpg" target="_blank"><img alt="Diagrama que representa la jerarquía de excepcines características de Java. De un rectángulo rojo con la palabra “Throwtable” parten dos rectángulos verdes y de uno de ellos varios azules y así sucesivamente. En cada uno de los recuadros está inscrita la palabra que representa la clase de excepción." class="imagen_ampliable" src="PROG03_CONT_R16_jerarquia_excepciones_miniatura.jpg" style="width: 200px; height: 140px;" title="Jerarquía de excepciones Java." width="200" height="140" /></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="85_chronounit.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="91_capturar_una_excepcin_con_try.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

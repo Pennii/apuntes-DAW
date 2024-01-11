@@ -7,7 +7,7 @@ CREATE TABLE GUIATUR.GUIAS_TURISTICOS(
     Fecha_nac DATE,
     Nacionalidad VARCHAR(30) DEFAULT "España",
     Fecha_alta DATE NOT NULL,
-    Salario MEDIUMINT,
+    Salario FLOAT,
     Titulacion TINYTEXT);
     
 CREATE TABLE GUIATUR.RUTAS(
@@ -40,3 +40,15 @@ ALTER TABLE rutas ADD CONSTRAINT RUT_Val_CHK CHECK (Valoraciones BETWEEN 0 and 1
 ALTER TABLE guias_turisticos ADD CONSTRAINT GT_Fecha_CHK CHECK (Fecha_alta > Fecha_nac);
 
 ALTER TABLE rutas DROP CONSTRAINT rutas_chk_1;
+
+CREATE INDEX indice_nombre ON lugares_interes (nombre);
+
+ALTER TABLE guias_turisticos RENAME COLUMN Salario TO Sueldo;
+
+RENAME TABLE guias_turisticos TO empleados;
+
+ALTER TABLE empleados MODIFY Apellido1 VARCHAR(25) AFTER Nombre;
+
+ALTER TABLE empleados MODIFY Apellido2 VARCHAR(25) AFTER Nombre;
+
+DROP TABLE lugares_interes;

@@ -19,7 +19,7 @@ CREATE TABLE jugadoras(
 
 CREATE TABLE partidos(
 	codigo CHAR(4) PRIMARY KEY,
-    fecha DATE CHECK (fecha BETWEEN 2022-01-01 AND 2022-06-30),
+    fecha DATE CHECK (fecha BETWEEN '2022-01-01' AND '2022-06-30'),
     resultado VARCHAR(5),
     nomArbitro VARCHAR(30),
     incidencias TEXT,
@@ -28,4 +28,16 @@ CREATE TABLE partidos(
     golesLoc TINYINT(3) DEFAULT 0,
     golesVist TINYINT(3) DEFAULT 0,
     CONSTRAINT part_eqLoc_FK FOREIGN KEY (equipoLoc) REFERENCES equipos (Siglas)ON DELETE SET NULL ON UPDATE CASCADE,
-    CONSTRAINT part_eqLoc_FK FOREIGN KEY (equipoLoc) REFERENCES equipos (Siglas)ON DELETE SET NULL ON UPDATE CASCADE);
+    CONSTRAINT part_eqVis_FK FOREIGN KEY (equipoVist) REFERENCES equipos (Siglas)ON DELETE SET NULL ON UPDATE CASCADE);
+    
+    ALTER TABLE jugadoras ADD COLUMN puesto ENUM ('Portera', 'Defensa', 'Delantera');
+    
+    ALTER TABLE partidos RENAME COLUMN nomArbitro TO colegiado;
+    
+    ALTER TABLE equipos ADD INDEX (puntos);
+    
+    CREATE VIEW CLASIFICACION AS SELECT nombre, puntos FROM equipos ORDER BY puntos DESC;
+
+    CREATE USER arbitro IDENTIFIED BY '1234';
+   
+    GRANT UPDATE ON partidos TO arbitro;

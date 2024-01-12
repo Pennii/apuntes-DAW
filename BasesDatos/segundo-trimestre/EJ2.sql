@@ -1,4 +1,4 @@
-CREATE DATABASE liga;
+CREATE DATABASE IF NOT EXISTS liga;
 
 CREATE TABLE equipos(
 	Siglas CHAR(4) PRIMARY KEY,
@@ -36,8 +36,16 @@ CREATE TABLE partidos(
     
     ALTER TABLE equipos ADD INDEX (puntos);
     
-    CREATE VIEW CLASIFICACION AS SELECT nombre, puntos FROM equipos ORDER BY puntos DESC;
 
+    CREATE VIEW CLASIFICACION AS SELECT nombre, puntos  FROM equipos ORDER BY puntos DESC;
+    
+    INSERT INTO equipos (siglas, nombre, puntos) VALUES ('cabj', 'boca', 12);
+    INSERT INTO equipos (siglas, nombre, puntos) VALUES ('carp', 'river', 20);
+	select * from equipos;
+    select * FROM clasificacion;
+    DELETE from equipos where(nombre = 'boca');
+    
     CREATE USER arbitro IDENTIFIED BY '1234';
-   
+    
+
     GRANT UPDATE ON partidos TO arbitro;

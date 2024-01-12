@@ -11,6 +11,8 @@ public class Vehiculo {
 //  atributos de clase constantes
     public static final double CAP_MIN = 10.0; //capacidad minima de un tanque
     public static final double CAP_MAX = 150.0; //capacidad max de un tanque
+    public static final double CONS_MIN = 1.0; //consumo medio minimo por 100km
+    public static final double CONS_MAX = 18.0; //consumo medio max por 100km
     
 //  atributos de clase
     private static double kilTot; //kilometros recorridos por todos los vehiculos

@@ -26,8 +26,8 @@ public class Vehiculo {
 
 //  atributos de objeto
     private boolean motorEncendido; //si el motor esta encendido o no 
-    private double distTot; //distancia total recorrida por el vehiculo
-    private double distRec; //distancia recorrida en su ultimo encendido
+    private double distTot; //combustibleNec total recorrida por el vehiculo
+    private double distRec; //combustibleNec recorrida en su ultimo encendido
     private double consumMed; //media de consumo de combustible del vehiculo
     private double nivelTan; //litros de combustible en el tanque
 
@@ -41,34 +41,108 @@ public class Vehiculo {
         return this.nivelTan;
     }
 
-    public boolean arrancar() { //vuelve true el estado del motor
+    public void arrancar() throws IllegalStateException { //vuelve true el estado del motor
+        if (this.motorEncendido) {
+            throw new IllegalStateException("Vehiculo ya encendido");
+        }
+
+        if (this.nivelTan == 0) {
+            throw new IllegalStateException("Vehiculo apagado");
+        }
         this.motorEncendido = true;
-        return this.motorEncendido;
+        prendidos++;
+
     }
 
-    public boolean parar() { //vuelve false el estado del motor
+    public void parar() throws IllegalStateException { //vuelve false el estado del motor
+        if (!this.motorEncendido) {
+            throw new IllegalStateException("Motor ya apagado");
+        }
+
         this.motorEncendido = false;
-        return this.motorEncendido;
+        prendidos--;
     }
 
     private boolean isEncendido() { //devuelve el estado del motor
         return this.motorEncendido;
     }
 
-    public void cargar(double a){ /*verifica si se puede cargar combustible, si
+    public void cargar(double a) throws IllegalArgumentException, IllegalStateException {
+        /*verifica si se puede cargar combustible, si
         puede, lo hace*/
+        double carga, exceso;
+        if (this.motorEncendido) {
+            throw new IllegalStateException("Motor encendido no se puede cargar");
+        }
+        if (a < 0) {
+            throw new IllegalArgumentException(
+                    String.format("Cantidad invalida: %2f", a));
+        }
+
         if (a + this.nivelTan <= this.CAPACIDAD) {
             this.nivelTan += a;
-        }else{
-            System.out.println("la cantidad que quieres ingresar supera la "
-                    + "capacidad del tanque");   
+        } else {
+            carga = this.nivelTan + a;
+            this.nivelTan = this.CAPACIDAD;
+            exceso = carga - this.nivelTan;
+
+            throw new IllegalStateException(String.format(
+                    "Cantidad excesiva: %2f", exceso));
         }
+
+    }
+
+    public double recorrerTrayecto(double km) throws IllegalArgumentException, IllegalStateException {
+        /*Se calcula cuanto combustible se necesita para recorrer la distancia
+        indicada y se evalua si es posible el trayecto
+        */
+        double combustibleNec, distancia;
+        if (km < 0) {
+            throw new IllegalArgumentException(String.format(
+                    "Cantidad invalida de kilometros: %2.f", km));
+        }
+
+        if (!this.motorEncendido) {
+            throw new IllegalStateException("Vehiculo apagado");
+        }
+        
+        combustibleNec = this.nivelTan / this.consumMed;
+        distancia = km;
+        /*Si la cantidad de combustible no es suficiente se recorre menos distancia
+        y el motor se apaga
+        */
+        if (this.nivelTan < combustibleNec ) {
+            distancia = this.nivelTan * this.consumMed;
+            this.motorEncendido = false;
+            prendidos--;
+        }
+        /*Se actualizan los valores de kilometros y combustible*/
+        this.distTot += distancia;
+        this.distRec = distancia;
+        kilTot += distancia;
+        this.nivelTan -= this.consumMed * distancia;
+
+        return distancia;
     }
     
-    public void recorrerTrayecto(double km){ /*la distancia indicada es sumada
-        a los valores de distancia del objeto y al global*/
-        this.distTot += km;
-        this.distRec = km;
-        kilTot += km;
+    public double recorrerTrayecto(double tiempo, double velocidad) {
+        /*Se calcula la distancia en base a los parametros dados y se llama al
+        metodo con el parametro de distancia
+        */
+        double dist, recorrido;
+        
+        if (tiempo < 0) {
+            throw new IllegalArgumentException("Tiempo invalido: "+tiempo);
+        }
+        
+        if (velocidad < 0) {
+            throw new IllegalArgumentException("Velocidad invalida: "+velocidad);
+        }
+        
+        dist = tiempo * velocidad;
+        
+        recorrido = this.recorrerTrayecto(dist);
+        return recorrido;
     }
+
 }

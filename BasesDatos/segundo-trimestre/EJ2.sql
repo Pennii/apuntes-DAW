@@ -30,22 +30,21 @@ CREATE TABLE partidos(
     CONSTRAINT part_eqLoc_FK FOREIGN KEY (equipoLoc) REFERENCES equipos (Siglas)ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT part_eqVis_FK FOREIGN KEY (equipoVist) REFERENCES equipos (Siglas)ON DELETE SET NULL ON UPDATE CASCADE);
     
-    ALTER TABLE jugadoras ADD COLUMN puesto ENUM ('Portera', 'Defensa', 'Delantera');
+ALTER TABLE jugadoras ADD COLUMN puesto ENUM ('Portera', 'Defensa', 'Delantera');
     
-    ALTER TABLE partidos RENAME COLUMN nomArbitro TO colegiado;
+ALTER TABLE partidos RENAME COLUMN nomArbitro TO colegiado;
     
-    ALTER TABLE equipos ADD INDEX (puntos);
-    
-
-    CREATE VIEW CLASIFICACION AS SELECT nombre, puntos  FROM equipos ORDER BY puntos DESC;
-    
-    INSERT INTO equipos (siglas, nombre, puntos) VALUES ('cabj', 'boca', 12);
-    INSERT INTO equipos (siglas, nombre, puntos) VALUES ('carp', 'river', 20);
-	select * from equipos;
-    select * FROM clasificacion;
-    DELETE from equipos where(nombre = 'boca');
-    
-    CREATE USER arbitro IDENTIFIED BY '1234';
+ALTER TABLE equipos ADD INDEX (puntos);
     
 
-    GRANT UPDATE ON partidos TO arbitro;
+CREATE VIEW CLASIFICACION AS SELECT nombre, puntos  FROM equipos ORDER BY puntos DESC;
+    
+INSERT INTO equipos (siglas, nombre, puntos) VALUES ('cabj', 'boca', 12);
+INSERT INTO equipos (siglas, nombre, puntos) VALUES ('carp', 'river', 20);
+select * from equipos;
+select * FROM clasificacion;
+DELETE from equipos where(nombre = 'boca');
+    
+CREATE USER arbitro IDENTIFIED BY '1234';
+ 
+GRANT UPDATE ON partidos TO arbitro;

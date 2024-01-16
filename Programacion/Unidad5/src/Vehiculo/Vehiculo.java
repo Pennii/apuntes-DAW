@@ -44,7 +44,7 @@ public class Vehiculo {
             throw new IllegalArgumentException("capacidad del tanque fuera de rango");
         }
         
-        if (!mat.matches(FORM_MAT) || mat == null) {
+        if (!mat.matches(FORM_MAT)) {
             throw new IllegalArgumentException("formato de la matricula invalido");
         }
         
@@ -60,6 +60,10 @@ public class Vehiculo {
         this.MATRICULA = mat;
         this.FECHA_MATR = fec;
         this.CONS_MED = cons;
+    }
+    
+    public Vehiculo(double cap, String mat, double cons){
+        this(cap, mat, cons);
     }
 
     public static double getKilTot() {
@@ -187,7 +191,8 @@ public class Vehiculo {
         return distancia;
     }
 
-    public double recorrerTrayecto(double tiempo, double velocidad) {
+    public double recorrerTrayecto(double tiempo, double velocidad) throws
+            IllegalStateException, IllegalArgumentException{
         /*Se calcula la distancia en base a los parametros dados y se llama al
         metodo con el parametro de distancia
          */
@@ -199,6 +204,9 @@ public class Vehiculo {
 
         if (velocidad < 0) {
             throw new IllegalArgumentException("Velocidad invalida: " + velocidad);
+        }
+        if (this.motorEncendido) {
+            throw new IllegalStateException("Vehiculo apagado");
         }
 
         dist = tiempo * velocidad;

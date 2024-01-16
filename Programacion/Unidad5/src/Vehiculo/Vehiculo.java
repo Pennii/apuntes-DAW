@@ -62,10 +62,7 @@ public class Vehiculo {
         this.CONS_MED = cons;
     }
     
-    public Vehiculo(double cap, String mat, double cons){
-        this(cap, mat, cons);
-    }
-
+   
     public static double getKilTot() {
         return Vehiculo.kilTot;
     }

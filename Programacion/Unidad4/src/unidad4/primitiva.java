@@ -13,6 +13,7 @@ import java.util.Arrays;
 public class Primitiva {
 
     public static void main(String[] args) {
+        final int NUMEROS = 12, RANGO_MIN = 1, RANGO_MAX = 49;
         String lista[] = {"¡Hola Mundo!",
             "primitiva050609123237",
             "La teoría de Filomeno dice…",
@@ -21,10 +22,10 @@ public class Primitiva {
             "primitiva123456789012",
             "estoEsunacosa",
             "AbuelitoDimeTu",
-            "primitiva010211334549"};
-        String sorteo[][] = new String[lista.length][6];
-        String patron = "primitiva[0-9]{12}";
-        int contador, validas = 0, fila =0, repetidos[] = new int[6];
+            "primitiva010211334549"}, sorteo[][] = new String[lista.length][6],
+                patron = "primitiva[0-9]{"+NUMEROS+"}";
+        int contador, validas = 0, fila = 0, repetidos[] = new int[6], posVal[]
+                = new int[lista.length], patronEncontrado = 0;
         boolean rango;
 
         for (String[] sorteo1 : sorteo) {
@@ -36,31 +37,35 @@ public class Primitiva {
             contador = 0;
             if (lista[i].matches(patron)) {
                 System.out.printf("cadena reconocida: %s\n", lista[i]);
-                for (int j = lista[i].length()-12; j < lista[i].length() ; j += 2) {
+                for (int j = lista[i].length() - NUMEROS; j < lista[i].length(); j += 2) {
                     sorteo[fila][contador] += lista[i].charAt(j);
-                    sorteo[fila][contador] += lista[i].charAt(j+1);
-                    contador++;
+                    sorteo[fila][contador++] += lista[i].charAt(j + 1);
                 }
                 fila++;
-                validas++;
+                patronEncontrado++;
             }
         }
-        System.out.printf("Se han encontrado %d listas validas\n",validas);
-        validas = 0;
-        for (int i = 0; i < validas; i++) {
+        fila = 0;
+        Arrays.fill(posVal, -1);
+        for (int i = 0; i < patronEncontrado; i++) {
             rango = true;
-            Arrays.fill(repetidos, 0);
+            Arrays.fill(repetidos, 0); 
             for (int j = 0; j < sorteo[i].length && rango; j++) {
-                rango = Integer.valueOf(sorteo[i][j])<=49 && Integer.valueOf(sorteo[i][j]) >= 1;
+                rango = Integer.parseInt(sorteo[i][j]) <= RANGO_MAX && Integer.parseInt(sorteo[i][j]) >= RANGO_MIN;
                 for (int k = 0; k < repetidos.length && rango; k++) {
-                    rango = repetidos[k] != Integer.valueOf(sorteo[i][j]);
+                    rango = repetidos[k] != Integer.parseInt(sorteo[i][j]);
                 }
-                repetidos[j] = Integer.valueOf(sorteo[i][j]);
+                repetidos[j] = Integer.parseInt(sorteo[i][j]);
             }
             if (rango) {
-                 System.out.println(Arrays.toString(sorteo[i]));
+                validas++;
+                posVal[fila++] = i;
             }
-           
+
+        }
+        System.out.printf("Se han encontrado %d listas validas\n", validas);
+        for (int i = 0; posVal[i] != -1; i++) {
+            System.out.printf("Sorteo %d: %s\n", i + 1, Arrays.toString(sorteo[posVal[i]]));
         }
     }
 }

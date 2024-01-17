@@ -1,4 +1,4 @@
-package vehiculo;
+package Vehiculos;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -36,6 +36,14 @@ public class Vehiculo {
     private double distRec; //distancia recorrida en su ultimo encendido
     private double nivelTan; //litros de combustible en el tanque
 
+    /**
+     * constructor con 4 parametros
+     * @param cap
+     * @param mat
+     * @param cons
+     * @param fec
+     * @throws IllegalArgumentException 
+     */
     public Vehiculo(double cap, String mat, double cons, LocalDate fec)throws IllegalArgumentException {
         /*Constructor de vehiculo que recibe la capacidad del tanque, la matricula,
         el consumo medio y la fecha de matriculacion
@@ -62,6 +70,18 @@ public class Vehiculo {
         this.CONS_MED = cons;
     }
     
+    /**
+     * constructor con 1 parametro y 3 defaults
+     * @param cap
+     * @throws IllegalArgumentException 
+     */
+    public Vehiculo(double cap) throws IllegalArgumentException{
+        this(cap, "1234BBB", 15, LocalDate.now());
+    }
+    
+    public Vehiculo(Vehiculo v) throws NullPointerException{
+        this(v.CAPACIDAD, v.MATRICULA, v.CONS_MED, v.FECHA_MATR);
+    }
    
     public static double getKilTot() {
         return Vehiculo.kilTot;

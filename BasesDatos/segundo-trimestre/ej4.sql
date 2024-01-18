@@ -18,7 +18,7 @@ CREATE TABLE administrativo(
 
 CREATE TABLE jefe(
 	codJefe char(4) PRIMARY KEY,
-    fechaIncorporacion DATE UNIQUE,
+    fechaIncorporacion DATE,
     CONSTRAINT jef_cod_fk FOREIGN KEY (codJefe) REFERENCES personal(codPersonal)
     ON UPDATE CASCADE);
 
@@ -57,7 +57,7 @@ codCategoria char(4);
 ALTER TABLE conferencia ADD CONSTRAINT
 conf_codCat_fk foreign KEY (codCategoria) REFERENCES categoria(codCategoria);
 
-ALTER TABLE PERSONAL ADD INDEX(apellido, nombre);
+ALTER TABLE PERSONAL ADD INDEX ap_nom_ind (apellido, nombre);
 
 CREATE VIEW personalMayor AS SELECT nombre, apellido FROM personal where fecNac < '1980-01-01';
 
@@ -65,8 +65,10 @@ ALTER TABLE personal Rename COLUMN fecNacimiento TO fecNac;
 
 ALTER TABLE jefe rename column fechaIncorporacion to fecinc;
 
-CREATE USER usuario_bd03 identified by 'root';
-GRANT INSERT, SELECT ON conferencias_bd03.* TO usuario_bd03;
+CREATE USER usuario_bd03@'localhost' identified by 'root';
+GRANT INSERT, SELECT ON conferencias_bd03.* TO usuario_bd03@'localhost';
+
+
 
 
 

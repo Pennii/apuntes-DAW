@@ -10,6 +10,11 @@ package Vehiculos;
  */
 public class aa {
     public static void main(String[] args) {
-        Vehiculo auto = new Vehiculo(0);
+        Vehiculo auto = new Vehiculo(50);
+        auto.cargar(50);
+        auto.arrancar();
+        //ejemplo de metodo con parametros variables
+        System.out.println("Recorrio: "+auto.recorrerTrayecto(1, 4, 1));
+        System.out.println(auto.toString());
     }
 }

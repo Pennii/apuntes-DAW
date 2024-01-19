@@ -38,51 +38,53 @@ public class Vehiculo {
 
     /**
      * constructor con 4 parametros
+     *
      * @param cap
      * @param mat
      * @param cons
      * @param fec
-     * @throws IllegalArgumentException 
+     * @throws IllegalArgumentException
      */
-    public Vehiculo(double cap, String mat, double cons, LocalDate fec)throws IllegalArgumentException {
+    public Vehiculo(double cap, String mat, double cons, LocalDate fec) throws IllegalArgumentException {
         /*Constructor de vehiculo que recibe la capacidad del tanque, la matricula,
         el consumo medio y la fecha de matriculacion
-        */
+         */
         if (cap > CAP_MAX || cap < CAP_MIN) {
             throw new IllegalArgumentException("capacidad del tanque fuera de rango");
         }
-        
+
         if (!mat.matches(FORM_MAT)) {
             throw new IllegalArgumentException("formato de la matricula invalido");
         }
-        
+
         if (fec.isAfter(LocalDate.now()) || fec.isBefore(FECHA_MIN)) {
             throw new IllegalArgumentException("fecha invalida");
         }
-        
+
         if (cons > CONS_MAX || cons < CONS_MIN) {
             throw new IllegalArgumentException("consumo medio invalido");
         }
-        
+
         this.CAPACIDAD = cap;
         this.MATRICULA = mat;
         this.FECHA_MATR = fec;
         this.CONS_MED = cons;
     }
-    
+
     /**
      * constructor con 1 parametro y 3 defaults
+     *
      * @param cap
-     * @throws IllegalArgumentException 
+     * @throws IllegalArgumentException
      */
-    public Vehiculo(double cap) throws IllegalArgumentException{
+    public Vehiculo(double cap) throws IllegalArgumentException {
         this(cap, "1234BBB", 15, LocalDate.now());
     }
-    
-    public Vehiculo(Vehiculo v) throws NullPointerException{
+
+    public Vehiculo(Vehiculo v) throws NullPointerException {
         this(v.CAPACIDAD, v.MATRICULA, v.CONS_MED, v.FECHA_MATR);
     }
-   
+
     public static double getKilTot() {
         return Vehiculo.kilTot;
     }
@@ -98,28 +100,28 @@ public class Vehiculo {
     public double getNivelDeposito() {
         return this.nivelTan;
     }
-    
-    public LocalDate getFechaMat(){
+
+    public LocalDate getFechaMat() {
         return this.FECHA_MATR;
     }
-    
-    public double getCapacidad(){
+
+    public double getCapacidad() {
         return this.CAPACIDAD;
     }
-    
-    public String getMatricula(){
+
+    public String getMatricula() {
         return this.MATRICULA;
     }
-    
-    public double getConsMed(){
+
+    public double getConsMed() {
         return this.CONS_MED;
     }
-    
-    public double getDistTot(){
+
+    public double getDistTot() {
         return this.distTot;
     }
-    
-    public double getDistRec(){
+
+    public double getDistRec() {
         return this.distRec;
     }
 
@@ -175,41 +177,50 @@ public class Vehiculo {
 
     }
 
-    public double recorrerTrayecto(double km) throws IllegalArgumentException, IllegalStateException {
+    public double recorrerTrayecto(double... km) throws IllegalArgumentException, IllegalStateException {
         /*Se calcula cuanto combustible se necesita para recorrer la distancia
         indicada y se evalua si es posible el trayecto
          */
-        double combustibleNec, distancia;
-        if (km < 0) {
-            throw new IllegalArgumentException(String.format(
-                    "Cantidad invalida de kilometros: %.2f", km));
-        }
-
+        double combustibleNec, distancia = 0;
         if (!this.motorEncendido) {
             throw new IllegalStateException("Vehiculo apagado");
         }
+        for (int i = 0; i < km.length; i++) {
+            if (km[i] < 0) {
+                throw new IllegalArgumentException(String.format(
+                        "Cantidad invalida de kilometros: %.2f", km));
+            }
 
-        combustibleNec = this.nivelTan / this.CONS_MED;
-        distancia = km;
-        /*Si la cantidad de combustible no es suficiente se recorre menos distancia
+            distancia += km[i];
+            /*Si la cantidad de combustible no es suficiente se recorre menos distancia
         y el motor se apaga
-         */
+             */
+
+        }
+        combustibleNec = distancia * this.CONS_MED;
         if (this.nivelTan < combustibleNec) {
-            distancia = this.nivelTan * this.CONS_MED;
+            distancia = this.nivelTan / this.CONS_MED;
             this.motorEncendido = false;
             prendidos--;
         }
         /*Se actualizan los valores de kilometros y combustible*/
         this.distTot += distancia;
-        this.distRec = distancia;
+        this.distRec += distancia;
         kilTot += distancia;
         this.nivelTan -= this.CONS_MED * distancia;
-
         return distancia;
     }
 
+    /**
+     *
+     * @param tiempo
+     * @param velocidad
+     * @return
+     * @throws IllegalStateException
+     * @throws IllegalArgumentException
+     */
     public double recorrerTrayecto(double tiempo, double velocidad) throws
-            IllegalStateException, IllegalArgumentException{
+            IllegalStateException, IllegalArgumentException {
         /*Se calcula la distancia en base a los parametros dados y se llama al
         metodo con el parametro de distancia
          */
@@ -222,7 +233,7 @@ public class Vehiculo {
         if (velocidad < 0) {
             throw new IllegalArgumentException("Velocidad invalida: " + velocidad);
         }
-        if (this.motorEncendido) {
+        if (!this.motorEncendido) {
             throw new IllegalStateException("Vehiculo apagado");
         }
 

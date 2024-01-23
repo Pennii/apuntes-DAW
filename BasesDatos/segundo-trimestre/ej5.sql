@@ -81,6 +81,7 @@ INSERT INTO VIVIENDA (referencia, direccion, localidad, provincia, n_habitacione
 
 INSERT INTO RESERVA (refViv, dni_cliente, f_ent, f_sal, precioTotal, cantidadPersonas) VALUES('A001', 'A12345678', '2024-01-25', '2024-01-26', 230, 2);
 INSERT INTO RESERVA(refViv, dni_cliente, f_ent, f_sal, precioTotal, cantidadPersonas) VALUES('B002', 'A12345678', '2024-01-30', '2024-02-5', 600, 1);
+INSERT INTO RESERVA VALUES('A001', 'A12345678', '2024-01-30', '2024-02-5', 600, 1, '2024-01-01 15:32:05');
 
 SELECT * FROM VIVIENDA;
 SELECT * FROM viviendas_almeria;

@@ -30,7 +30,8 @@ public class Numeracion {
                 if (valido.group(0).length() > 1) {
                     switch (valido.group(0).charAt(1)) {
                         case 'x':
-                            aux = Integer.decode(entrada);
+                            auxiliar = entrada.substring(2);
+                            aux = Integer.parseInt(auxiliar,16);
                             resultados.append(String.format("HEX a DEC(%s -> %d)\n", entrada, aux));
                             break;
                         case 'b':
@@ -40,7 +41,7 @@ public class Numeracion {
                             break;
                         default:
                             if (Character.isDigit(valido.group(0).charAt(1))) {
-                                aux = Integer.decode(entrada);
+                                aux = Integer.parseInt(entrada);
                                 resultados.append(String.format("DEC a DEC(%s -> %d)\n", entrada, aux));
                             } else {
                                 switch (valido.group(0)) {
@@ -48,7 +49,6 @@ public class Numeracion {
                                         aux = 1;
                                         resultados.append(String.format("EGP a DEC(%s -> %d)\n", entrada, aux));
                                         break;
-                                        
                                     case "senua":
                                         aux = 2;
                                         resultados.append(String.format("EGP a DEC(%s -> %d)\n", entrada, aux));
@@ -62,13 +62,12 @@ public class Numeracion {
                                 }
                             }
                     }
-                } else if (valido.find()) {
+                } else{
                     aux = Integer.decode(entrada);
                     resultados.append(String.format("DEC a DEC(%s -> %d)\n", entrada, aux));
-                } else {
-                    erroneos++;
                 }
-
+            }else{
+                 erroneos++;
             }
         } while (!entrada.equals("fin") && !entrada.equals("end"));
         if (erroneos - 1 > 0) {

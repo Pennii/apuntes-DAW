@@ -61,8 +61,10 @@ public class CompraVideoJuegos {
                 return this.cantPs5;
             case "XBOX":
                 return this.cantXbox;
-            default:
+            case "SWITCH":
                 return this.cantSwitch;
+            default:
+                return 0;
         }
     }
 
@@ -75,8 +77,10 @@ public class CompraVideoJuegos {
                 return this.gastoPs5;
             case "XBOX":
                 return this.gastoXbox;
-            default:
+            case "SWITCH":
                 return this.gastoSwitch;
+            default:
+                return 0;
         }
     }
 

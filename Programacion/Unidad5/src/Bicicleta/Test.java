@@ -15,7 +15,7 @@ public class Test {
     public static void main(String[] args) {
         ChipiBici bici1 = new ChipiBici();
         ChipiBici bici4[] = ChipiBici.fabrica(4);
-        ChipiBici bici2 = new ChipiBici(5, 4);
+        ChipiBici bici2 = new ChipiBici(4, 7);
         ChipiBici bici3 = new ChipiBici(LocalDate.of(2024, 4, 20), 3, 7);
         
         bici1.alquilar();

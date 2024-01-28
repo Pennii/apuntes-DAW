@@ -40,6 +40,16 @@ public class ChipiBici {
     private LocalDateTime fechaHoraFinUltAlquiler;
     private double kmRecUltAlquiler;
 
+    /**
+     * constructor de 3 parametros.
+     * 
+     * constructor con fecha de compra, version y revision, el resto de parametros
+     * seran predeterminados
+     * @param fecha
+     * @param ver
+     * @param rev
+     * @throws IllegalArgumentException 
+     */
     public ChipiBici(LocalDate fecha, int ver, int rev) throws IllegalArgumentException {
         if (fecha.isBefore(MIN_FECH_ADQ)) {
             throw new IllegalArgumentException(String.format("FECHA INVALIDA: %d/%d/%d", fecha.getDayOfMonth(), fecha.getMonthValue(), fecha.getYear()));
@@ -61,14 +71,35 @@ public class ChipiBici {
         totBicis++;
     }
 
+    /**
+     * constructor con dos parametros.
+     * 
+     * este constructor utiliza la version y revision para establecerlos, el resto
+     * de parametros son los default
+     * @param ver
+     * @param rev
+     * @throws IllegalArgumentException 
+     */
     public ChipiBici(int ver, int rev) throws IllegalArgumentException {
         this(LocalDate.now(), ver, rev);
     }
 
+    /**
+     * constructor sin parametros.
+     * 
+     * Se utilizaran unicamente los valores predeterminados
+     */
     public ChipiBici() {
         this(LocalDate.now(), VER_DEF, REV_DEF);
     }
 
+    /**
+     * metodo fabrica
+     * 
+     * metodo que genera bicis con valores predeterminados en un array
+     * @param num
+     * @return Array de bicis
+     */
     public static ChipiBici[] fabrica(int num) {
         if (num < 1) {
             throw new IllegalArgumentException(String.format("CANTIDAD INVALIDA: %d", num));
@@ -80,66 +111,134 @@ public class ChipiBici {
         return array;
     }
 
+    /**
+     * metodo para obtener el numero de serie
+     * @return numero de serie
+     */
     public String getNumSerie() {
         return this.NUM_SERIE;
     }
 
+    /**
+     * metodo para obtener la fecha de compra
+     * @return fecha de compra
+     */
     public LocalDate getFechaCompra() {
         return this.FECHA_COMPRA;
     }
 
+    /**
+     * metodo para obtener la version
+     * @return version 
+     */
     public int getVersion() {
         return this.ver;
     }
 
+    /**
+     * metodo para obtener la revision
+     * @return revision 
+     */
     public int getRevision() {
         return this.rev;
     }
 
+    /**
+     * metodo que devuelve la version y revision
+     * 
+     * por ejemplo 1.0
+     * @return version y revision 
+     */
     public String getVerRev() {
         return String.format("%d.%d", this.ver, this.rev);
     }
 
+    /**
+     * metodo que obtiene el alquiler.
+     * 
+     * si este es false la bici no estara alquilada, si es true, si lo estara
+     * @return estado del alquiler 
+     */
     public boolean isAlquilada() {
         return this.alquilada;
     }
 
+    /**
+     * metodo que devuelve los km recorridos en total por la bici
+     * @return kilometros recorridos en total 
+     */
     public double getKmTot() {
         return this.kmRecorridos;
     }
 
+    /**
+     * 
+     * @return fecha y hora del alquiler actual 
+     */
     public LocalDateTime getRegistroInicioAlquilerActual() {
         return this.fechaHoraAlquiler;
     }
 
+    /**
+     * 
+     * @return km recorridos en este alquiler
+     */
     public double getKmAlquilerActual() {
         return this.kmRecAlquilerActual;
     }
 
+    /**
+     * 
+     * @return fecha y hora de inicio del ultimo alquiler 
+     */
     public LocalDateTime getRegistroInicioUltimoAlquiler() {
         return this.fechaHoraIniUltAlquiler;
     }
 
+    /**
+     * 
+     * @return fecha y hora de fin del ultimo alquiler 
+     */
     public LocalDateTime getRegistroFinUltimoAlquiler() {
         return this.fechaHoraFinUltAlquiler;
     }
 
+    /**
+     * 
+     * @return km recorridos en el ultimo alquiler 
+     */
     public double getKmRecUltAlquiler() {
         return this.kmRecUltAlquiler;
     }
 
+    /**
+     * 
+     * @return numero total de bicis creadas 
+     */
     public static int getNumBicis() {
         return ChipiBici.totBicis;
     }
 
+    /**
+     * 
+     * @return numero total de bicis alquiladas 
+     */
     public static int getNumBicisAlquiladas() {
         return ChipiBici.totBicisAlq;
     }
 
+    /**
+     * 
+     * @return km totales recorridos por todas las bicis 
+     */
     public static double getKmGlobales() {
         return ChipiBici.kmTotalGlob;
     }
 
+    /**
+     * metodo que cambia el valor de alquilada a true
+     * @throws IllegalStateException 
+     */
     public void alquilar() throws IllegalStateException {
         if (this.isAlquilada()) {
             throw new IllegalStateException("BICICLETA ALQUILADA");
@@ -151,6 +250,10 @@ public class ChipiBici {
         totBicisAlq++;
     }
 
+    /**
+     * metodo que cambia el valor de alquilada a false
+     * @throws IllegalStateException 
+     */
     public void devolver() throws IllegalStateException {
         if (!this.isAlquilada()) {
             throw new IllegalStateException("BICICLETA NO ALQUILADA");
@@ -164,6 +267,16 @@ public class ChipiBici {
         totBicisAlq--;
     }
 
+    /**
+     * metodo para actualizar los valores de km
+     * 
+     * actualiza los valores de la bici y globales en base a la distancia 
+     * porporcionada como parametro
+     * @param distancia
+     * @return
+     * @throws IllegalArgumentException
+     * @throws IllegalStateException 
+     */
     public double recorrerTrayecto(double distancia) throws IllegalArgumentException, IllegalStateException {
         if (distancia < 0 || distancia > MAX_DIST) {
             throw new IllegalArgumentException(String.format(
@@ -180,10 +293,24 @@ public class ChipiBici {
         return this.kmRecAlquilerActual;
     }
 
+    /**
+     * metodo para actualizar los valores de km
+     * 
+     * llama al metodo de un parametro utilizando el valor maximo de distancia
+     * @return
+     * @throws IllegalStateException 
+     */
     public double recorrerTrayecto() throws IllegalStateException {
         return this.recorrerTrayecto(MAX_DIST);
     }
 
+    /**
+     * metodo que actualiza el frimware
+     * @param ver
+     * @param rev
+     * @throws IllegalArgumentException
+     * @throws IllegalStateException 
+     */
     public void actualizarFrimware(int ver, int rev) throws IllegalArgumentException, IllegalStateException {
         if (this.alquilada) {
             throw new IllegalStateException("Bicicleta alquilada, imposible actualizar");
@@ -202,10 +329,19 @@ public class ChipiBici {
         this.rev = rev;
     }
 
+    /**
+     * metodo que actualiza el frimware
+     * 
+     * utiliza unicamente la version como parametro, la revision sera le default
+     * @param ver 
+     */
     public void actualizarFrimware(int ver) {
         this.actualizarFrimware(ver, REV_DEF);
     }
 
+    /**
+     * metodo que reinicia los valores de la bici a los por defecto
+     */
     public void reset() {
         if (this.alquilada) {
             throw new IllegalStateException("Bici alquilada, imposible resetear");

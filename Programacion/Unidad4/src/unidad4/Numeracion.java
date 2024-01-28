@@ -70,7 +70,7 @@ public class Numeracion {
                  erroneos++;
             }
         } while (!entrada.equals("fin") && !entrada.equals("end"));
-        if (erroneos - 1 > 0) {
+        if (--erroneos > 0) {
             resultados.append(String.format("Cantidad de numeros erroneos: %d\n", erroneos));
         }
         System.out.println(resultados);

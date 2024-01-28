@@ -163,4 +163,60 @@ public class ChipiBici {
         this.kmRecUltAlquiler = this.kmRecAlquilerActual;
         totBicisAlq--;
     }
+    
+    public double recorrerTrayecto(double distancia) throws IllegalArgumentException, IllegalStateException{
+        if (distancia < 0 || distancia > MAX_DIST) {
+            throw new IllegalArgumentException(String.format(
+                    "Distancia invalida %.2f",distancia));
+        }
+        if (!this.alquilada) {
+            throw new IllegalStateException("Bicicleta no alquilada");
+        }
+        
+        this.kmRecAlquilerActual += distancia;
+        this.kmRecorridos += distancia;
+        kmTotalGlob += distancia;
+        
+        return this.kmRecAlquilerActual;
+    }
+    
+    public double recorrerTrayecto() throws IllegalStateException{
+      return this.recorrerTrayecto(MAX_DIST);
+    }    
+
+    public void actualizarFrimware(int ver, int rev) throws IllegalArgumentException, IllegalStateException{
+        if (this.alquilada) {
+            throw new IllegalStateException("Bicicleta alquilada, imposible actualizar");
+        }
+        if (ver == this.ver && rev <= this.rev) {
+            throw new IllegalArgumentException("se debe actualizar");
+        }
+        if (ver < this.ver || ver > VER_MAX || ver < VER_MIN) {
+            throw new IllegalArgumentException("version invalida");
+        }
+        if (rev > REV_MAX || ver < VER_MIN) {
+            throw new IllegalArgumentException("revision invalida");
+        }
+        
+        this.ver = ver;
+        this.rev = rev;
+    }
+    
+    public void actualizarFrimware(int ver){
+        this.actualizarFrimware(ver, REV_DEF);
+    }
+    
+    public void reset(){
+        if (this.alquilada) {
+            throw new IllegalStateException("Bici alquilada, imposible resetear");
+        }
+        this.fechaHoraAlquiler = null;
+        this.fechaHoraFinUltAlquiler = null;
+        this.fechaHoraIniUltAlquiler = null;
+        this.kmRecAlquilerActual = 0;
+        this.kmRecUltAlquiler = 0;
+        this.kmRecorridos = 0;
+        this.ver = VER_DEF;
+        this.rev = REV_DEF;
+    }
 }

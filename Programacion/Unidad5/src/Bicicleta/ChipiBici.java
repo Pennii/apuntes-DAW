@@ -163,28 +163,28 @@ public class ChipiBici {
         this.kmRecUltAlquiler = this.kmRecAlquilerActual;
         totBicisAlq--;
     }
-    
-    public double recorrerTrayecto(double distancia) throws IllegalArgumentException, IllegalStateException{
+
+    public double recorrerTrayecto(double distancia) throws IllegalArgumentException, IllegalStateException {
         if (distancia < 0 || distancia > MAX_DIST) {
             throw new IllegalArgumentException(String.format(
-                    "Distancia invalida %.2f",distancia));
+                    "Distancia invalida %.2f", distancia));
         }
         if (!this.alquilada) {
             throw new IllegalStateException("Bicicleta no alquilada");
         }
-        
+
         this.kmRecAlquilerActual += distancia;
         this.kmRecorridos += distancia;
         kmTotalGlob += distancia;
-        
+
         return this.kmRecAlquilerActual;
     }
-    
-    public double recorrerTrayecto() throws IllegalStateException{
-      return this.recorrerTrayecto(MAX_DIST);
-    }    
 
-    public void actualizarFrimware(int ver, int rev) throws IllegalArgumentException, IllegalStateException{
+    public double recorrerTrayecto() throws IllegalStateException {
+        return this.recorrerTrayecto(MAX_DIST);
+    }
+
+    public void actualizarFrimware(int ver, int rev) throws IllegalArgumentException, IllegalStateException {
         if (this.alquilada) {
             throw new IllegalStateException("Bicicleta alquilada, imposible actualizar");
         }
@@ -197,16 +197,16 @@ public class ChipiBici {
         if (rev > REV_MAX || ver < VER_MIN) {
             throw new IllegalArgumentException("revision invalida");
         }
-        
+
         this.ver = ver;
         this.rev = rev;
     }
-    
-    public void actualizarFrimware(int ver){
+
+    public void actualizarFrimware(int ver) {
         this.actualizarFrimware(ver, REV_DEF);
     }
-    
-    public void reset(){
+
+    public void reset() {
         if (this.alquilada) {
             throw new IllegalStateException("Bici alquilada, imposible resetear");
         }
@@ -218,5 +218,52 @@ public class ChipiBici {
         this.kmRecorridos = 0;
         this.ver = VER_DEF;
         this.rev = REV_DEF;
+    }
+
+    public String toString() {
+        String salida;
+        if (this.alquilada && this.fechaHoraIniUltAlquiler != null) {
+            salida = String.format("{ NS:%s, %d/%d/%d, FW: %s, ALQUILADA, %.2fKM TOTALES;"
+                    + "ALQUILER ACTUAL: %d/%d/%d, %d:%d:%d, %.2fKM; ULTIMO ALQUILER:"
+                    + "%d/%d/%d, %d:%d:%d, %.2fKM }", this.NUM_SERIE,
+                    this.FECHA_COMPRA.getDayOfMonth(), this.FECHA_COMPRA.getMonthValue(),
+                    this.FECHA_COMPRA.getYear(), this.getVerRev(),
+                    this.kmRecorridos, this.fechaHoraAlquiler.getDayOfMonth(),
+                    this.fechaHoraAlquiler.getMonthValue(), this.fechaHoraAlquiler.getYear(),
+                    this.fechaHoraAlquiler.getHour(), this.fechaHoraAlquiler.getMinute(),
+                    this.fechaHoraAlquiler.getSecond(), this.kmRecAlquilerActual,
+                    this.fechaHoraIniUltAlquiler.getDayOfMonth(), this.fechaHoraIniUltAlquiler.getMonthValue(),
+                    this.fechaHoraIniUltAlquiler.getYear(), this.fechaHoraIniUltAlquiler.getHour(),
+                    this.fechaHoraIniUltAlquiler.getMinute(), this.fechaHoraIniUltAlquiler.getSecond(),
+                    this.kmRecUltAlquiler);
+        } else if (this.alquilada && this.fechaHoraIniUltAlquiler == null) {
+            salida = String.format("{ NS:%s, %d/%d/%d, FW: %s, ALQUILADA, %.2fKM TOTALES;"
+                    + "ALQUILER ACTUAL: %d/%d/%d, %d:%d:%d, %.2fKM; ULTIMO ALQUILER:"
+                    + "---, ---, %.2fKM }", this.NUM_SERIE,
+                    this.FECHA_COMPRA.getDayOfMonth(), this.FECHA_COMPRA.getMonthValue(),
+                    this.FECHA_COMPRA.getYear(), this.getVerRev(),
+                    this.kmRecorridos, this.fechaHoraAlquiler.getDayOfMonth(),
+                    this.fechaHoraAlquiler.getMonthValue(), this.fechaHoraAlquiler.getYear(),
+                    this.fechaHoraAlquiler.getHour(), this.fechaHoraAlquiler.getMinute(),
+                    this.fechaHoraAlquiler.getSecond(), this.kmRecAlquilerActual);
+        } else if (!this.alquilada && this.fechaHoraIniUltAlquiler != null) {
+            salida = String.format("{ NS:%s, %d/%d/%d, FW: %s, NO ALQUILADA, %.2fKM TOTALES;"
+                    + "ALQUILER ACTUAL: --------; ULTIMO ALQUILER:"
+                    + "%d/%d/%d, %d:%d:%d, %.2fKM }", this.NUM_SERIE,
+                    this.FECHA_COMPRA.getDayOfMonth(), this.FECHA_COMPRA.getMonthValue(),
+                    this.FECHA_COMPRA.getYear(), this.getVerRev(),
+                    this.kmRecorridos, this.fechaHoraIniUltAlquiler.getDayOfMonth(), this.fechaHoraIniUltAlquiler.getMonthValue(),
+                    this.fechaHoraIniUltAlquiler.getYear(), this.fechaHoraIniUltAlquiler.getHour(),
+                    this.fechaHoraIniUltAlquiler.getMinute(), this.fechaHoraIniUltAlquiler.getSecond(),
+                    this.kmRecUltAlquiler);
+        } else {
+            salida = String.format("{ NS:%s, %d/%d/%d, FW: %s, NO ALQUILADA, %.2fKM TOTALES;"
+                    + "ALQUILER ACTUAL: ------; ULTIMO ALQUILER:"
+                    + "---, --- }", this.NUM_SERIE,
+                    this.FECHA_COMPRA.getDayOfMonth(), this.FECHA_COMPRA.getMonthValue(),
+                    this.FECHA_COMPRA.getYear(), this.getVerRev(),
+                    this.kmRecorridos);
+        }
+        return salida;
     }
 }

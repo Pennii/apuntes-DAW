@@ -27,5 +27,10 @@ public class Test {
         System.out.println(bici1.getVerRev());
         bici1.actualizarFrimware(6);
         System.out.println(bici1.getVerRev());
+        System.out.println(bici1.toString());
+        bici1.alquilar();
+        bici1.recorrerTrayecto();
+        System.out.println(bici1.toString());
+        System.out.println(bici2.toString());
     }
 }

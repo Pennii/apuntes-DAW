@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Bicicleta;
 
 import java.time.LocalDate;
@@ -10,17 +6,44 @@ import java.time.Month;
 
 /**
  *
- * @author maniana
+ * @author penni
  */
 public class ChipiBici {
 
+    /**
+     * valor maximo que puede tener una version
+     */
     public static final int VER_MAX = 10;
+    /**
+     * valor minimo que puede tener una version
+     */
     public static final int VER_MIN = 1;
+    /**
+     * valor maximo que puede tener una revision
+     */
     public static final int REV_MAX = 9;
+    /**
+     * valor minimo que puede tener una revision
+     */
     public static final int REV_MIN = 0;
+    /**
+     * valor maximo de distancia en un recorrido
+     */
     public static final double MAX_DIST = 140.0;
+
+    /**
+     * valor default de la version
+     */
     public static final int VER_DEF = VER_MIN;
+
+    /**
+     * valor default de la revision
+     */
     public static final int REV_DEF = REV_MIN;
+
+    /**
+     * valor minimo de la fecha de compra
+     */
     public static final LocalDate MIN_FECH_ADQ = LocalDate.of(2020, 6, 15);
 
     private static double kmTotalGlob;
@@ -94,7 +117,7 @@ public class ChipiBici {
     }
 
     /**
-     * metodo fabrica
+     * metodo fabrica.
      * 
      * metodo que genera bicis con valores predeterminados en un array
      * @param num
@@ -356,6 +379,10 @@ public class ChipiBici {
         this.rev = REV_DEF;
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
         String salida;
         if (this.alquilada && this.fechaHoraIniUltAlquiler != null) {

@@ -62,11 +62,13 @@ REVOKE UPDATE ON atleta from usuario_club@'%';
 INSERT INTO atleta (dorsal, nombre, apellido, sexo) VALUES("10", "lionel", 'messi', 'H');
 INSERT INTO atleta VALUES('05', 'agustin', 'viras', 'frances', 'H', '2001-05-03');
 UPDATE atleta SET fec_nac = '2005-04-04' WHERE nombre = 'lionel';
+
 INSERT INTO instalacion VALUES('A01','MIRADOR','CANCHA GRANDE',505);
 INSERT INTO instalacion VALUES('B52','RIO AZUL', 'MUCHO AFORO', 5000);
 
 INSERT INTO prueba (codigo, nombre, ref_instalacion) VALUES('X02', 'CORLEJO', 'A01');
 INSERT INTO prueba VALUES('Z41', 'DROPEO', 'NO DEJES CAER NADA', 'AAAA', 'BBB', '2024-01-20 15:30:00', 'B52');
+delete from instalacion where referencia = 'b52'; 
 
 INSERT INTO participar (dorsal_atl, codigo_pru, puesto) VALUES('10', 'X02', 1);
 INSERT INTO participar VALUES('05', 'X02', 'NINGUNA', 47, 6);

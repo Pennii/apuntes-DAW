@@ -25,7 +25,7 @@ main{
 }
 section{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     row-gap: 50px;
     flex-wrap: wrap;
 

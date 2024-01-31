@@ -1,0 +1,23 @@
+html{
+    height: 100%;
+}
+#columna{
+    columns: 3;
+    column-rule-color: aqua;
+    column-rule-style: dashed;
+    column-rule: 2px dashed red;
+    column-gap: 60px;
+    border: 2px solid red;
+    padding: 10px;
+}
+
+#caja{
+    height: 250px;
+    width: 30%;
+    border: 2px solid blue;
+    overflow: auto;
+    transition: 1s;
+}
+
+
+

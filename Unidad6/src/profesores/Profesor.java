@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package profesores;
 
 /**
@@ -9,21 +5,50 @@ package profesores;
  * @author maniana
  */
 public class Profesor {
+
+    public static final int ANIOS_CONSOLIDADO_DEFAULT = 1;
+    
     private String nombre;
     private int edad;
-    protected int aniosConsolidado;
-    
-    public Profesor(){
-        this.aniosConsolidado = 1;
-    }
-}
+    private int aniosConsolidado;
 
-class ProfesorEmerito extends Profesor{
-    private int aniosEmerito;
+    public Profesor(int edad, String nombre, int anios) {
+        this.aniosConsolidado = anios;
+        this.edad = edad;
+        this.nombre = nombre;
+    }
+
+    public Profesor(int edad, String nombre) {
+        this(edad, nombre, Profesor.ANIOS_CONSOLIDADO_DEFAULT);
+    }
+
+    public Profesor() {
+        this.nombre = "";
+        this.edad = 18;
+        this.aniosConsolidado = Profesor.ANIOS_CONSOLIDADO_DEFAULT;
+    }
+
+    public int getAniosConsolidado() {
+        return this.aniosConsolidado;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public int getEdad() {
+        return this.edad;
+    }
+
+    public void setEdad(int e) {
+        this.edad = e;
+    }
+
+    public void setAniosConsolidado(int e) {
+        this.aniosConsolidado = e;
+    }
     
-    public double getSueldoBase(){
-        double sueldo;
-        sueldo = 925 + super.aniosConsolidado * 33.25 + 47.80 * this.aniosEmerito;
-        return sueldo;
+    public void setNombre(String n){
+        this.nombre = n;
     }
 }

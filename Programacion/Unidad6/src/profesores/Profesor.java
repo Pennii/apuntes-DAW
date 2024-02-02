@@ -51,4 +51,8 @@ public class Profesor {
     public void setNombre(String n){
         this.nombre = n;
     }
+    
+    public void cambiarNombre(String n){
+        n = "hola";
+    }
 }

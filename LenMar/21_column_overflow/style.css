@@ -1,6 +1,7 @@
 html{
     height: 100%;
 }
+
 #columna{
     columns: 3;
     column-rule-color: aqua;
@@ -17,6 +18,16 @@ html{
     border: 2px solid blue;
     overflow: auto;
     transition: 1s;
+    position: sticky;
+    bottom: 0;
+    background-color: yellow;
+}
+#pegajoso{
+    width: 100%;
+    color: white;
+    background-color: black;
+    position: sticky;
+    top: 0px;
 }
 
 

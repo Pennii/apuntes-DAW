@@ -20,7 +20,7 @@ public abstract class Libro extends Producto {
     private final int ANIO_PUBLICACION;
 
     public Libro(double precio, String descripcion, String titulo, String autor,
-             int publicacion) {
+             int publicacion) throws IllegalArgumentException {
         super(precio, descripcion);
         if (publicacion < MIN_YEAR || publicacion > MAX_YEAR) {
             throw new IllegalArgumentException("AÑO FUERA DE RANGO");

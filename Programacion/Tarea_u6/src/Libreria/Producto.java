@@ -19,7 +19,7 @@ public abstract class Producto {
     protected double precio;
     private  String descripcion;
     
-    public Producto(double precio, String descripcion){
+    public Producto(double precio, String descripcion) throws IllegalArgumentException{
         if (precio < MIN_PRECIO || precio > MAX_PRECIO) {
             throw new IllegalArgumentException(String.format("El precio no esta en el"
                     + " rango permitido: %.2f",precio));

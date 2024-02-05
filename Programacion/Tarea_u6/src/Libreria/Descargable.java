@@ -10,7 +10,7 @@ package Libreria;
  */
 public interface Descargable {
     
-    double getSize();
+    int getSize();
     int getNumDescargas();
     int descargar();
     

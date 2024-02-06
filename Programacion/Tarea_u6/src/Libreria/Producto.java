@@ -12,8 +12,8 @@ package Libreria;
 public abstract class Producto {
     
     private static int controlador = 1;
-    private static final double MIN_PRECIO = 0.01;
-    private static final double MAX_PRECIO = 10000.00;
+    public static final double MIN_PRECIO = 0.01;
+    public static final double MAX_PRECIO = 10000.00;
     
     private  final int IDENTIFICADOR;
     protected double precio;

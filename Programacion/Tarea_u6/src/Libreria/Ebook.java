@@ -25,7 +25,9 @@ public final class Ebook extends LibroDigital {
     }
     
     public int descargar(){
-        this.precio+=0.01;
+        if (this.precio < Producto.MAX_PRECIO ) {
+            this.precio+=0.01;
+        }   
         return super.descargar();   
     }
 

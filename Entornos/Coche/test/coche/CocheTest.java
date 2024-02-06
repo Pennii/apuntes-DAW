@@ -5,6 +5,7 @@
 package coche;
 
 import junit.framework.TestCase;
+import sun.jvm.hotspot.utilities.Assert;
 
 /**
  *
@@ -65,15 +66,14 @@ public class CocheTest extends TestCase {
     }
 
     /**
-     * Test of comprar method, of class Coche.
+     * Test de valores validos para comprar.
      */
-    public void testComprar() throws Exception {
+    public void testComprarValidos() throws Exception {
         System.out.println("comprar");
-        int cantidad = 0;
-        Coche instance = new Coche();
+        int cantidad = 20;
+        Coche instance = new Coche("fiat", 45.65, 50);
         instance.comprar(cantidad);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(instance.obtenerStock() == cantidad+50);
     }
 
     /**

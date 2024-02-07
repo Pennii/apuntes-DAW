@@ -11,12 +11,12 @@ package Libreria;
 public abstract class LibroDigital extends Libro implements Descargable {
 
     /**
-     * tamaño maximo del archivo: {@value MAX_SIZE}
+     * tamaño maximo del archivo:
      */
     public static final int MAX_SIZE = 65535;
 
     /**
-     * tamaño minimo del archivo: {@value MIN_SIZE}
+     * tamaño minimo del archivo:
      */
     public static final int MIN_SIZE = 20;
 
@@ -26,12 +26,12 @@ public abstract class LibroDigital extends Libro implements Descargable {
     /**
      * constructor que agrega 1 parametro al heredado
      *
-     * @param precio
-     * @param descripcion
-     * @param titulo
-     * @param autor
-     * @param publicacion
-     * @param tam
+     * @param precio precio del producto
+     * @param descripcion descripcion del porducto
+     * @param titulo titulo del libro
+     * @param autor autor del libro
+     * @param publicacion año de publicacion del libro
+     * @param tam tamaño del archivo
      * @throws IllegalArgumentException
      */
     public LibroDigital(double precio, String descripcion, String titulo,

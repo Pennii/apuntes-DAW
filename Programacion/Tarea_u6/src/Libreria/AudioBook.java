@@ -11,12 +11,12 @@ package Libreria;
 public final class AudioBook extends LibroDigital implements Audible {
 
     /**
-     * cantidad minima de voces: {@value VOCES_MIN}
+     * cantidad minima de voces:
      * 
      */
     public final int VOCES_MIN = 1;
     /**
-     * duracion minima del libro: {@value DURACION_MIN}
+     * duracion minima del libro: 
      * 
      */
     public final int DURACION_MIN = 1;
@@ -33,14 +33,14 @@ public final class AudioBook extends LibroDigital implements Audible {
     /**
      * constructor de dos parametros.
      *  ademas del constructo padre inicializa la duracion y la cantidad de voces
-     * @param precio
-     * @param descripcion
-     * @param titulo
-     * @param autor
-     * @param publicacion
-     * @param tam
-     * @param duracion
-     * @param voces
+     * @param precio precio del producto
+     * @param descripcion descripcion del producto
+     * @param titulo titulo del libro
+     * @param autor autor del libro
+     * @param publicacion año de publicacion
+     * @param tam tamaño del archivo
+     * @param duracion duracion en minutos
+     * @param voces cantidad de voces
      * @throws IllegalArgumentException
      */
     public AudioBook(double precio, String descripcion, String titulo, String autor, int publicacion, int tam, int duracion, int voces)

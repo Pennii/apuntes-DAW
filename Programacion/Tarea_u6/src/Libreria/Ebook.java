@@ -15,13 +15,13 @@ public final class Ebook extends LibroDigital {
     /**
      * constructor que agrega 1 parametro al agregado
      *
-     * @param precio
-     * @param descripcion
-     * @param titulo
-     * @param autor
-     * @param publicacion
-     * @param tam
-     * @param cod
+     * @param precio precio del producto
+     * @param descripcion descripcion del producto
+     * @param titulo titulo del libro
+     * @param autor autor del libro
+     * @param publicacion año de publicacion
+     * @param tam tamaño del archivo
+     * @param cod codificacion
      * @throws IllegalArgumentException
      */
     public Ebook(double precio, String descripcion, String titulo,

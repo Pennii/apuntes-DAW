@@ -12,11 +12,11 @@ public abstract class Producto {
 
     private static int controlador = 1;
     /**
-     * precio minimo de un producto: {@value MIN_PRECIO}
+     * precio minimo de un producto:
      */
     public static final double MIN_PRECIO = 0.01;
     /**
-     * precio maximo de un producto: {@value MAX_PRECIO}
+     * precio maximo de un producto: 
      */
     public static final double MAX_PRECIO = 10000.00;
 
@@ -28,8 +28,8 @@ public abstract class Producto {
      * constructor de 2 parametros. sera el constructor que se utilizara en esta
      * clase y sus hijas
      *
-     * @param precio
-     * @param descripcion
+     * @param precio precio del producto
+     * @param descripcion descripcion del producto
      * @throws IllegalArgumentException
      */
     public Producto(double precio, String descripcion) throws IllegalArgumentException {

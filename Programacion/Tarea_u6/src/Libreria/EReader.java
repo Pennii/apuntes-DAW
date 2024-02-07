@@ -16,9 +16,9 @@ public final class EReader extends Producto {
      * constructor de un parametro. implementa el constructor padre agregando
      * fabricante.
      *
-     * @param precio
-     * @param descripcion
-     * @param fabricante
+     * @param precio precio del producto
+     * @param descripcion descripcion del producto
+     * @param fabricante fabricante del producto
      * @throws IllegalArgumentException
      */
     public EReader(double precio, String descripcion, String fabricante)

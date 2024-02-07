@@ -10,6 +10,7 @@ package Libreria;
  */
 public interface Audible {
     
+    
     double getDuracion();
     int getNumVoces();
     boolean isCoral();

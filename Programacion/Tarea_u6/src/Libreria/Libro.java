@@ -13,11 +13,11 @@ import java.time.LocalDate;
 public abstract class Libro extends Producto {
 
     /**
-     * año minimo de publicacion: {@value MIN_YEAR}
+     * año minimo de publicacion
      */
     public static final int MIN_YEAR = 1500;
     /**
-     * año maximo de publicacion. sera el actual: {@value MAX_YEAR}
+     * año maximo de publicacion. sera el actual
      */
     public static final int MAX_YEAR = LocalDate.now().getYear();
 
@@ -29,11 +29,11 @@ public abstract class Libro extends Producto {
      * constructor heredado de producto. es el mismo, pero se agregan 3
      * parametros
      *
-     * @param precio
-     * @param descripcion
-     * @param titulo
-     * @param autor
-     * @param publicacion
+     * @param precio precio del producto
+     * @param descripcion descripcion del porducto
+     * @param titulo titulo del libro
+     * @param autor autor del libro
+     * @param publicacion año de publicacion
      * @throws IllegalArgumentException
      */
     public Libro(double precio, String descripcion, String titulo, String autor,

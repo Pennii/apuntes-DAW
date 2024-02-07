@@ -11,12 +11,12 @@ package Libreria;
 public final class LibroFisico extends Libro {
 
     /**
-     * tamaño minimo de paginas
+     * tamaño minimo de paginas: {@value MIN_PAGINAS}
      */
     public static final int MIN_PAGINAS = 20;
     
     /**
-     * tamaño maximo de paginas
+     * tamaño maximo de paginas: {@value MAX_PAGINAS}
      */
     public static final int MAX_PAGINAS = 5000;
 

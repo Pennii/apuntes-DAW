@@ -13,11 +13,11 @@ import java.time.LocalDate;
 public abstract class Libro extends Producto {
 
     /**
-     * año minimo de publicacion
+     * año minimo de publicacion: {@value MIN_YEAR}
      */
     public static final int MIN_YEAR = 1500;
     /**
-     * año maximo de publicacion. sera el actual
+     * año maximo de publicacion. sera el actual: {@value MAX_YEAR}
      */
     public static final int MAX_YEAR = LocalDate.now().getYear();
 

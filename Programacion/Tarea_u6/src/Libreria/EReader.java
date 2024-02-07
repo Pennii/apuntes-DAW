@@ -10,7 +10,7 @@ package Libreria;
  */
 public final class EReader extends Producto {
     
-    private final String FABRICANTE;
+    private final String fabricante;
     
     
     /**
@@ -25,13 +25,21 @@ public final class EReader extends Producto {
             throws IllegalArgumentException {
         super(precio, descripcion);
         
-        this.FABRICANTE = fabricante;
+        this.fabricante = fabricante;
     }
     
+    /**
+     * devuelve el fabricante del ereader
+     * @return fabricante
+     */
     public String getFabaricante(){
-        return this.FABRICANTE;
+        return this.fabricante;
     }
     
+    /**
+     * 
+     * @return todos los atributos del producto en String 
+     */
     public String toString(){
         return String.format("%s fabricante: %s", super.toString(), 
                 this.getFabaricante());

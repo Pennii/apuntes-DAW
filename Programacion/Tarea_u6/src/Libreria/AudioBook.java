@@ -11,12 +11,12 @@ package Libreria;
 public final class AudioBook extends LibroDigital implements Audible {
 
     /**
-     * cantidad minima de voces:
+     * cantidad minima de voces: {@value VOCES_MIN}
      * 
      */
     public final int VOCES_MIN = 1;
     /**
-     * duracion minima del libro: 
+     * duracion minima del libro: {@value DURACION_MIN}
      * 
      */
     public final int DURACION_MIN = 1;

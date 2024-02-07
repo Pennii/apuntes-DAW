@@ -12,11 +12,11 @@ public abstract class Producto {
 
     private static int controlador = 1;
     /**
-     * precio minimo de un producto:
+     * precio minimo de un producto: {@value MIN_PRECIO}
      */
     public static final double MIN_PRECIO = 0.01;
     /**
-     * precio maximo de un producto: 
+     * precio maximo de un producto: {@value MAX_PRECIO}
      */
     public static final double MAX_PRECIO = 10000.00;
 

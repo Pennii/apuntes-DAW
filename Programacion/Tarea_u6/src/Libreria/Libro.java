@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public abstract class Libro extends Producto {
 
     /**
-     * año minimo de publicacion
+     * año minimo de publicacion: {@value MIN_YEAR}
      */
     public static final int MIN_YEAR = 1500;
     /**

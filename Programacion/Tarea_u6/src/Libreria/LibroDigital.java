@@ -11,12 +11,12 @@ package Libreria;
 public abstract class LibroDigital extends Libro implements Descargable {
 
     /**
-     * tamaño maximo del archivo:
+     * tamaño maximo del archivo: {@value MAX_SIZE}
      */
     public static final int MAX_SIZE = 65535;
 
     /**
-     * tamaño minimo del archivo:
+     * tamaño minimo del archivo: {@value MIN_SIZE}
      */
     public static final int MIN_SIZE = 20;
 

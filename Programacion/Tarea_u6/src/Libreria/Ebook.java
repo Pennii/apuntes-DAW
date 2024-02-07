@@ -12,27 +12,55 @@ public final class Ebook extends LibroDigital {
 
     private String codificacion;
 
+    /**
+     * constructor que agrega 1 parametro al agregado
+     *
+     * @param precio
+     * @param descripcion
+     * @param titulo
+     * @param autor
+     * @param publicacion
+     * @param tam
+     * @param cod
+     * @throws IllegalArgumentException
+     */
     public Ebook(double precio, String descripcion, String titulo,
             String autor, int publicacion, int tam,
             String cod) throws IllegalArgumentException {
         super(precio, descripcion, titulo, autor, publicacion, tam);
-        
+
         this.codificacion = cod;
     }
-    
-    public String getCodificacion(){
+
+    /**
+     * devuelve la codificacion
+     *
+     * @return codificacion del ebook
+     */
+    public String getCodificacion() {
         return this.codificacion;
     }
-    
-    public int descargar(){
-        if (this.precio < Producto.MAX_PRECIO ) {
-            this.precio+=0.01;
-        }   
-        return super.descargar();   
+
+    /**
+     * accion de descargar un archivo. emula la descarga del archivo, aumentando
+     * el numero de veces descargado y el precio del mismo, hasta que llegue al
+     * maximo
+     *
+     * @return cantidad de veces descargado
+     */
+    public int descargar() {
+        if (this.precio < Producto.MAX_PRECIO) {
+            this.precio += 0.01;
+        }
+        return super.descargar();
     }
 
-    public String toString(){
-        return String.format("%s Codificacion: %s",super.toString(),
+    /**
+     * 
+     * @return todos los atributos del producto en String
+     */
+    public String toString() {
+        return String.format("%s Codificacion: %s", super.toString(),
                 this.getCodificacion());
     }
 }

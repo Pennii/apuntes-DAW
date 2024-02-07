@@ -12,41 +12,77 @@ import java.time.LocalDate;
  */
 public abstract class Libro extends Producto {
 
+    /**
+     * año minimo de publicacion
+     */
     public static final int MIN_YEAR = 1500;
+    /**
+     * año maximo de publicacion. sera el actual
+     */
     public static final int MAX_YEAR = LocalDate.now().getYear();
 
-    private final String TITULO;
-    private final String AUTOR;
-    private final int ANIO_PUBLICACION;
+    private final String titulo;
+    private final String autor;
+    private final int anio_publicacion;
 
+    /**
+     * constructor heredado de producto. es el mismo, pero se agregan 3
+     * parametros
+     *
+     * @param precio
+     * @param descripcion
+     * @param titulo
+     * @param autor
+     * @param publicacion
+     * @throws IllegalArgumentException
+     */
     public Libro(double precio, String descripcion, String titulo, String autor,
-             int publicacion) throws IllegalArgumentException {
+            int publicacion) throws IllegalArgumentException {
         super(precio, descripcion);
         if (publicacion < MIN_YEAR || publicacion > MAX_YEAR) {
             throw new IllegalArgumentException("AÑO FUERA DE RANGO");
         }
 
-        this.TITULO = titulo;
-        this.AUTOR = autor;
-        this.ANIO_PUBLICACION = publicacion;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anio_publicacion = publicacion;
     }
-    
-    public String getTitulo(){
-     return this.TITULO;   
+
+    /**
+     * devuelve el titulo
+     *
+     * @return titulo del libro
+     */
+    public String getTitulo() {
+        return this.titulo;
     }
-    
-    public String getAutor(){
-        return this.AUTOR;
+
+    /**
+     * devuelve el autor
+     *
+     * @return autor del libro
+     */
+    public String getAutor() {
+        return this.autor;
     }
-    
-    public int getAnioPublicacion(){
-        return this.ANIO_PUBLICACION;
+
+    /**
+     * devuelve el año de publicacion
+     *
+     * @return año de publicacion del libro
+     */
+    public int getAnioPublicacion() {
+        return this.anio_publicacion;
     }
-    
-    public String toString(){
-        return String.format("%s Titulo: %s Autor: %s Año: %d", 
+
+    /**
+     *
+     * @return todos los atributos del producto en String
+     */
+    public String toString() {
+        return String.format("%s Titulo: %s Autor: %s Año: %d",
                 super.toString(), this.getTitulo(), this.getAutor(),
                 this.getAnioPublicacion());
     }
-    
+
 }

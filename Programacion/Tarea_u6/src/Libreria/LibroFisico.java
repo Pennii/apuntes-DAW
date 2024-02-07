@@ -30,7 +30,7 @@ public final class LibroFisico extends Libro {
      * @param autor autor del libro
      * @param publicacion año de publicacion del libro
      * @param paginas numero de paginas del libro
-     * @throws IllegalArgumentException 
+     * @throws IllegalArgumentException si el numero de paginas es invalido
      */
     public LibroFisico(double precio, String descripcion, String titulo,
             String autor, int publicacion, int paginas) throws IllegalArgumentException {

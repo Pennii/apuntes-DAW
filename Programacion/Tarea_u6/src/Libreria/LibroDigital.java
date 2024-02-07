@@ -20,6 +20,9 @@ public abstract class LibroDigital extends Libro implements Descargable {
      */
     public static final int MIN_SIZE = 20;
 
+    /**
+     * tamaño del archivo
+     */
     protected int size;
     private int vecesDescargado;
 
@@ -32,7 +35,7 @@ public abstract class LibroDigital extends Libro implements Descargable {
      * @param autor autor del libro
      * @param publicacion año de publicacion del libro
      * @param tam tamaño del archivo
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException si el tamaño del archivo es invalido
      */
     public LibroDigital(double precio, String descripcion, String titulo,
             String autor, int publicacion, int tam) throws IllegalArgumentException {

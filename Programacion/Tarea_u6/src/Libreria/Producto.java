@@ -21,6 +21,9 @@ public abstract class Producto {
     public static final double MAX_PRECIO = 10000.00;
 
     private final int identificador;
+    /**
+     * precio de un producto
+     */
     protected double precio;
     private final String descripcion;
 
@@ -30,7 +33,7 @@ public abstract class Producto {
      *
      * @param precio precio del producto
      * @param descripcion descripcion del producto
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException si el precio es invalido
      */
     public Producto(double precio, String descripcion) throws IllegalArgumentException {
         if (precio < MIN_PRECIO || precio > MAX_PRECIO) {

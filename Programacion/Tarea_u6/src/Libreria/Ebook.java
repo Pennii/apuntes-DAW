@@ -22,7 +22,7 @@ public final class Ebook extends LibroDigital {
      * @param publicacion año de publicacion
      * @param tam tamaño del archivo
      * @param cod codificacion
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException dependera totalmente del padre
      */
     public Ebook(double precio, String descripcion, String titulo,
             String autor, int publicacion, int tam,

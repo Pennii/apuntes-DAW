@@ -41,7 +41,7 @@ public final class AudioBook extends LibroDigital implements Audible {
      * @param tam tamaño del archivo
      * @param duracion duracion en minutos
      * @param voces cantidad de voces
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException si la duracion o las voces son invalidas
      */
     public AudioBook(double precio, String descripcion, String titulo, String autor, int publicacion, int tam, int duracion, int voces)
             throws IllegalArgumentException {

@@ -19,7 +19,7 @@ public final class EReader extends Producto {
      * @param precio precio del producto
      * @param descripcion descripcion del producto
      * @param fabricante fabricante del producto
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException dependera totalmente del padre
      */
     public EReader(double precio, String descripcion, String fabricante)
             throws IllegalArgumentException {

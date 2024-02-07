@@ -34,7 +34,7 @@ public abstract class Libro extends Producto {
      * @param titulo titulo del libro
      * @param autor autor del libro
      * @param publicacion año de publicacion
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException si el año de publicacion es invalido
      */
     public Libro(double precio, String descripcion, String titulo, String autor,
             int publicacion) throws IllegalArgumentException {

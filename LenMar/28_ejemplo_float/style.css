@@ -1,0 +1,14 @@
+
+*{
+    box-sizing: border-box;
+}
+section{
+    border: 2px solid red;
+    padding: 30px;
+    /* display: inline-block; */
+    width: 20%;
+    float: left;
+}
+h2{
+    clear: both;
+}

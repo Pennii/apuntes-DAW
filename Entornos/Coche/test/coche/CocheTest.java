@@ -12,16 +12,16 @@ import sun.jvm.hotspot.utilities.Assert;
  * @author maniana
  */
 public class CocheTest extends TestCase {
-    
+
     public CocheTest(String testName) {
         super(testName);
     }
-    
+
     @Override
     protected void setUp() throws Exception {
         super.setUp();
     }
-    
+
     @Override
     protected void tearDown() throws Exception {
         super.tearDown();
@@ -71,9 +71,46 @@ public class CocheTest extends TestCase {
     public void testComprarValidos() throws Exception {
         System.out.println("comprar");
         int cantidad = 20;
-        Coche instance = new Coche("fiat", 45.65, 50);
-        instance.comprar(cantidad);
-        assertTrue(instance.obtenerStock() == cantidad+50);
+        Coche instance = new Coche("fiat", 12000.0, 50);
+        try {
+            instance.comprar(cantidad);
+            assertTrue(instance.obtenerStock() == cantidad + 50);
+        } catch (Exception e) {
+            fail("No debería saltar ninguna excepción");
+        }
+    }
+    public void testComprarValidosLimite() throws Exception {
+        System.out.println("comprar");
+        int cantidad = 1;
+        Coche instance = new Coche("fiat", 12000.0, 50);
+        try {
+            instance.comprar(cantidad);
+            assertTrue(instance.obtenerStock() == cantidad + 50);
+        } catch (Exception e) {
+            fail("No debería saltar ninguna excepción");
+        }
+    }
+    public void testComprarInvalidosNeg() throws Exception {
+        System.out.println("comprar con valor negativo");
+        int cantidad = -20;
+        Coche instance = new Coche("fiat", 12000.0, 50);
+        try {
+            instance.comprar(cantidad);
+            fail("debe saltar excepción");
+        } catch (Exception e) {
+            assertTrue(instance.obtenerStock() == 50);
+        }
+    }
+    public void testComprarInvalidos0() throws Exception {
+        System.out.println("comprar con valor negativo");
+        int cantidad = 0;
+        Coche instance = new Coche("fiat", 12000.0, 50);
+        try {
+            instance.comprar(cantidad);
+            fail("debe saltar excepción");
+        } catch (Exception e) {
+            assertTrue(instance.obtenerStock() == 50);
+        }
     }
 
     /**
@@ -87,5 +124,5 @@ public class CocheTest extends TestCase {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }

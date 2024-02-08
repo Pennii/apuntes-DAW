@@ -9,32 +9,41 @@ package Libreria;
  * @author matii
  */
 public final class EReader extends Producto {
-    
-    private final String FABRICANTE;
-    
-    
+
+    private final String fabricante;
+
     /**
-     * constructor de un parametro.
-     *  implementa el constructor padre agregando fabricante.
-     * @param precio
-     * @param descripcion
-     * @param fabricante
-     * @throws IllegalArgumentException 
+     * constructor de un parametro. implementa el constructor padre agregando
+     * fabricante.
+     *
+     * @param precio precio del producto
+     * @param descripcion descripcion del producto
+     * @param fabricante fabricante del producto
+     * @throws IllegalArgumentException dependera totalmente del padre
      */
     public EReader(double precio, String descripcion, String fabricante)
             throws IllegalArgumentException {
         super(precio, descripcion);
-        
-        this.FABRICANTE = fabricante;
+
+        this.fabricante = fabricante;
     }
-    
-    public String getFabaricante(){
-        return this.FABRICANTE;
+
+    /**
+     * devuelve el fabricante del ereader
+     *
+     * @return fabricante
+     */
+    public String getFabaricante() {
+        return this.fabricante;
     }
-    
-    public String toString(){
-        return String.format("%s fabricante: %s", super.toString(), 
+
+    /**
+     *
+     * @return todos los atributos del producto en String
+     */
+    public String toString() {
+        return String.format("%s fabricante: %s", super.toString(),
                 this.getFabaricante());
     }
-    
+
 }

@@ -11,12 +11,12 @@ package Libreria;
 public final class AudioBook extends LibroDigital implements Audible {
 
     /**
-     * cantidad minima de voces.
+     * cantidad minima de voces: {@value VOCES_MIN}
      * 
      */
     public final int VOCES_MIN = 1;
     /**
-     * duracion minima del libro.
+     * duracion minima del libro: {@value DURACION_MIN}
      * 
      */
     public final int DURACION_MIN = 1;
@@ -33,15 +33,15 @@ public final class AudioBook extends LibroDigital implements Audible {
     /**
      * constructor de dos parametros.
      *  ademas del constructo padre inicializa la duracion y la cantidad de voces
-     * @param precio
-     * @param descripcion
-     * @param titulo
-     * @param autor
-     * @param publicacion
-     * @param tam
-     * @param duracion
-     * @param voces
-     * @throws IllegalArgumentException
+     * @param precio precio del producto
+     * @param descripcion descripcion del producto
+     * @param titulo titulo del libro
+     * @param autor autor del libro
+     * @param publicacion año de publicacion
+     * @param tam tamaño del archivo
+     * @param duracion duracion en minutos
+     * @param voces cantidad de voces
+     * @throws IllegalArgumentException si la duracion o las voces son invalidas
      */
     public AudioBook(double precio, String descripcion, String titulo, String autor, int publicacion, int tam, int duracion, int voces)
             throws IllegalArgumentException {
@@ -62,7 +62,7 @@ public final class AudioBook extends LibroDigital implements Audible {
 
     /**
      * aumenta el numero de descargas y el tamaño del libro.
-     * @return 
+     * @return numero de descargas
      */
     @Override
     public int descargar() {
@@ -74,7 +74,7 @@ public final class AudioBook extends LibroDigital implements Audible {
 
     /**
      * 
-     * @return 
+     * @return todos los atributos del producto en String
      */
     @Override
     public String toString() {
@@ -84,7 +84,7 @@ public final class AudioBook extends LibroDigital implements Audible {
 
     /**
      * devuelve la duracion en minutos enteros.
-     * @return 
+     * @return duracion del audiobook
      */
     @Override
     public double getDuracion() {
@@ -93,7 +93,7 @@ public final class AudioBook extends LibroDigital implements Audible {
 
     /**
      * devuelve el numero de voces.
-     * @return 
+     * @return cantidad de voces
      */
     @Override
     public int getNumVoces() {
@@ -102,7 +102,7 @@ public final class AudioBook extends LibroDigital implements Audible {
 
     /**
      * indica si hay mas de una voz.
-     * @return 
+     * @return si hay mas de una voz
      */
     @Override
     public boolean isCoral() {
@@ -113,7 +113,7 @@ public final class AudioBook extends LibroDigital implements Audible {
 
     /**
      * indica si hay una sola voz.
-     * @return 
+     * @return si solo hay una voz
      */
     @Override
     public boolean isMonologo() {

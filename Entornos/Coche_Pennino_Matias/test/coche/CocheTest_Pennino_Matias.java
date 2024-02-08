@@ -11,9 +11,9 @@ import sun.jvm.hotspot.utilities.Assert;
  *
  * @author maniana
  */
-public class CocheTest extends TestCase {
+public class CocheTest_Pennino_Matias extends TestCase {
 
-    public CocheTest(String testName) {
+    public CocheTest_Pennino_Matias(String testName) {
         super(testName);
     }
 
@@ -88,7 +88,7 @@ public class CocheTest extends TestCase {
      * @throws Exception
      */
     public void testComprarValidosLimite() throws Exception {
-        System.out.println("comprar");
+        System.out.println("comprar con valor limite");
         int cantidad = 1;
         Coche instance = new Coche("fiat", 12000.0, 50);
         try {
@@ -122,7 +122,7 @@ public class CocheTest extends TestCase {
      * @throws Exception
      */
     public void testComprarInvalidos0() throws Exception {
-        System.out.println("comprar con valor negativo");
+        System.out.println("comprar con valor 0");
         int cantidad = 0;
         Coche instance = new Coche("fiat", 12000.0, 50);
         try {
@@ -213,7 +213,7 @@ public class CocheTest extends TestCase {
      * @throws Exception
      */
     public void testVenderInvalidos0() throws Exception {
-        System.out.println("vender invalido negativo");
+        System.out.println("vender invalido 0");
         int cantidad = 0;
         Coche instance = new Coche("ford", 5000, 10);
 
@@ -232,7 +232,7 @@ public class CocheTest extends TestCase {
      */
     public void testVenderInvalidosSobreLimite() throws Exception {
         //vender mas de lo que hay en stock deberia ser imposible
-        System.out.println("vender invalido negativo");
+        System.out.println("vender invalido sobre el limite");
         int cantidad = 11;
         Coche instance = new Coche("ford", 5000, 10);
 

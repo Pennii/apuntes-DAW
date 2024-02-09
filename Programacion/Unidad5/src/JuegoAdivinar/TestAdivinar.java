@@ -42,7 +42,7 @@ public class TestAdivinar {
         boolean adivinado = false;
 
         System.out.printf("El usuario tiene %d intentos, el numero maximo"
-                + "es %d\n", juego4.getIntentosRestantes(),
+                + " es %d\n", juego4.getIntentosRestantes(),
                 juego4.getMaxValPosible());
 
         while (juego4.getIntentosRestantes() > 0 && !adivinado) {

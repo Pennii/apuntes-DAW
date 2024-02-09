@@ -14,8 +14,9 @@ import java.util.Scanner;
  */
 public class Ejercicio5Matriz2 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         final byte DERECHA = 1, IZQUIERDA = 2, SALIR = 0;
+        String[] espera = {"calculando.", "..", "..."};
 
         byte[] numeros = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         byte instruccion = 0, auxiliar = 0;
@@ -29,7 +30,13 @@ public class Ejercicio5Matriz2 {
                     IZQUIERDA, SALIR);
             do {
                 try {
+
                     instruccion = teclado.nextByte();
+                    for (int i = 0; i < 10; i++) {
+                        
+                    }
+                    Thread.sleep(5000);
+
                     valido = instruccion == DERECHA || instruccion == IZQUIERDA
                             || instruccion == SALIR;
                 } catch (InputMismatchException ex) {

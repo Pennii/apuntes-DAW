@@ -20,18 +20,18 @@ public class JuegoAdivinar {
     private final int MAX_VALOR_POSIBLE;
     private final int MAX_INTENTOS;
 
-    public JuegoAdivinar(int a, int b) throws IllegalArgumentException {
-        if (a > LIMITE_MAX_POSIBLE || b > LIMITE_MAX_INTENTOS || a < 0 || b <= 0) {
+    public JuegoAdivinar(int valor, int intentos) throws IllegalArgumentException {
+        if (valor > LIMITE_MAX_POSIBLE || intentos > LIMITE_MAX_INTENTOS || valor < 0 || intentos <= 0) {
             throw new IllegalArgumentException("ERROR EN EL INGRESO DE DATOS");
         }
 
-        this.MAX_INTENTOS = b;
-        this.MAX_VALOR_POSIBLE = a;
+        this.MAX_INTENTOS = intentos;
+        this.MAX_VALOR_POSIBLE = valor;
         this.numeroSecreto = (int) (Math.floor(Math.random() * (this.MAX_VALOR_POSIBLE+1)));
     }
 
-    public JuegoAdivinar(int b) throws IllegalArgumentException {
-        this(DEFAULT_MAX_VAL_POSIBLE, b);
+    public JuegoAdivinar(int intentos) throws IllegalArgumentException {
+        this(DEFAULT_MAX_VAL_POSIBLE, intentos);
     }
 
     public JuegoAdivinar() {

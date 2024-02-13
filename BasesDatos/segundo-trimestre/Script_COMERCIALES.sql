@@ -152,9 +152,10 @@ SELECT nombre, v.matricula FROM comerciales c, vehiculos v WHERE c.vehiculoasig 
 
 SELECT c.nombre, max(precio), min(precio) FROM comerciales c, productos p, vender WHERE c.codigo = codcomercial AND referencia = refproducto GROUP BY codigo having max(precio) - min(precio) > 50;
 
-SELECT nombre, fecha FROM comerciales, vender WHERE codigo = codcomercial AND fecha BETWEEN '2011-01-01' AND '2011-04-01';
+SELECT nombre, date_format(fecha, '%d de %M del %Y')  FROM comerciales, vender WHERE codigo = codcomercial AND fecha BETWEEN '2011-01-01' AND '2011-04-01';
 
 SELECT nombre, salario FROM comerciales WHERE salario IN((SELECT max(salario) FROM comerciales), (SELECT min(salario) FROM comerciales));
 
 SELECT nombre, sum(cantidad) FROM comerciales, vender WHERE codigo = codcomercial AND fnacimiento IN(SELECT max(fnacimiento) FROM comerciales) GROUP BY codigo;
 
+SELECT c.nombre, sum(precio*cantidad) FROM comerciales c, productos, oficinas o, vender WHERE codOficina = o.codigo AND codComercial = c.codigo AND referencia = refProducto AND codOficina IN (SELECT codOficina FROM comerciales GROUP BY codOficina having count(c.codigo) > 1) GROUP BY c.codigo ORDER BY sum(precio*cantidad) DESC;

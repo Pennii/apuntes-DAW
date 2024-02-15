@@ -100,7 +100,7 @@ SELECT concat((SELECT sum(precio) FROM paquete),'$') 'precio';
 
 SELECT referencia, timediff(fec_hora_entrega, fec_hora_salida) FROM paquete WHERE timediff(fec_hora_entrega, fec_hora_salida) IS NOT NULL ORDER BY timediff(fec_hora_entrega, fec_hora_salida);
 
-/* ej 9*/
+SELECT referencia, ifnull(date_format(fec_hora_salida, '%d de %M del %Y'), "aun no ha salido")FROM paquete ORDER BY Fec_Hora_salida;
 
 SELECT DISTINCT c.nombre, telefono FROM cliente c, paquete p WHERE c.codigo = cod_cli AND peso > 0.5;
 
@@ -112,3 +112,14 @@ SELECT num_trans, avg(peso) FROM paquete WHERE estado IN('en reparto', 'entregad
 
 SELECT localidad, provincia FROM destinatario d, paquete p WHERE DNI = DNI_des GROUP BY localidad HAVING count(referencia) > 2;
 
+SELECT referencia, provincia, t.nombre, t.telefono, datediff(curdate(), fec_hora_salida) FROM paquete, destinatario, transportista t WHERE Num_trans = numero AND dni_des = dni AND Fec_Hora_entrega IS NULL;
+
+SELECT codigo, nombre, sum(precio) FROM cliente, paquete WHERE codigo = cod_cli GROUP BY codigo;
+
+SELECT referencia FROM cliente, paquete, destinatario WHERE codigo = cod_cli AND dni = dni_des AND (cliente.Provincia = 'granada' OR destinatario.Provincia = 'granada');
+
+SELECT c.nombre, concat(d.nombre," ",d.apellido1," ",d.apellido2) "nombre destinatario", fec_hora_salida FROM cliente c, destinatario d, paquete WHERE codigo = cod_cli AND dni = dni_des;
+
+SELECT  c.provincia, c.nombre, d.nombre, t.nombre, referencia, peso FROM cliente c, paquete, transportista t, destinatario d WHERE codigo = cod_cli AND dni = dni_des AND c.provincia = d.Provincia AND num_trans = numero;
+
+SELECT nombre, telefono FROM cliente, paquete WHERE codigo = cod_cli AND count(referencia) = (SELECT max(count(Referencia)) FROM paquete, cliente WHERE codigo = cod_cli GROUP BY codigo);

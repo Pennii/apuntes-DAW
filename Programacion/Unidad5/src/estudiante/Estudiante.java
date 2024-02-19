@@ -71,7 +71,6 @@ public class Estudiante {
         boolean resultado;
         if (nuevaNota >= 0) {
             resultado = true;
-
             this.numNotas++;
             this.notaMedia = (this.notaMedia * (this.numNotas - 1) + nuevaNota) / this.numNotas;
         } else {

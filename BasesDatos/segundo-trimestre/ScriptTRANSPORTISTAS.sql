@@ -114,12 +114,14 @@ SELECT localidad, provincia FROM destinatario d, paquete p WHERE DNI = DNI_des G
 
 SELECT referencia, provincia, t.nombre, t.telefono, datediff(curdate(), fec_hora_salida) FROM paquete, destinatario, transportista t WHERE Num_trans = numero AND dni_des = dni AND Fec_Hora_entrega IS NULL;
 
-SELECT codigo, nombre, sum(precio) FROM cliente, paquete WHERE codigo = cod_cli GROUP BY codigo;
+SELECT codigo, nombre, sum(precio) FROM cliente, paquete WHERE codigo = cod_cli GROUP BY codigo HAVING sum(precio) > (SELECT avg(precio) FROM paquete);
 
 SELECT referencia FROM cliente, paquete, destinatario WHERE codigo = cod_cli AND dni = dni_des AND (cliente.Provincia = 'granada' OR destinatario.Provincia = 'granada');
 
-SELECT c.nombre, concat(d.nombre," ",d.apellido1," ",d.apellido2) "nombre destinatario", fec_hora_salida FROM cliente c, destinatario d, paquete WHERE codigo = cod_cli AND dni = dni_des;
+SELECT c.nombre, concat(d.nombre," ",d.apellido1," ",ifnull(d.apellido2, '')) "nombre destinatario", fec_hora_salida, count(*) FROM cliente c, destinatario d, paquete 
+WHERE codigo = cod_cli AND dni = dni_des AND Fec_Hora_salida is NOT NULL GROUP BY c.nombre, d.Nombre HAVING count(*) >1;
 
 SELECT  c.provincia, c.nombre, d.nombre, t.nombre, referencia, peso FROM cliente c, paquete, transportista t, destinatario d WHERE codigo = cod_cli AND dni = dni_des AND c.provincia = d.Provincia AND num_trans = numero;
 
-SELECT nombre, telefono FROM cliente, paquete WHERE codigo = cod_cli AND count(referencia) = (SELECT max(count(Referencia)) FROM paquete, cliente WHERE codigo = cod_cli GROUP BY codigo);
+SELECT nombre, telefono, count(referencia) FROM cliente, paquete WHERE cod_cli = codigo GROUP BY COD_CLI HAVING count(referencia) = (SELECT max(envios) FROM (SELECT count(Referencia) as envios FROM paquete group by cod_cli) as numero);
+

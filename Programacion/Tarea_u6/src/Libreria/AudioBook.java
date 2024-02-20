@@ -14,12 +14,12 @@ public final class AudioBook extends LibroDigital implements Audible {
      * cantidad minima de voces: {@value VOCES_MIN}
      * 
      */
-    public final int VOCES_MIN = 1;
+    public static final int VOCES_MIN = 1;
     /**
      * duracion minima del libro: {@value DURACION_MIN}
      * 
      */
-    public final int DURACION_MIN = 1;
+    public final static int DURACION_MIN = 1;
 
     /**
      * duracion en minutos del libro.

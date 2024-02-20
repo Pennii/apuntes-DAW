@@ -86,7 +86,7 @@ INSERT INTO EMPLEADO VALUES ('88888888O','Soledad', 'Campillo Molina','1978-04-1
 INSERT INTO EMPLEADO VALUES ('03232323P','María Luisa', 'Galdón Ter','1969-03-14', 1200);
 INSERT INTO EMPLEADO VALUES ('14567555L','Piedad', 'Colmenero Zapillo','1991-10-15', 1200);
 INSERT INTO EMPLEADO VALUES ('14111155T','Sergio', 'Lérida Campos','1992-12-17', 1000);
-
+INSERT INTO EMPLEADO VALUES ('aaaaaaaaa','Sergio', 'Lérida Campos','1992-12-17', 1000);
 
 
 INSERT INTO USUARIO VALUES ('U001', '14188151T','Carlos', 'Sánchez Ruíz', '600259874',25);
@@ -282,17 +282,21 @@ SELECT u.nombre, apellidos FROM usuario u, excursion, reserva WHERE usuario = co
 
 SELECT recurso, r.nombre, if(codigo = recurso, count(ruta), '0') FROM recurso r, usa WHERE recurso = codigo GROUP BY recurso;
 
+SELECT r.nombre, count(ruta) from recurso r left join usa on recurso = codigo GROUP BY recurso; 
 
+SELECT r.nombre, descripcion, count(codigo_e) FROM ruta r, excursion WHERE ruta =  codigo_r GROUP BY ruta;
 
+SELECT count(codigo_e), date_format(fecha, '%M del %Y') FROM excursion GROUP BY month(fecha) ORDER BY count(codigo_e) DESC;
 
+SELECT concat(codigo_r,' .',r.nombre) FROM ruta r WHERE tipo IN('media', 'dificil') AND precio > 25 ORDER BY Codigo_R;
 
+SELECT nombre, precio, descripcion FROM ruta where precio >= (SELECT avg(precio) FROM ruta);
 
+SELECT e.nombre, dni, codigo_e FROM empleado e LEFT JOIN excursion ON empleado = dni WHERE empleado IS NULL;
 
+SELECT e.* FROM excursion e LEFT JOIN ruta ON codigo_r = ruta LEFT JOIN usa ON codigo_r = usa.ruta LEFT JOIN recurso ON recurso = codigo WHERE recurso.nombre ='caballo';
 
-
-
-
-
+SELECT empleado, sec_to_time(avg(time_to_sec(timediff(h_fin, h_inicio)))) FROM excursion GROUP BY empleado;
 
 
 

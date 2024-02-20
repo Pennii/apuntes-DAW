@@ -124,4 +124,3 @@ WHERE codigo = cod_cli AND dni = dni_des AND Fec_Hora_salida is NOT NULL GROUP B
 SELECT  c.provincia, c.nombre, d.nombre, t.nombre, referencia, peso FROM cliente c, paquete, transportista t, destinatario d WHERE codigo = cod_cli AND dni = dni_des AND c.provincia = d.Provincia AND num_trans = numero;
 
 SELECT nombre, telefono, count(referencia) FROM cliente, paquete WHERE cod_cli = codigo GROUP BY COD_CLI HAVING count(referencia) = (SELECT max(envios) FROM (SELECT count(Referencia) as envios FROM paquete group by cod_cli) as numero);
-

@@ -1,0 +1,105 @@
+:root{
+    --borde: red;
+    --enlace: green;
+    --corazon: red;
+}
+
+#contenedor {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: .5fr 1fr .2fr ;
+    gap: 10px;
+    grid-template-areas: 
+    "cabecera cabecera galeria"
+    "menu principal galeria"
+    "pie pie galeria";
+}
+
+header,
+main,
+aside,
+footer,
+nav {
+    border: 2px solid var(--borde);
+}
+
+img {
+    object-fit: cover;
+}
+
+header {
+    grid-area: cabecera;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    width: 50%;
+    height: 50%;
+
+}
+
+aside {
+    grid-area: galeria;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px;
+}
+
+aside img {
+    width: 75%;
+}
+
+nav {
+    grid-area: menu;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+a {
+    font-size: 150%;
+    text-decoration: none;
+    color: var(--enlace);
+    transition: .5s;
+}
+
+a:hover{
+    font-weight: bolder;
+}
+
+main {
+    grid-area: principal;
+    padding: 5px;
+}
+
+main img {
+    float: left;
+    width: 50%;
+}
+
+footer {
+    grid-area: pie;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p{
+    width: 20%;
+}
+
+span {
+    color: var(--corazon);
+}

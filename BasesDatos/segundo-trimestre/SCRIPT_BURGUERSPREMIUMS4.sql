@@ -204,3 +204,20 @@ SELECT nombre, codigo, precio FROM producto WHERE precio >= (SELECT avg(precio) 
 
 /* 9 */
 SELECT dni, nombre FROM empleado LEFT JOIN pedido ON dni = dni_ep WHERE dni_ep IS NULL ;
+
+/* 10 */
+SELECT p.*, e.nombre FROM producto p LEFT JOIN consta ON codigo = codigo_pr LEFT JOIN pedido ON numero_p = numero LEFT JOIN empleado e ON dni = dni_etm WHERE e.nombre LIKE 'luis%' OR e.nombre LIKE 'maria luisa%';
+
+/* 11 */
+SELECT nombre, count(numero), sec_to_time(AVG(time_to_sec(timediff(hora_rep, hora_pre)))) FROM repartidor LEFT JOIN pedido ON dni_r = dni GROUP BY dni;
+
+/* 12 */
+SELECT * from producto WHERE precio IN (SELECT max(precio)FROM producto) OR precio IN(SELECT min(precio) FROM producto);
+
+/* 13 */
+SELECT nombre, codigo, count(numero) FROM producto LEFT JOIN consta ON codigo = codigo_pr LEFT JOIN pedido ON numero_p = numero group by codigo having count(numero) >= 2 ORDER BY count(numero) ASC;
+
+/* 14 */
+SELECT e.*, codigo, r.nombre FROM empleado e LEFT JOIN pedido ON dni_etm = dni LEFT JOIN repartidor r ON dni_r = r.dni LEFT JOIN consta ON numero_p = numero LEFT JOIN producto ON codigo = codigo_pr WHERE r.nombre LIKE "Laura%" AND codigo = 13; 
+
+/* 15 */

@@ -14,4 +14,16 @@ public class Entrenador extends Seleccion{
         super(id, nombre, apellido, edad);
     }
     
+    public void entrenar(){
+        System.out.println("DIRIGE");
+    }
+    
+    public void partido(){
+        System.out.println("DIRIGE PARTIDO");
+    }
+    
+    public void planificaEntrenamiento(){
+        System.out.println("PLANIFICA");
+    }
+    
 }

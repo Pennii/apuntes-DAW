@@ -13,6 +13,7 @@ public class TestEscuela {
     public static void main(String[] args) {
         
         Alumno alumno = new Alumno(3);
+        Alumno alumno2 = new Alumno(6);
         
         Profesor profe = new Profesor();
         
@@ -24,6 +25,10 @@ public class TestEscuela {
         }
         
         System.out.printf("La media de notas es: %.2f\n",profe.calcularMedia(alumno));
+        
+        for (int i = 0; i < alumno2.getAsignaturas(); i++) {
+            System.out.printf("Id de la asignatura %d: %d\n",i+1, alumno2.getAsig(i).getId());
+        }
     }
     
 }

@@ -1,0 +1,37 @@
+* {box-sizing: border-box;} 
+body {background-color: lightblue;}
+main {
+ background-color: lightgray;
+ display: grid;
+ grid-template-columns: 2fr 5fr 3fr;
+ grid-template-rows: 1fr 2fr 1fr 1fr;
+ gap: 10px;
+ padding: 5px;
+ grid-template-areas: 
+ "cabecera cabecera menu"
+ "contenido contenido menu"
+ "pie pie pie"
+ "lateral lateral lateral";
+}
+main div {
+ border: 1px solid black;
+ padding: 20px;
+ background-color: white;
+}
+
+#b1{
+    grid-area: cabecera;
+}
+#b2{
+    grid-area: lateral;
+    background-color: purple;
+}
+#b3{
+    grid-area: menu;
+}
+#b4{
+    grid-area: contenido;
+}
+#b5{
+    grid-area: pie;
+}

@@ -218,6 +218,6 @@ SELECT * from producto WHERE precio IN (SELECT max(precio)FROM producto) OR prec
 SELECT nombre, codigo, count(numero) FROM producto LEFT JOIN consta ON codigo = codigo_pr LEFT JOIN pedido ON numero_p = numero group by codigo having count(numero) >= 2 ORDER BY count(numero) ASC;
 
 /* 14 */
-SELECT e.*, codigo, r.nombre FROM empleado e LEFT JOIN pedido ON dni_etm = dni LEFT JOIN repartidor r ON dni_r = r.dni LEFT JOIN consta ON numero_p = numero LEFT JOIN producto ON codigo = codigo_pr WHERE r.nombre LIKE "Laura%" AND codigo = 13; 
+SELECT e.*, codigo, r.nombre AS repartidor FROM empleado e LEFT JOIN pedido ON dni_etm = dni LEFT JOIN repartidor r ON dni_r = r.dni LEFT JOIN consta ON numero_p = numero LEFT JOIN producto ON codigo = codigo_pr WHERE r.nombre LIKE "Laura%" AND codigo = 13; 
 
 /* 15 */

@@ -270,33 +270,56 @@ INSERT INTO RESERVA VALUES ('EX012', 'U002', 80, 'contado');
 INSERT INTO RESERVA VALUES ('EX012', 'U004', 80, 'bizum');
 INSERT INTO RESERVA VALUES ('EX012', 'U006', 80, 'bizum');
 
+/* 1 */
 SELECT * FROM ruta;
 
-SELECT codigo_e, nombre, empleado, n_plazas FROM excursion WHERE month(fecha) = 2;
+/* 2 */
+SELECT codigo_e, nombre, empleado, n_plazas, fecha FROM excursion WHERE month(fecha) = 2 AND year(fecha) = 2020;
 
+/* 3 */
 SELECT * FROM empleado WHERE (datediff(curdate(), f_nac) / 360) >= 40 AND salario > 1100;
 
+/* 4 */
 SELECT nombre, descripcion FROM ruta WHERE tipo IN('media') AND precio > 30;
 
+/* 5 */
 SELECT u.nombre, apellidos FROM usuario u, excursion, reserva WHERE usuario = codigo_u AND excursion = codigo_e AND codigo_e = 'ex005';
 
-SELECT recurso, r.nombre, if(codigo = recurso, count(ruta), '0') FROM recurso r, usa WHERE recurso = codigo GROUP BY recurso;
+/* 6 */
+SELECT codigo, r.nombre, if(codigo = recurso, count(ruta), 'ninguna') FROM recurso r LEFT JOIN usa ON codigo = recurso GROUP BY recurso ORDER BY codigo;
 
-SELECT r.nombre, count(ruta) from recurso r left join usa on recurso = codigo GROUP BY recurso; 
-
+/* 7 */
 SELECT r.nombre, descripcion, count(codigo_e) FROM ruta r, excursion WHERE ruta =  codigo_r GROUP BY ruta;
 
+/* 8 */
 SELECT count(codigo_e), date_format(fecha, '%M del %Y') FROM excursion GROUP BY month(fecha) ORDER BY count(codigo_e) DESC;
 
+/* 9 */
 SELECT concat(codigo_r,' .',r.nombre) FROM ruta r WHERE tipo IN('media', 'dificil') AND precio > 25 ORDER BY Codigo_R;
 
+/* 10 */
 SELECT nombre, precio, descripcion FROM ruta where precio >= (SELECT avg(precio) FROM ruta);
 
-SELECT e.nombre, dni, codigo_e FROM empleado e LEFT JOIN excursion ON empleado = dni WHERE empleado IS NULL;
+/* 11 */
+SELECT empleado.nombre, dni FROM empleado LEFT JOIN excursion ON dni = empleado WHERE empleado IS NULL;
 
+/* 12 */
 SELECT e.* FROM excursion e LEFT JOIN ruta ON codigo_r = ruta LEFT JOIN usa ON codigo_r = usa.ruta LEFT JOIN recurso ON recurso = codigo WHERE recurso.nombre ='caballo';
 
-SELECT empleado, sec_to_time(avg(time_to_sec(timediff(h_fin, h_inicio)))) FROM excursion GROUP BY empleado;
+/* 13 */
+SELECT empleado, time_format(avg(timediff(h_fin, h_inicio)), '%T') FROM excursion GROUP BY empleado;
 
+/* 14 */
+SELECT codigo_e, e.nombre, count(usuario), sum(importe) FROM excursion e LEFT JOIN reserva ON codigo_e = excursion GROUP BY Codigo_E;
 
+/* 15 */
+SELECT codigo_r, nombre, precio FROM ruta WHERE precio = (SELECT min(precio) FROM ruta) OR precio = (SELECT max(precio) FROM ruta);
 
+/* 16 */
+SELECT codigo_e, e.nombre, count(usuario) FROM excursion e LEFT JOIN reserva ON codigo_e = excursion LEFT JOIN ruta r ON ruta = codigo_r WHERE r.precio >= 20 GROUP BY excursion HAVING count(usuario) > 5;
+
+/* 17 */
+SELECT * FROM empleado LEFT JOIN excursion ON dni = empleado LEFT JOIN reserva ON codigo_e = excursion GROUP BY excursion HAVING count(usuario) > 8 ;
+
+/* 18 */
+SELECT codigo_u, u.nombre FROM usuario u LEFT JOIN reserva ON codigo_u = usuario LEFT JOIN excursion ON excursion = codigo_e LEFT JOIN ruta ON excursion.ruta = codigo_r LEFT JOIN usa ON usa.ruta = codigo_r LEFT JOIN recurso ON recurso = codigo WHERE recurso.nombre = 'quads'; 

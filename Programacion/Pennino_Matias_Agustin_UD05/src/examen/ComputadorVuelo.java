@@ -64,7 +64,7 @@ public class ComputadorVuelo {
         ComputadorVuelo.totalAviones++;
     }
 
-    public ComputadorVuelo(String matricula, String modelo) {
+    public ComputadorVuelo(String matricula, String modelo) throws IllegalArgumentException, NullPointerException {
         this(matricula, modelo, ComputadorVuelo.PILOTO_DEFECTO);
     }
 

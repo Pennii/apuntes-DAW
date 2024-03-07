@@ -10,7 +10,7 @@ package almacen;
  */
 public abstract class Producto {
     
-    private static int ids = 0; 
+    private static int ids = 1; 
     
     private final int id;
     private final double cantLitros;
@@ -22,6 +22,10 @@ public abstract class Producto {
         this.cantLitros = cant;
         this.precio = precio;
         this.marca = marca;
+    }
+    
+    public int getId(){
+        return this.id;
     }
     
     public String toString(){

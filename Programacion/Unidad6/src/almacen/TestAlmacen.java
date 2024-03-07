@@ -11,12 +11,19 @@ package almacen;
 public class TestAlmacen {
     
     public static void main(String[] args) {
-        Producto almacen[] = new Producto[5];
-        int contador = 0;
+        Almacen miAlmacen = new Almacen(5);
+        Azucarada cokitacola= new Azucarada(4, 1, "cokita", 10, true);
+        AguaMineral awita = new AguaMineral(2, 2, "zum", "manantial");
         
-        while(almacen[4] == null){
-             
-        }
+        miAlmacen.agregar(cokitacola);
+        miAlmacen.agregar(awita);
+        miAlmacen.agregar(awita);
+        miAlmacen.agregar(cokitacola);
+        miAlmacen.agregar(cokitacola);
+        
+        System.out.printf("Precio total: %.2f\n",miAlmacen.calcularPrecio());
+        
+        miAlmacen.mostrar();
     }
     
 }

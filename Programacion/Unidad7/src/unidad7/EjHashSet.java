@@ -18,21 +18,25 @@ public class EjHashSet {
 
     public static void main(String[] args) {
 //        Set<String> setNombres = new HashSet<>();
-//        Set<String> setNombres = new LinkedHashSet<>();
-        Set<String> setNombres = new TreeSet<>();
+//        Set setNombres = new LinkedHashSet<>();
+        Set setNombres = new TreeSet<>();
         setNombres.add("Encarni");
         setNombres.add("Antonio");
 //        setNombres.add(null);
         setNombres.add("David");
         setNombres.add("Jose");
-        System.out.println(setNombres.add("David"));
+        setNombres.add("Antonio");
+        setNombres.add(1.0);
+//        System.out.println(setNombres.add("David"));
         
-        // si no se establece el tipo del objeto no se puede usar for each
-        for(String nombres : setNombres){
+        // si no se establece el tipo del objeto se utiliza Object
+        for(Object nombres : setNombres){
             System.out.println(nombres);
         }
         
-        Iterator<String> it = setNombres.iterator();
+        System.out.println("");
+        
+        Iterator it = setNombres.iterator();
         
         while(it.hasNext()){
             System.out.println(it.next());

@@ -145,7 +145,7 @@ public class Fubolista {
      */
     @Override
     public String toString() {
-        return String.format("Nombre: %s apodo: %s\nidentificador: %d "
+        return String.format("Nombre: %s apodo: %s identificador: %d "
                 + "numero de camiseta: %d fecha de nacimiento: %s\n", this.nombre,
                 this.apodo, this.identificador, this.numCamiseta,
                 this.fNac.toString());

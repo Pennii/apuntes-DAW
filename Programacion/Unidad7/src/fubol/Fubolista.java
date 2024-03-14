@@ -5,8 +5,6 @@
 package fubol;
 
 import java.time.LocalDate;
-import java.time.Month;
-import java.util.Objects;
 
 /**
  *
@@ -27,7 +25,7 @@ public class Fubolista {
      *
      *
      */
-    public final static LocalDate FECHA_DEFAULT = LocalDate.of(2005, 01, 31);
+    public static final LocalDate FECHA_DEFAULT = LocalDate.of(2005, 01, 31);
 
     private static int id = 0;
 

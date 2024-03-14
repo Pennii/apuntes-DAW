@@ -54,3 +54,10 @@ UPDATE disco SET precio = precio - 5 WHERE fecha IS NOT NULL ORDER BY fecha DESC
 DELETE FROM disco WHERE titulo = "a love supreme";
 -- 10
 DELETE FROM disco WHERE fecha = (SELECT fecha FROM (SELECT * FROM disco) AS DIS ORDER BY 1 DESC LIMIT 1);
+select * from disco;
+Start TRANSACTION;
+UPDATE disco SET cod_disco = "lp01" WHERE titulo = "animals";
+ROLLBACK;
+COMMIT;
+lock tables disco read;
+unlock tables;

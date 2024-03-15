@@ -11,11 +11,11 @@ public class Main {
         
         bruger=new Bote(300,10,"verde",2,500);
        
-        operaPinta(bruger, metros);
-        operaRellena(bruger, centilitros, centimos);
+        opera_Pinta(bruger, metros);
+        opera_Rellena(bruger, centilitros, centimos);
     }
 
-    private static void operaRellena(Bote bruger, int centilitros, int centimos) {
+    private static void opera_Rellena(Bote bruger, int centilitros, int centimos) {
         /*Vamos a intentar añadir 300 centilitros al bote, como se supera la capacidad saltará
         una excepción y no se modificará el contenido del depósito que seguirá siendo 280cl*/
         try {
@@ -28,7 +28,7 @@ public class Main {
         }
     }
 
-    private static void operaPinta(Bote bruger, int metros) {
+    private static void opera_Pinta(Bote bruger, int metros) {
         /*Vamos a pintar 2 metros, como hay sufuiciente pintura la operación tendrá éxito y se
         descontarán 20 centilitros del contenido del bote, quedan 280cl*/
         try {

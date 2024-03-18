@@ -1,3 +1,6 @@
+*{
+    transition: .5s ease;
+}
 :root {
     --cab: red;
     --men: blue;
@@ -12,6 +15,7 @@
 html,
 body {
     height: 100%;
+    max-width: 800px;
 }
 
 p,
@@ -48,13 +52,14 @@ header {
     width: 30%;
     margin: .5rem;
     position: relative;
+    overflow: hidden;
 }
 
 #logo p {
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-30deg);
+    top: 30%;
+    left: 30%;
+    transform:rotate(-30deg);
    
 }
 

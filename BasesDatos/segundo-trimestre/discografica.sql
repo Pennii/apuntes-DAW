@@ -11,10 +11,10 @@ CREATE TABLE disco(
     titulo varchar(30),
     artista varchar(30),
     fecha date,
-    discografia varchar(30),
+    discografica varchar(30),
     precio float,
     soporte varchar(30),
-    constraint dis_disc_fk foreign key (discografia) references discografica(cod_discografica) on delete set null on update cascade);
+    constraint dis_disc_fk foreign key (discografica) references discografica(cod_discografica) on delete set null on update cascade);
     
 insert into discografica values
 ('d01', 'sony', 'reino unido'),
@@ -54,10 +54,34 @@ UPDATE disco SET precio = precio - 5 WHERE fecha IS NOT NULL ORDER BY fecha DESC
 DELETE FROM disco WHERE titulo = "a love supreme";
 -- 10
 DELETE FROM disco WHERE fecha = (SELECT fecha FROM (SELECT * FROM disco) AS DIS ORDER BY 1 DESC LIMIT 1);
-select * from disco;
+/*select * from disco;
 Start TRANSACTION;
 UPDATE disco SET cod_disco = "lp01" WHERE titulo = "animals";
 ROLLBACK;
 COMMIT;
 lock tables disco read;
-unlock tables;
+unlock tables;*/
+
+-- 11
+CREATE TABLE disco_cd(
+	cod_disco varchar (30) primary key,
+    titulo varchar(30),
+    artista varchar(30),
+    fecha date,
+    discografica varchar(30),
+    precio float,
+    stock int default 20,
+    constraint cd_disc_fk foreign key (discografica) references discografica(cod_discografica) on delete set null on update cascade);
+    
+INSERT INTO disco_cd (cod_disco, titulo, artista, fecha, discografica, precio) SELECT cod_disco, titulo, artista, fecha, discografica, precio FROM disco WHERE soporte = "cd";
+
+-- 12
+START TRANSACTION;
+DELETE FROM discografica WHERE nombre = "sony";
+SELECT * FROM discografica;
+ROLLBACK;
+
+-- 13
+LOCK TABLE disco READ;
+SELECT * FROM DISCO;
+UPDATE disco SET PRECIO = 20 WHERE COD_DISCO = "LP04";

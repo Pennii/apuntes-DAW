@@ -1,0 +1,54 @@
+:root{
+    --cabe: red;
+    --a: blue;
+    --b: green;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th{
+    background-color: var(--cabe);
+}
+
+#b{
+    background-color: var(--b);
+}
+
+.a{
+    background-color: var(--a);
+}
+
+th, .a, #b{
+    border: 2px solid black;
+}
+
+header{
+    grid-area: h;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    grid-area: m;
+    background-color: yellow;
+}
+
+footer{
+    grid-area: f;
+    background-color: brown;
+}
+
+#contenedor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: 
+    "h m"
+    "f f";
+    gap: 15px;
+}

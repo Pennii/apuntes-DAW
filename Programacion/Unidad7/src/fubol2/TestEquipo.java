@@ -28,9 +28,10 @@ public class TestEquipo {
         System.out.printf("tenemos los siguientes jugadores: %s\n", Arrays.toString(jugadores2));
         System.out.println(equipo1.insertarJugador(jugadores2));
         equipo1.mostrar();
-        
-        System.out.println(equipo1.borrarJugador(jugador1));
-         System.out.println(equipo1.borrarJugador(jugador1));
+       
+        System.out.println(equipo1.borrarJugador(jugadores));
+        System.out.println(equipo1.borrarJugador(jugadores2));
+//         System.out.println(equipo1.borrarJugador(jugador));
         equipo1.mostrar();
 
         if (equipo1.contiene(jugador2)) {

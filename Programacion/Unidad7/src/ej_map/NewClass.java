@@ -13,18 +13,19 @@ import java.util.Map;
  * @author maniana
  */
 public class NewClass {
+
     public static void main(String[] args) {
         Map<Object, String> mapita = new HashMap<>();
-        
+
         mapita.put(1, "aaa");
         mapita.put("b", "222");
         mapita.put("k", "333");
         mapita.put(3, "bbb");
-        
-        mapita.entrySet().forEach((m) -> System.out.println(m.getKey()+" : "+m.getValue()));
+
+        mapita.entrySet().forEach((m) -> System.out.println(m.getKey() + " : " + m.getValue()));
         Iterator it = mapita.keySet().iterator();
-        
-        while(it.hasNext()){
+
+        while (it.hasNext()) {
             System.out.println(mapita.get(it.next()));
         }
         for (Map.Entry<Object, String> valor : mapita.entrySet()) {

@@ -1,3 +1,10 @@
+# comentario de linea
+"""
+comentario de multiple linea
+comentario de multiple linea
+comentario de multiple linea
+"""
+
 def main():
     filas = int(input("Ingresa las filas: \n"))
     columnas = int(input("Ingresa las columnas: \n"))

@@ -1,4 +1,4 @@
-tupla = (1, 3, "hola", 5.7)
+tupla = (1, 5, "hola", 5.7)
 for i in tupla:
     print(i,"",end="")
 print("")

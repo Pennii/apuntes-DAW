@@ -1,11 +1,9 @@
 class Persona:
-    
-    __nombre = ()
-    
+
     def __init__(self,nombre, edad, dni):
-        self.nombre = nombre
-        self.edad = edad
-        self.dni = dni
+        self.__nombre = nombre
+        self.__edad = edad
+        self.__dni = dni
 
 
 

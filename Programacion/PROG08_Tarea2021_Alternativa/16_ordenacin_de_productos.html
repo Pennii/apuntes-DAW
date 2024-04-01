@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.6.- Ordenación de Productos | Tarea online  </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-19"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Tarea online </div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tarea online</a></li>
+   <li class="current-page-parent"><a href="1_descripcin_de_la_tarea.html" class="current-page-parent daddy">1.- Descripción de la tarea</a>
+   <ul>
+      <li><a href="11_combinacin_aleatoria.html" class="no-ch">1.1.- Combinación aleatoria</a></li>
+      <li><a href="12_vaciado_de_lista.html" class="no-ch">1.2.- Vaciado de lista</a></li>
+      <li><a href="13_mapa_de_colores.html" class="no-ch">1.3.- Mapa de colores</a></li>
+      <li><a href="14_asignacin_de_turnos_i.html" class="no-ch">1.4.- Asignación de turnos (I)</a></li>
+      <li><a href="15_asignacin_de_turnos_ii.html" class="no-ch">1.5.- Asignación de turnos (II)</a></li>
+      <li id="active"><a href="16_ordenacin_de_productos.html" class="active no-ch">1.6.- Ordenación de Productos</a></li>
+   </ul>
+   </li>
+   <li><a href="2_informacin_de_inters.html" class="no-ch">2.- Información de interés</a></li>
+   <li><a href="3_evaluacin_de_la_tarea.html" class="no-ch">3.- Evaluación de la tarea</a></li>
+   <li><a href="anexo_licencia_de_recursos.html" class="no-ch">Anexo. Licencia de recursos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="15_asignacin_de_turnos_ii.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_informacin_de_inters.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.6.- Ordenación de Productos</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id57">
+<div class="iDevice emphasis0">
+<div id="ta57_154" class="block iDevice_content">
+<div class="exe-figure exe-image float-right license-pd" style="width: 189px;"><img src="canned-food-570114_640.jpg" alt="Estantería con diversos productos de alimentación enlatados" title="Productos" style="float: right;" width="180" height="120" />
+<div class="figcaption"><a href="https://pixabay.com/es/photos/alimentos-enlatados-latas-570114/" title="Acceder a la web de descarga de la imagen de PublicDomainArchive en Pixabay (se abre en una nueva ventana)" target="_blank" class="author"><span class="author">PublicDomainArchive</span></a> <span class="license"><span class="sep">(<a href="https://pixabay.com/es/service/license/" title="Acceder a los términos de la Licencia Pixabay (Se abre en una nueva ventana)" target="_blank">Pixabay License</a></span><span class="sep">)</span></span></div>
+</div>
+<p>Dada la clase <code>Producto</code>, implementa un programa en Java donde se cree una lista de objetos de este tipo para a continuación rellenarla con la siguiente información y en el siguiente orden: <code></code><code></code></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>1. {sardinas  , 31/12/2023, 1,50}
+2. {caballa   , 25/12/2023, 1,70}
+3. {navajas   , 01/01/2021, 2,40}
+4. {mejillones, 11/01/2022, 2,10}</code></pre>
+</div>
+</div>
+<p>A continuación, ordenar la lista conforme a tres criterios diferentes:</p>
+<ol>
+<li>por <strong>nombre</strong> del producto;</li>
+<li>por <strong>fecha de caducidad</strong> del producto;</li>
+<li>por <strong>precio</strong> del producto.</li>
+</ol>
+<p>Para ello habrá que implementar tres clases que implementen la interfaz <code>Comparator</code> que nos permitan ordenar esa lista en función de tres criterios diferentes:</p>
+<ol>
+<li>clase <code>ComparadorProductosPorNombre</code>;</li>
+<li>clase <code>ComparadorProductosPorCaducidad</code>;</li>
+<li>clase <code>ComparadorProductosPorPrecio</code>.</li>
+</ol>
+<p>Puedes escribir las tres clases dentro del propio archivo del ejercicio, fuera de la clase principal.</p>
+<p>En la clase principal, tendrás que implementar el programa principal (método <code>main</code>) que llevará a cabo las siguientes acciones:</p>
+<ol>
+<li><strong>crear una lista de productos</strong> (objetos instancia de la clase <code>Producto</code>);</li>
+<li><strong>rellenar la lista con los cuatro productos indicados</strong> (sardinas, caballa, navajas, mejillones) y en ese orden;</li>
+<li><strong>mostrar el contenido inicial de la lista</strong> recorriendo cada elemento y mostrándolo en una línea diferente;</li>
+<li>llevar a cabo la <strong>ordenación de la lista</strong> utilizando el comparador por <strong>nombre</strong>;</li>
+<li>recorrer de nuevo la lista y <strong>mostrar cada elemento</strong> en una línea diferente;</li>
+<li>llevar a cabo una <strong>nueva ordenación de la lista</strong> utilizando el comparador por <strong>fecha de caducidad</strong>;</li>
+<li>volver a recorrer la lista y <strong>mostrar nuevamente sus elementos</strong> ordenados con el nuevo criterio;</li>
+<li>realizar una <strong>última ordenació</strong>n utilizando el comparador por <strong>precio</strong>;</li>
+<li><strong>mostrar por última</strong> vez el contenido de la lista ordenada por este tercer criterio.</li>
+</ol>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice" id="id58">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header" style="background-image:url(icon_ejercicioresueltofpd.png)"><h1 class="iDeviceTitle">Ejemplo de ejecución</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta58_148" class="block story iDevice_content">
+
+</section>
+<section id="taquesQuestion0b58" class="block iDevice_content">
+<p>Aquí tienes una muestra de cómo debería quedar el resultado final de la ejecución del programa:</p>
+</section>
+<form name="feedback-form-quesFeedback0b58" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b58text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b58" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b58" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>ORDENACIÓN DE PRODUCTOS
+-----------------------
+Contenido inicial de la lista:
+1. {sardinas  , 31/12/2023, 1,50}
+2. {caballa   , 25/12/2023, 1,70}
+3. {navajas   , 01/01/2021, 2,40}
+4. {mejillones, 11/01/2022, 2,10}
+
+Ordenación de la lista por nombre de producto:
+1. {caballa   , 25/12/2023, 1,70}
+2. {mejillones, 11/01/2022, 2,10}
+3. {navajas   , 01/01/2021, 2,40}
+4. {sardinas  , 31/12/2023, 1,50}
+
+Ordenación de la lista por caducidad de producto:
+1. {navajas   , 01/01/2021, 2,40}
+2. {mejillones, 11/01/2022, 2,10}
+3. {caballa   , 25/12/2023, 1,70}
+4. {sardinas  , 31/12/2023, 1,50}
+
+Ordenación de la lista por precio de producto:
+1. {sardinas  , 31/12/2023, 1,50}
+2. {caballa   , 25/12/2023, 1,70}
+3. {mejillones, 11/01/2022, 2,10}
+4. {navajas   , 01/01/2021, 2,40}</code></pre>
+</div>
+</div></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="15_asignacin_de_turnos_ii.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="2_informacin_de_inters.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

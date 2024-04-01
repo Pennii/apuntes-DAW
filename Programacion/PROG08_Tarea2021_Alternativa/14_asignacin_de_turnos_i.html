@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.4.- Asignación de turnos (I) | Tarea online  </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-17"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Tarea online </div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tarea online</a></li>
+   <li class="current-page-parent"><a href="1_descripcin_de_la_tarea.html" class="current-page-parent daddy">1.- Descripción de la tarea</a>
+   <ul>
+      <li><a href="11_combinacin_aleatoria.html" class="no-ch">1.1.- Combinación aleatoria</a></li>
+      <li><a href="12_vaciado_de_lista.html" class="no-ch">1.2.- Vaciado de lista</a></li>
+      <li><a href="13_mapa_de_colores.html" class="no-ch">1.3.- Mapa de colores</a></li>
+      <li id="active"><a href="14_asignacin_de_turnos_i.html" class="active no-ch">1.4.- Asignación de turnos (I)</a></li>
+      <li><a href="15_asignacin_de_turnos_ii.html" class="no-ch">1.5.- Asignación de turnos (II)</a></li>
+      <li><a href="16_ordenacin_de_productos.html" class="no-ch">1.6.- Ordenación de Productos</a></li>
+   </ul>
+   </li>
+   <li><a href="2_informacin_de_inters.html" class="no-ch">2.- Información de interés</a></li>
+   <li><a href="3_evaluacin_de_la_tarea.html" class="no-ch">3.- Evaluación de la tarea</a></li>
+   <li><a href="anexo_licencia_de_recursos.html" class="no-ch">Anexo. Licencia de recursos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="13_mapa_de_colores.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="15_asignacin_de_turnos_ii.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.4.- Asignación de turnos (I)</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id52">
+<div class="iDevice emphasis0">
+<div id="ta52_154" class="block iDevice_content">
+<div class="exe-figure exe-image float-right license-pd" style="width: 189px;"><img src="calendar-1763587_640.png" alt="Calendario de un mes" title="Calendario" style="float: right;" width="160" height="117" />
+<div class="figcaption"><a href="https://pixabay.com/es/vectors/calendario-fecha-mes-d%C3%ADa-semana-1763587/" title="Acceder a la web de descarga de la imagen de 200Degrees en Pixabay (se abre en una nueva ventana)" target="_blank" class="author" rel="noopener"><span class="author">200Degrees </span></a> <span class="license"><span class="sep">(<a href="https://pixabay.com/es/service/license/" title="Acceder a los términos de la Licencia Pixabay (Se abre en una nueva ventana)" target="_blank" rel="noopener">Pixabay License</a></span><span class="sep">)</span></span></div>
+</div>
+<p>Dado el siguiente array con los nombres de las personas que trabajan en sistema de turnos:</p>
+<div class="highlighted-code language-java">
+<div>
+<pre><code>String[] arrayPersonas = {"Juan", "Luisa", "Clara", "Rogelio", "Francisco"};</code></pre>
+</div>
+</div>
+<p>hay que implementar un programa en Java que genere y rellene una estructura de tipo <code>Map</code> llamada <code>mapTurnosPorFecha</code> donde:</p>
+<ul>
+<li class="lista_verificacion">las <strong>claves</strong> serán <strong>fechas</strong> (objetos de tipo <code>LocalDate</code>);</li>
+<li class="lista_verificacion">los <strong>elementos</strong> serán <strong>listas</strong> que contengan <strong>nombres de personas</strong> (objetos de tipo <code>List&lt;String&gt;</code>).</li>
+</ul>
+<p>Una vez declarada la estructura <code>Map</code> se rellenará con <strong>siete elementos</strong> donde:</p>
+<ul>
+<li class="lista_verificacion">las <strong>claves</strong> serán las <strong>fechas desde el 1 de marzo al 7 de marzo de 2021</strong> (objetos de tipo <code>LocalDate</code>);</li>
+<li class="lista_verificacion">los <strong>elementos</strong> serán listas vacías, aún sin contener nombres de personas.</li>
+</ul>
+<p>A partir de aquí, se irán rellenando los conjuntos de personas correspondientes a cada fecha según el siguiente criterio:</p>
+<ol>
+<li><strong>cada fecha</strong> tendrá asociada <strong>tres personas</strong> para trabajar ese día. Comenzaremos asignando a la primera persona del array y continuaremos de manera secuencial siguiendo el orden de los nombres en el array. Cuando se vayan a superar los límites del array se volverá a la primera posición (recuerda la utilidad del operador <strong>módulo %</strong> para estos casos).</li>
+<li><strong>la primera persona asignada en una fecha no será asignada para el día siguiente</strong>, de manera que de un día para otro coincidirán la segunda y tercera persona del día anterior, que serán ahora primera y segunda, y habrá una tercera persona nueva.</li>
+</ol>
+<p>Esto significa que si para el 1 de marzo habría que asignar el trabajo a  Juan, Luisa, y Clara, para el día siguiente (2 de marzo) las personas involucradas tendrían que ser Luisa, Clara y Rogelio, para el tercer día (3 de marzo) tendríamos a Clara, Rogelio y Francisco, y así sucesivamente.</p>
+<p>El programa, a la vez que va rellenando la estructura de datos, debe ir indicando por pantalla cómo se va asignando a cada fecha cada uno de las personas involucradas, pudiendo quedar algo así:</p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>Asignando a la fecha 01/03/2021 la persona Juan
+Asignando a la fecha 01/03/2021 la persona Luisa
+Asignando a la fecha 01/03/2021 la persona Clara
+
+Asignando a la fecha 02/03/2021 la persona Luisa
+Asignando a la fecha 02/03/2021 la persona Clara
+Asignando a la fecha 02/03/2021 la persona Rogelio
+
+Asignando a la fecha 03/03/2021 la persona Clara
+Asignando a la fecha 03/03/2021 la persona Rogelio
+Asignando a la fecha 03/03/2021 la persona Francisco
+
+Asignando a la fecha 04/03/2021 la persona Rogelio
+Asignando a la fecha 04/03/2021 la persona Francisco
+Asignando a la fecha 04/03/2021 la persona Juan
+
+Asignando a la fecha 05/03/2021 la persona Francisco
+Asignando a la fecha 05/03/2021 la persona Juan
+Asignando a la fecha 05/03/2021 la persona Luisa
+
+Asignando a la fecha 06/03/2021 la persona Juan
+Asignando a la fecha 06/03/2021 la persona Luisa
+Asignando a la fecha 06/03/2021 la persona Clara
+
+Asignando a la fecha 07/03/2021 la persona Luisa
+Asignando a la fecha 07/03/2021 la persona Clara
+Asignando a la fecha 07/03/2021 la persona Rogelio</code></pre>
+</div>
+</div>
+<p>Una vez realizadas todas las asignaciones, deberá recorrerse el contenido del mapa de turnos y mostrar, para cada clave (objeto de tipo fecha), el conjunto de personas asociadas a ella usando el siguiente formato:</p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>Fecha dd/mm/aaaa: [persona_1, persona_2, persona_3]</code></pre>
+</div>
+</div>
+<p>En nuestro caso concreto, el resultado debería quedar así:</p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>Contenido final del mapa de turnos:
+Fecha 01/03/2021: [Juan, Luisa, Clara]
+Fecha 02/03/2021: [Luisa, Clara, Rogelio]
+Fecha 03/03/2021: [Clara, Rogelio, Francisco]
+Fecha 04/03/2021: [Rogelio, Francisco, Juan]
+Fecha 05/03/2021: [Francisco, Juan, Luisa]
+Fecha 06/03/2021: [Juan, Luisa, Clara]
+Fecha 07/03/2021: [Luisa, Clara, Rogelio]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice" id="id53">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header" style="background-image:url(icon_ejercicioresueltofpd.png)"><h1 class="iDeviceTitle">Ejemplo de ejecución</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta53_148" class="block story iDevice_content">
+
+</section>
+<section id="taquesQuestion0b53" class="block iDevice_content">
+<p>Aquí tienes una muestra de cómo debería quedar el resultado final de la ejecución del programa:</p>
+</section>
+<form name="feedback-form-quesFeedback0b53" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b53text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b53" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b53" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>ASIGNACIÓN DE TURNOS (I): TURNOS POR FECHA
+------------------------------------------
+Asignando a la fecha 01/03/2021 la persona Juan
+Asignando a la fecha 01/03/2021 la persona Luisa
+Asignando a la fecha 01/03/2021 la persona Clara
+
+Asignando a la fecha 02/03/2021 la persona Luisa
+Asignando a la fecha 02/03/2021 la persona Clara
+Asignando a la fecha 02/03/2021 la persona Rogelio
+
+Asignando a la fecha 03/03/2021 la persona Clara
+Asignando a la fecha 03/03/2021 la persona Rogelio
+Asignando a la fecha 03/03/2021 la persona Francisco
+
+Asignando a la fecha 04/03/2021 la persona Rogelio
+Asignando a la fecha 04/03/2021 la persona Francisco
+Asignando a la fecha 04/03/2021 la persona Juan
+
+Asignando a la fecha 05/03/2021 la persona Francisco
+Asignando a la fecha 05/03/2021 la persona Juan
+Asignando a la fecha 05/03/2021 la persona Luisa
+
+Asignando a la fecha 06/03/2021 la persona Juan
+Asignando a la fecha 06/03/2021 la persona Luisa
+Asignando a la fecha 06/03/2021 la persona Clara
+
+Asignando a la fecha 07/03/2021 la persona Luisa
+Asignando a la fecha 07/03/2021 la persona Clara
+Asignando a la fecha 07/03/2021 la persona Rogelio
+
+Contenido final del mapa de turnos organizados por fechas:
+Fecha 01/03/2021: [Juan, Luisa, Clara]
+Fecha 02/03/2021: [Luisa, Clara, Rogelio]
+Fecha 03/03/2021: [Clara, Rogelio, Francisco]
+Fecha 04/03/2021: [Rogelio, Francisco, Juan]
+Fecha 05/03/2021: [Francisco, Juan, Luisa]
+Fecha 06/03/2021: [Juan, Luisa, Clara]
+Fecha 07/03/2021: [Luisa, Clara, Rogelio]</code></pre>
+</div>
+</div>
+<p></p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper RecomendacionfpdIdevice em_iDevice" id="id54">
+<div class="iDevice emphasis_recomendacionfpd" >
+<header class="iDevice_header" style="background-image:url(icon_recomendacionfpd.png)"><h1 class="iDeviceTitle">Recomendación</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta54_131" class="block iDevice_content">
+<p>Recuerda que diseñar formatos de fecha y hora puedes crear un objeto de la clase <code>DateTimeFormatter</code> mediante el método estático <code>ofPattern</code>. Para usar ese formato tendrás posteriormente que usar el método <code>format</code> sobre el objeto <code>LocalDate</code> que quieras mostrar por pantalla.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="13_mapa_de_colores.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="15_asignacin_de_turnos_ii.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

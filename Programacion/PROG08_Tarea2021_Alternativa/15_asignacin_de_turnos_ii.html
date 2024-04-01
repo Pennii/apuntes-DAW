@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.5.- Asignación de turnos (II) | Tarea online  </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.3.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site" id="exe-node-18"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Tarea online </div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Tarea online</a></li>
+   <li class="current-page-parent"><a href="1_descripcin_de_la_tarea.html" class="current-page-parent daddy">1.- Descripción de la tarea</a>
+   <ul>
+      <li><a href="11_combinacin_aleatoria.html" class="no-ch">1.1.- Combinación aleatoria</a></li>
+      <li><a href="12_vaciado_de_lista.html" class="no-ch">1.2.- Vaciado de lista</a></li>
+      <li><a href="13_mapa_de_colores.html" class="no-ch">1.3.- Mapa de colores</a></li>
+      <li><a href="14_asignacin_de_turnos_i.html" class="no-ch">1.4.- Asignación de turnos (I)</a></li>
+      <li id="active"><a href="15_asignacin_de_turnos_ii.html" class="active no-ch">1.5.- Asignación de turnos (II)</a></li>
+      <li><a href="16_ordenacin_de_productos.html" class="no-ch">1.6.- Ordenación de Productos</a></li>
+   </ul>
+   </li>
+   <li><a href="2_informacin_de_inters.html" class="no-ch">2.- Información de interés</a></li>
+   <li><a href="3_evaluacin_de_la_tarea.html" class="no-ch">3.- Evaluación de la tarea</a></li>
+   <li><a href="anexo_licencia_de_recursos.html" class="no-ch">Anexo. Licencia de recursos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="14_asignacin_de_turnos_i.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="16_ordenacin_de_productos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.5.- Asignación de turnos (II)</h1></header>
+<article class="iDevice_wrapper FreeTextfpdIdevice" id="id55">
+<div class="iDevice emphasis0">
+<div id="ta55_154" class="block iDevice_content">
+<div class="exe-figure exe-image float-right license-pd" style="width: 189px;"><img src="pencil-308509_640.png" alt="Hoja de checklists" title="Lista" style="float: right;" width="160" height="164" />
+<div class="figcaption"><a href="https://pixabay.com/es/vectors/l%C3%A1piz-marcas-notas-programa-lista-308509/" title="Acceder a la web de descarga de la imagen de Clker-Free-Vector-Images en Pixabay (se abre en una nueva ventana)" target="_blank" class="author" rel="noopener"><span class="author">Clker-Free-Vector-Images</span></a> <span class="license"><span class="sep">(<a href="https://pixabay.com/es/service/license/" title="Acceder a los términos de la Licencia Pixabay (Se abre en una nueva ventana)" target="_blank" rel="noopener">Pixabay License</a></span><span class="sep">)</span></span></div>
+</div>
+<p>Partiendo del resultado obtenido por el ejercicio anterior, implementa un programa en Java que explore la estructura de datos que contiene la asignación de turnos organizados por fechas y genere una nueva estructura de datos que contenga la <strong>asignación de turnos organizados por personas</strong>. Es decir, que se rellene una estructura de tipo <code>Map</code>, en este caso llamada <code>mapTurnosPorPersona</code>, donde:</p>
+<ul>
+<li class="lista_verificacion">las <strong>claves</strong> sean los <strong>nombres</strong> de las personas (objetos de tipo <code>String</code>);</li>
+<li class="lista_verificacion">los <strong>elementos</strong> serán <strong>listas de fechas</strong> (objetos de tipo <code>List&lt;LocalDate&gt;</code>).</li>
+</ul>
+<p>Para realizar esta segunda parte, el programa no deberá usar los elementos del array original de nombres, sino que tendrá que obtenerlos a partir de la estructura <code>mapTurnosPorFecha</code> generada por el programa anterior de manera que según la vaya explorando se vayan encontrando nombres de personas que serán añadidos como claves del nuevo <code>mapTurnosPorPersona</code>.</p>
+<p>Por tanto, los pasos que habrían de darse serían:</p>
+<ol>
+<li>realizar todas las acciones del ejercicio anterior para generar la estructura <code>mapTurnosPorFecha</code>, aunque sin mostrar las asignaciones paso a paso, únicamente el contenido final de la estructura;</li>
+<li>llevar a cabo la exploración elemento a elemento de todos los contenidos de ese <code>Map</code> e ir generando <strong>una nueva entrada en el nuevo <code>Map</code> <code>mapTurnosPorPersona</code> cada vez que aparezca un nuevo nombre de persona</strong> e indicarlo por pantalla;</li>
+<li><strong>para cada aparición de una persona</strong> debe añadirse, a la lista asociada a esa persona, la <strong>fecha</strong> correspondiente e indicarlo por pantalla;</li>
+<li>una vez finalizada toda la exploración, se recorrerá la nueva estructura <strong><code>mapTurnosPorPersona</code></strong> y se <strong>mostrará su contenido</strong> de una manera similar a como se hizo con la estructura <code>mapTurnosPorFecha</code>.</li>
+</ol>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper EjercicioresueltofpdIdevice em_iDevice" id="id56">
+<div class="iDevice emphasis_ejercicioresueltofpd" >
+<header class="iDevice_header" style="background-image:url(icon_ejercicioresueltofpd.png)"><h1 class="iDeviceTitle">Ejemplo de ejecución</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<section id="ta56_148" class="block story iDevice_content">
+
+</section>
+<section id="taquesQuestion0b56" class="block iDevice_content">
+<p>Aquí tienes una muestra de cómo debería quedar el resultado final de la ejecución del programa:</p>
+</section>
+<form name="feedback-form-quesFeedback0b56" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedbackquesFeedback0b56text = "Mostrar retroalimentación";</script><input type="button" name="toggle-feedback-quesFeedback0b56" value="Mostrar retroalimentación" class="feedbackbutton feedback-toggler" /></p>
+</div>
+<section id="feedback-quesFeedback0b56" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Retroalimentación</h1>
+<p></p>
+<div class="highlighted-code code-style-2 language-markup">
+<div>
+<pre><code>ASIGNACIÓN DE TURNOS (II): TURNOS POR PERSONA
+---------------------------------------------
+Contenido inicial del mapa de turnos organizado por fechas:
+Fecha 01/03/2021: [Juan, Luisa, Clara]
+Fecha 02/03/2021: [Luisa, Clara, Rogelio]
+Fecha 03/03/2021: [Clara, Rogelio, Francisco]
+Fecha 04/03/2021: [Rogelio, Francisco, Juan]
+Fecha 05/03/2021: [Francisco, Juan, Luisa]
+Fecha 06/03/2021: [Juan, Luisa, Clara]
+Fecha 07/03/2021: [Luisa, Clara, Rogelio]
+
+Procedemos a explorar la estructura de turnos por fechas para generar la estructura de turnos por personas:
+
+Encontrada persona Juan por primera vez. Creamos una entrada en el mapa para ella con una lista de fechas vacía
+Asginando a la persona Juan la fecha 01/03/2021
+Encontrada persona Luisa por primera vez. Creamos una entrada en el mapa para ella con una lista de fechas vacía
+Asginando a la persona Luisa la fecha 01/03/2021
+Encontrada persona Clara por primera vez. Creamos una entrada en el mapa para ella con una lista de fechas vacía
+Asginando a la persona Clara la fecha 01/03/2021
+
+Asginando a la persona Luisa la fecha 02/03/2021
+Asginando a la persona Clara la fecha 02/03/2021
+Encontrada persona Rogelio por primera vez. Creamos una entrada en el mapa para ella con una lista de fechas vacía
+Asginando a la persona Rogelio la fecha 02/03/2021
+
+Asginando a la persona Clara la fecha 03/03/2021
+Asginando a la persona Rogelio la fecha 03/03/2021
+Encontrada persona Francisco por primera vez. Creamos una entrada en el mapa para ella con una lista de fechas vacía
+Asginando a la persona Francisco la fecha 03/03/2021
+
+Asginando a la persona Rogelio la fecha 04/03/2021
+Asginando a la persona Francisco la fecha 04/03/2021
+Asginando a la persona Juan la fecha 04/03/2021
+
+Asginando a la persona Francisco la fecha 05/03/2021
+Asginando a la persona Juan la fecha 05/03/2021
+Asginando a la persona Luisa la fecha 05/03/2021
+
+Asginando a la persona Juan la fecha 06/03/2021
+Asginando a la persona Luisa la fecha 06/03/2021
+Asginando a la persona Clara la fecha 06/03/2021
+
+Asginando a la persona Luisa la fecha 07/03/2021
+Asginando a la persona Clara la fecha 07/03/2021
+Asginando a la persona Rogelio la fecha 07/03/2021
+
+Contenido final del mapa de turnos organizado por personas:
+Persona Clara: [2021-03-01, 2021-03-02, 2021-03-03, 2021-03-06, 2021-03-07]
+Persona Francisco: [2021-03-03, 2021-03-04, 2021-03-05]
+Persona Juan: [2021-03-01, 2021-03-04, 2021-03-05, 2021-03-06]
+Persona Luisa: [2021-03-01, 2021-03-02, 2021-03-05, 2021-03-06, 2021-03-07]
+Persona Rogelio: [2021-03-02, 2021-03-03, 2021-03-04, 2021-03-07]</code></pre>
+</div>
+</div></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="14_asignacin_de_turnos_i.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="16_ordenacin_de_productos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

@@ -17,6 +17,7 @@ public class Combinacion {
     
     private final Set<Integer> numeros;
     
+    @SuppressWarnings("empty-statement")
     public Combinacion(){
         numeros = new HashSet();
         for (int i = 0; i < TAM; i++) {

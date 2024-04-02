@@ -28,20 +28,16 @@ public class Colores {
         List<String> nombres = new LinkedList();
 
         for (int i = 0; i < 10; i++) {
-            num = (int)(Math.random() * arrayColores.length);
+            num = (int) (Math.random() * arrayColores.length);
             nombres.add(arrayColores[num]);
-            frecuencia[num]++;
+            mapa.put(arrayColores[num], mapa.get(arrayColores[num]) + 1);
         }
-        
+
         for (String nom : nombres) {
-            System.out.print(nom+" ");
+            System.out.print(nom + " ");
         }
         System.out.println("");
-        
-        for (int i = 0; i < arrayColores.length; i++) {
-            mapa.put(arrayColores[i], frecuencia[i]);
-        }
-        
+
         System.out.println(mapa.toString());
     }
 }

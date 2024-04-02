@@ -4,8 +4,8 @@
  */
 package tarea2;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,7 +17,7 @@ public class Vaciado {
     private List<Integer> lista;
 
     public Vaciado() {
-        lista = new LinkedList<>();
+        lista = new ArrayList<>();
         for (int i = 0; i < 12; i++) {
             lista.add((int) (Math.random() * 5 + 1));
         }
@@ -27,7 +27,7 @@ public class Vaciado {
         int prim = lista.get(0);
         System.out.println("EL PRIMER ELEMENTO ES: " + prim);
         Iterator<Integer> it = lista.iterator();
-        while (it.hasNext()) {
+        while (it.hasNext() && lista.contains(prim)) {
             if (it.next().equals(prim)) {
                 it.remove();
             }

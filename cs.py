@@ -3,7 +3,6 @@ import pyautogui
 import os
 
 try:
-    # Ejecutar el programa especificadogit
     pyautogui.press("winleft")
     pyautogui.write("git")
     pyautogui.press("enter")
@@ -21,6 +20,5 @@ try:
     pyautogui.press("enter")
     pyautogui.sleep(15)
     os.system("shutdown /s /t 1")
-    print("El programa ha terminado.")
 except Exception as e:
     print("Ha ocurrido un error:", e)

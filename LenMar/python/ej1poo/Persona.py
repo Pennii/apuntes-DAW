@@ -8,7 +8,7 @@ class Persona:
 
 
     def setNombre(self, nom):
-        self.nombre = nom
+        self.__nombre = nom
     
     def getNombre(self):
-        return self.nombre        
+        return self.__nombre        

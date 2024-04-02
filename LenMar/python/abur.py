@@ -18,7 +18,7 @@ def main():
         matriz.append(fila)
     for i in matriz:
         for j in i:
-            print(j,'',end='')
+            print(j, end="")
         print('')
     input("ingresa una tecla para salir... ")
         

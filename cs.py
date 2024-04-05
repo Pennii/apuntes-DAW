@@ -3,6 +3,7 @@ import pyautogui
 import os
 
 try:
+    # WRITER PARA ESCRIBIR, READER PARA LEER VARIABLE {ESCRIBIR VARIABLE EN TEXTO - READ VARIABLE - UTILIZAR VARIABLE}
     pyautogui.press("winleft")
     pyautogui.write("git")
     pyautogui.press("enter")

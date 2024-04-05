@@ -22,57 +22,37 @@ public class AsigTurnos {
     public static void main(String[] args) {
         String[] personas = {"Juan", "Luisa", "Clara", "Rogelio", "Francisco"};
         Map<LocalDate, LinkedList<String>> turnosPorFecha = new TreeMap();
-        Map<String, LinkedList> turnosPorPersona = new HashMap();
+        Map<String, LinkedList<LocalDate>> turnosPorPersona = new HashMap();
         int cont = 0;
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/YY");
 
         for (int i = 0; i < 7; i++) {
-            turnosPorFecha.put(LocalDate.of(2021, 3, i + 1), new LinkedList<String>());
+            turnosPorFecha.put(LocalDate.of(2021, 3, i + 1), new LinkedList<>());
         }
-        for(LocalDate fechas : turnosPorFecha.keySet()){
+        for (LocalDate fechas : turnosPorFecha.keySet()) {
             for (int i = 0; i < 3; i++) {
-                String persona = personas[(i + cont)%personas.length];
+                String persona = personas[(i + cont) % personas.length];
                 turnosPorFecha.get(fechas).add(persona);
-                System.out.println("SE AÑADE A LA FECHA "+fechas+": "+persona);
+                System.out.println("SE AÑADE A LA FECHA " + fechas.format(formato) + ": " + persona);
             }
             cont++;
         }
-        
-//        for (int i = 0; i < 7; i++) {
-//            
-////            turnosPorFecha.get(LocalDate.of(2021, 3, i + 1)).add(personas[cont]);
-////            System.out.println("SE AÑADE A LA FECHA " + LocalDate.of(2021, 3, i + 1).format(formato) + ": " + personas[cont]);
-////            if (cont == personas.length - 1) {
-////                cont = 0;
-////            }
-////            turnosPorFecha.get(LocalDate.of(2021, 3, i + 1)).add(personas[cont + 1]);
-////            System.out.println("SE AÑADE A LA FECHA " + LocalDate.of(2021, 3, i + 1).format(formato) + ": " + personas[cont + 1]);
-////            if (cont == personas.length - 2) {
-////                cont = 0;
-////            }
-////            turnosPorFecha.get(LocalDate.of(2021, 3, i + 1)).add(personas[cont + 2]);
-////            System.out.println("SE AÑADE A LA FECHA " + LocalDate.of(2021, 3, i + 1).format(formato) + ": " + personas[cont + 2]);
-////            if (cont == personas.length - 3) {
-////                cont = 0;
-////            }
-////            cont++;
-//        }
-        
 
-        for (int i = 1; i < 8; i++) {
-            for (String lista : turnosPorFecha.get(LocalDate.of(2021, Month.MARCH, i))) {
-                if (!turnosPorPersona.containsKey(lista)) {
-                    turnosPorPersona.put(lista, new LinkedList<LocalDate>());
-                }
-            }
-        }
-         for (int i = 1; i < 8; i++) {
-            LocalDate fecha = LocalDate.of(2021, Month.MARCH, i);
+        System.out.println("---------------------");
+        for (LocalDate fecha : turnosPorFecha.keySet()) {
             for (String lista : turnosPorFecha.get(fecha)) {
-            turnosPorPersona.get(lista).add(fecha);
+                if (!turnosPorPersona.containsKey(lista)) {
+                    turnosPorPersona.put(lista, new LinkedList<>());
+                    System.out.println("ENCONTRADO " + lista + " ASIGNANDOLE TURNO...");
+                }
+                turnosPorPersona.get(lista).add(fecha);
+                System.out.println(lista + " ASIGNADO A " +fecha.format(formato));
             }
-         }
-       
-        System.out.println(turnosPorPersona.toString());
+            System.out.println("--");
+        }
+
+        for(String persona : turnosPorPersona.keySet()){
+            System.out.println(persona+": "+turnosPorPersona.get(persona));
+        }
     }
 }

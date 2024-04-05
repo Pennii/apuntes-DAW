@@ -11,7 +11,7 @@ import tarea2.OrdProd.Producto;
  *
  * @author matii
  */
-public class CompararProdPrecio implements Comparator<Producto> {
+ class CompararProdPrecio implements Comparator<Producto> {
 
     @Override
     public int compare(Producto o1, Producto o2) {

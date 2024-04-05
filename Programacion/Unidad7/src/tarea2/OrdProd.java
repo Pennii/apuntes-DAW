@@ -55,29 +55,16 @@ public class OrdProd {
 
         @Override
         public int compareTo(Producto o) {
-            int res;
-            if (o.precio > this.precio) {
-                res = -1;
-            } else if (o.precio == this.precio) {
-                res = 0;
-            } else {
-                res = 1;
-            }
-            return res;
+            return Double.valueOf(this.precio).compareTo(o.precio);
         }
     }
 
     public static void main(String[] args) {
-        Producto prod1 = new Producto("Sardinas", LocalDate.of(2023, 12, 31), 1.5);
-        Producto prod2 = new Producto("Caballa", LocalDate.of(2023, 12, 25), 1.7);
-        Producto prod3 = new Producto("Navajas", LocalDate.of(2021, 1, 1), 2.4);
-        Producto prod4 = new Producto("Mejillones", LocalDate.of(2022, 1, 11), 2.1);
-
         List<Producto> lista = new ArrayList();
-        lista.add(prod1);
-        lista.add(prod2);
-        lista.add(prod3);
-        lista.add(prod4);
+        lista.add(new Producto("Sardinas", LocalDate.of(2023, 12, 31), 1.5));
+        lista.add(new Producto("Caballa", LocalDate.of(2023, 12, 25), 1.7));
+        lista.add(new Producto("Navajas", LocalDate.of(2021, 1, 1), 2.4));
+        lista.add(new Producto("Mejillones", LocalDate.of(2022, 1, 11), 2.1));
 
         for (Producto prod : lista) {
             System.out.println(prod.toString());

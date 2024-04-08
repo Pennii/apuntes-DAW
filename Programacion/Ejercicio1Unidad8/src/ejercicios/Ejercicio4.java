@@ -4,12 +4,29 @@
  */
 package ejercicios;
 
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /**
  *
  * @author matii
  */
 public class Ejercicio4 {
+
     public static void main(String[] args) {
-        
+        int num, lista[];
+        try (FileOutputStream file = new FileOutputStream("recursos/arrayAleatorio.bin"); DataOutputStream ds = new DataOutputStream(file);) {
+            num = (int) (Math.random() * 21 + 10);
+            lista = new int[num];
+
+            ds.writeInt(num);
+            for (int i = 0; i < lista.length; i++) {
+                lista[i] = (int) (Math.random() * 10 + 1);
+                ds.writeInt(lista[i]);
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 }

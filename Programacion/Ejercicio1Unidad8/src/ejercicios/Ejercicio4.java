@@ -22,7 +22,7 @@ public class Ejercicio4 {
 
             ds.writeInt(num);
             for (int i = 0; i < lista.length; i++) {
-                lista[i] = (int) (Math.random() * 10 + 1);
+                lista[i] = (int) (Math.random() * 9);
                 ds.writeInt(lista[i]);
             }
         } catch (IOException e) {

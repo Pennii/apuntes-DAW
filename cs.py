@@ -1,14 +1,16 @@
-import subprocess
 import pyautogui
 import os
 
 try:
-    # WRITER PARA ESCRIBIR, READER PARA LEER VARIABLE {ESCRIBIR VARIABLE EN TEXTO - READ VARIABLE - UTILIZAR VARIABLE}
+    # abrimos el archivo
+    file = open("ruta.txt")
+    ruta = file.read()
+    # subimos la copia de seguridad
     pyautogui.press("winleft")
     pyautogui.write("git")
     pyautogui.press("enter")
     pyautogui.sleep(1)
-    pyautogui.write("cd onedrive/desktop/apuntes-daw")
+    pyautogui.write(f"cd {ruta}")
     pyautogui.press("enter")
     pyautogui.sleep(1)
     pyautogui.write("git add .")
@@ -21,5 +23,6 @@ try:
     pyautogui.press("enter")
     pyautogui.sleep(15)
     os.system("shutdown /s /t 1")
+    print("El programa ha terminado.")
 except Exception as e:
     print("Ha ocurrido un error:", e)

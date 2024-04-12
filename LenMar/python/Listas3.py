@@ -1,6 +1,7 @@
 import random
 alumno = []
 sum = 0
+numNotas = 5
 
 for i in range(5):
     alumno.append(random.randint(0,10))

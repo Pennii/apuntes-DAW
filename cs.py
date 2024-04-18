@@ -6,10 +6,11 @@ try:
     file = open("ruta.txt")
     ruta = file.read()
     # subimos la copia de seguridad
-    pyautogui.press("winleft")
-    pyautogui.write("git")
+    pyautogui.hold("winleft")
+    pyautogui.press("r")
+    pyautogui.write("cmd")
     pyautogui.press("enter")
-    pyautogui.sleep(1)
+    """    pyautogui.sleep(1)
     pyautogui.write(f"cd {ruta}")
     pyautogui.press("enter")
     pyautogui.sleep(1)
@@ -23,6 +24,6 @@ try:
     pyautogui.press("enter")
     pyautogui.sleep(15)
     os.system("shutdown /s /t 1")
-    print("El programa ha terminado.")
+    print("El programa ha terminado.")"""
 except Exception as e:
     print("Ha ocurrido un error:", e)

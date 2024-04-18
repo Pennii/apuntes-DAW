@@ -1,7 +1,13 @@
 
 package ejercicio3;
 
+import java.io.IOException;
 import java.time.LocalDate;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 /**
  * Ejercicio 3: Lectura y escritura de objetos. XML.
@@ -15,7 +21,7 @@ public class Ejercicio3 {
      * Método principal.
      * @param args argumentos que recibe el método
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws ParserConfigurationException, SAXException, IOException {
 
         //----------------------------------------------
         //          Declaración de variables 
@@ -35,6 +41,9 @@ public class Ejercicio3 {
         //---------------------------------------------------------------------- 
         
         try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(ruta);
             // Creo un objeto CAgendaContactos y tres objetos CPersona. 
             miAgenda = new CAgendaContactos();
             p1 = new CPersona("Manuel Pérez Pérez", "C/Sevilla,nº5,Aguadulce", "123321123",

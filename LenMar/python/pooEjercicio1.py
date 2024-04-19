@@ -34,20 +34,23 @@ class Persona:
         self.__dni = dni
         print("dni cambiado")
         
-    def mostrar(self):
-        print(f"Nombre: {self.__nombre}, edad: {self.__edad}, dni: {self.__dni}")
+    def __str__(self):
+        return f"Nombre: {self.__nombre}, edad: {self.__edad}, dni: {self.__dni}"
     
     def esMayorDeEdad(self):
         return self.__edad >= 18
 
-class alumno(persona):
+class alumno(Persona):
     def __init__(self, nombre, edad, dni, nota):
-        super(self, nombre, edad, dni)
+        super().__init__( nombre, edad, dni)
         self.__nota = nota
+        
+    def __str__(self):
+        return super().__str__() + f" nota: {self.__nota}"
 
-persona1 = Persona("matias", 21, "xd")
+persona1 = alumno("matias", 21, "xd", 5)
 
-persona1.mostrar()
+
 persona1.dni = "tampoco"
-persona1.mostrar()
+print(persona1.__str__())
 print(persona1.esMayorDeEdad())

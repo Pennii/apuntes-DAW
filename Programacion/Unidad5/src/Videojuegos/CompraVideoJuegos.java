@@ -1,5 +1,6 @@
 package Videojuegos;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,7 +8,9 @@ import java.util.regex.Pattern;
  *
  * @author maniana
  */
-public class CompraVideoJuegos {
+public class CompraVideoJuegos implements Serializable{
+    
+    private static long serialVersionUID = 42L;
 
     private static final String PLATAFORMAS = "PS5|XBOX|Switch";
     private static final String FORMATO_TICKET = "(([A-Z a-z0-9]+),(PS5|XBOX|Switch),([1-9][0-9\\.]{0,4})#?)+";

@@ -2,8 +2,8 @@
 package coche;
 
 /**
- *
- * @author Fran
+ * Clase que simula el comportamiento de una empresa de compra y venta de autos
+ * @author Matias Pennino
  */
 public class Coche {
 
@@ -12,38 +12,57 @@ public class Coche {
     private double precioIVA;
     private int stock;
 
-    /* Constructor sin argumentos */
+    /**
+     * Constructor sin parametros
+     */
     public Coche ()
     {
     }
-    // Constructor con parámetro para iniciar todas las propiedades de la clase
-    // coche
-    
+   
+    /**
+     * constructor con tres parametros
+     * @param nom nombre del auto
+     * @param precio precio del auto
+     * @param stock cantidad de autos
+     */
     public Coche (String nom, double precio, int stock)
     {
         this.nombre =nom;
         this.precio=precio;
         this.stock=stock;
     }
-   // Método para asignar el nombre del coche
+   
+    /**
+     * metodo que asigna un nombre a un auto
+     * @param nom nombre a asignar
+     */
     public void asignarNombre(String nom)
     {
         nombre=nom;
     }
-    // Método que me devuelve el nombre del coche
+    
+    /**
+     * metodo que devuelve el nombre del auto
+     * @return nombre del auto
+     */
     public String obtenerNombre()
     {
         return nombre;
     }
 
-    // Método que me devuelve el stock de coches disponible en cada momento
+    /**
+     * metodo que devuelve la cantidad de autos que hay en stock de ese modelo
+     * @return cantidad de ese modelo
+     */
      public int obtenerStock ()
     {
         return stock;
     }
 
-    /* Método para comprar coches. Modifica el stock.
-     * Este método va a ser probado con Junit
+    /**
+     * metodo que modifica la cantidad de autos, simulando la compra de estos
+     * @param cantidad autos a comprar
+     * @throws Exception si la cantidad es negativa
      */
     public void comprar(int cantidad) throws Exception
     {
@@ -52,6 +71,12 @@ public class Coche {
         stock = stock + cantidad;
     }
 
+    /**
+     * metodo que modifica la cantidad de autos, simulando la venta de estos
+     * @param cantidad autos a vender
+     * @throws Exception si la cantidad es igual o menor a 0, o si no hay la 
+     * cantidad suficiente de autos
+     */
     public void vender (int cantidad) throws Exception
     {
         if (cantidad <= 0)

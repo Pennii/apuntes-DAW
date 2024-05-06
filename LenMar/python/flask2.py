@@ -15,11 +15,24 @@ def inicio():
 
 @app.get("/lista")
 def listado():
-    texto = "<h1>Listado de alumnos</h1>\n<ol>"
+    texto = f"""
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo flex</title>
+        <link rel="stylesheet" href={url_for('static', filename = 'css/style.css')}>
+
+    </head>
+    <body>
+    <img src = {url_for('static', filename = 'img/logo_ies_aguadulce.png')} alt = '...' width = 200px>
+    <h2><a href = {url_for('formulario')}>Agregar alumno</a></h2>
+    <h1>Listado de alumnos</h1>\n<ol>"""
     for i in range(len(lista)):
-        texto += "<li> {nombre} y tiene {edad} años, estudia {ciclo}</li>\n".format(nombre = lista[i].get("nombre"), edad = lista[i].get("edad"), ciclo = lista[i].get("ciclo"))
+        texto += f"<li> <a href = {url_for('alumno', nom = lista[i].get('nombre'))}>{lista[i].get('nombre')}</a> y tiene {lista[i].get('edad')} años, estudia {lista[i].get('ciclo')} <a href = {url_for('eliminarAlm', nom = lista[i].get('nombre'))}>BORRAR</a></li>\n"
     texto += "</ol>"
-    return "<head> <style>body{background-color : #32363a; color : white}</style></head>"+texto
+    return texto+"</body></html>"
 
 @app.get("/alumno/<nom>")
 def alumno(nom):
@@ -57,12 +70,14 @@ def eliminarAlm(nom):
             encontrado = True
             lista.remove(alm)
     if encontrado:
-        salida = inicio()
+        salida = redirect(url_for('listado'))
     else:
-        salida = "El alumno no ha sido encontrado en la lista"
+        salida = f"""El alumno no ha sido encontrado en la lista
+        <a href= {url_for('inicio')}> volver </a>
+        """
     return salida
     
-@app.route("/prueba", methods = ["GET", "POST"])
+@app.route("/formulario_alumno", methods = ["GET", "POST"])
 def formulario():
     if request.method == "POST":
         nom = request.form['nombre']
@@ -70,8 +85,7 @@ def formulario():
         cic = request.form['ciclo']
         return redirect(url_for('agregarAlm',nombre = nom, ciclo = cic, edad = ed))
     else:
-        return """<form method = 'post' action = '/prueba'>
-        
+        return f"""<form method = 'post' action = {url_for('formulario')}>        
         <input type = 'text' name = 'nombre' id = 'nombre'>
         <input type = 'number' name = 'edad' id = 'edad'>
         <input type = 'text' name = 'ciclo' id = 'ciclo'>
@@ -82,7 +96,10 @@ def formulario():
 
 @app.errorhandler(404)
 def notEncontrado(e):
-    return inicio()
+    return f"""
+    <h2>ERROR PAGINA NO EXISTE</h2>
+    <a href = {url_for("inicio")} >VOLVER</a>
+    """
 
 
 if __name__ == "__main__":

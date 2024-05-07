@@ -1,8 +1,16 @@
 package bote;
-
+/**
+ * Clase principal del proyecto
+ * @author maniana
+ * @version 1.0
+ * @since 05-07-2024
+ */
 public class Main {
 
-    
+    /**
+     * metodo principal donde se ejecuta todo
+     * @param args argumentos pasados como parametro
+     */
     public static void main(String[] args) {
         Bote bruger;
         int centilitros=300;
@@ -15,6 +23,12 @@ public class Main {
         opera_Rellena(bruger, centilitros, centimos);
     }
 
+    /**
+     * metodo que simula la carga de combustible
+     * @param bruger objeto bote a usar
+     * @param centilitros cantidad de combustible
+     * @param centimos importe total
+     */
     private static void opera_Rellena(Bote bruger, int centilitros, int centimos) {
         /*Vamos a intentar añadir 300 centilitros al bote, como se supera la capacidad saltará
         una excepción y no se modificará el contenido del depósito que seguirá siendo 280cl*/

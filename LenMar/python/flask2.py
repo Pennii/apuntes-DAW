@@ -83,16 +83,16 @@ def formulario():
         nom = request.form['nombre']
         ed = request.form['edad']
         cic = request.form['ciclo']
-        return redirect(url_for('agregarAlm',nombre = nom, ciclo = cic, edad = ed))
+        salida = redirect(url_for('agregarAlm',nombre = nom, ciclo = cic, edad = ed))
     else:
-        return f"""<form method = 'post' action = {url_for('formulario')}>        
+        salida = f"""<form method = 'post' action = {url_for('formulario')}>        
         <input type = 'text' name = 'nombre' id = 'nombre'>
         <input type = 'number' name = 'edad' id = 'edad'>
         <input type = 'text' name = 'ciclo' id = 'ciclo'>
         <input type = 'submit' value = 'enviar'>
         </form>
         """
-        
+    return salida
 
 @app.errorhandler(404)
 def notEncontrado(e):

@@ -1,7 +1,7 @@
 package bote;
 /**
  * Clase principal del proyecto
- * @author maniana
+ * @author Pennino Matias
  * @version 1.0
  * @since 05-07-2024
  */
@@ -24,10 +24,10 @@ public class Main {
     }
 
     /**
-     * metodo que simula la carga de combustible
+     * metodo que simula la carga de pintura
      * @param bruger objeto bote a usar
-     * @param centilitros cantidad de combustible
-     * @param centimos importe total
+     * @param centilitros cantidad de pintura
+     * @param centimos dinero con el que se pagara
      */
     private static void opera_Rellena(Bote bruger, int centilitros, int centimos) {
         /*Vamos a intentar añadir 300 centilitros al bote, como se supera la capacidad saltará
@@ -42,6 +42,11 @@ public class Main {
         }
     }
 
+    /**
+     * metodo que simula la accion de pintar
+     * @param bruger objeto bote a usar
+     * @param metros metros a pintar
+     */
     private static void opera_Pinta(Bote bruger, int metros) {
         /*Vamos a pintar 2 metros, como hay sufuiciente pintura la operación tendrá éxito y se
         descontarán 20 centilitros del contenido del bote, quedan 280cl*/

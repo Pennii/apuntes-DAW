@@ -14,10 +14,7 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-//import java.sql.DriverManager;
-//import java.sql.Connection;
-//import java.sql.SQLException;
-//import java.sql.Statement;
+
 
 /**
  *
@@ -45,9 +42,12 @@ public class App {
         boolean creada = false;
 
         try (Statement st = con.createStatement()) {
+            // se comprueba si las tablas y sus valores ya estan cargados
             ResultSet rs = st.executeQuery("SELECT COUNT(*) FROM CLIENTE");
             rs.next();
-//            if (!(rs.getInt("COUNT(*)") > 0)) {
+            //si el conteo es mayor a 0 significa que ya lo estan
+            if (!(rs.getInt("COUNT(*)") > 0)) {
+                
                 String sql = cargarRecurso(ESTRUCTURA);
                 if (sql != null) {
                     /*
@@ -64,7 +64,7 @@ public class App {
                 } else {
                     System.out.println("Problemas al cargar el script");
                 }
-            
+            }
 
         } catch (SQLException ex) {
             System.out.println(ex);;
@@ -145,6 +145,130 @@ public class App {
             }
         }
     }
+    /**
+     * metodo que muestra todos los proveedores en la bd
+     *
+     * @param con conexion a la bd
+     */
+    public static void mostrarProveedores(Connection con) {
+        if (con != null) {
+            try (Statement consulta = con.createStatement()) {
+                String query = "SELECT id,nombre  FROM proveedor";
+                ResultSet resultado;
+                resultado = consulta.executeQuery(query);
+
+                System.out.printf("%-8s%-10s\n", "ID", "NOMBRE");
+                while (resultado.next()) {
+                    String codigo = resultado.getString("id");
+                    String nombre = resultado.getString("nombre");
+
+                    System.out.printf("%-8s%-10s\n", codigo, nombre);
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error al mostrar proveedores:\n\t" + ex);
+            }
+        }
+    }
+    /**
+     * metodo que muestra todos los clientes en la bd
+     *
+     * @param con conexion a la bd
+     */
+    public static void mostrarClientes(Connection con) {
+        if (con != null) {
+            try (Statement consulta = con.createStatement()) {
+                String query = "SELECT codigo,nombre,edad  FROM cliente";
+                ResultSet resultado;
+                resultado = consulta.executeQuery(query);
+
+                System.out.printf("%-8s%-10s%s\n", "CODIGO", "NOMBRE", "EDAD");
+                while (resultado.next()) {
+                    String codigo = resultado.getString("codigo");
+                    String nombre = resultado.getString("nombre");
+                    int edad = resultado.getInt("edad");
+
+                    System.out.printf("%-8s%-10s%d\n", codigo, nombre, edad);
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error al mostrar productos:\n\t" + ex);
+            }
+        }
+    }
+    /**
+     * metodo que muestra todos los repartidores en la bd
+     *
+     * @param con conexion a la bd
+     */
+    public static void mostrarRepartidores(Connection con) {
+        if (con != null) {
+            try (Statement consulta = con.createStatement()) {
+                String query = "SELECT codigo,nombre,vehiculo  FROM repartidor";
+                ResultSet resultado;
+                resultado = consulta.executeQuery(query);
+
+                System.out.printf("%-8s%-10s%s\n", "CODIGO", "NOMBRE", "VEHICULO");
+                while (resultado.next()) {
+                    String codigo = resultado.getString("codigo");
+                    String nombre = resultado.getString("nombre");
+                    String vehiculo = resultado.getString("vehiculo");
+
+                    System.out.printf("%-8s%-10s%s\n", codigo, nombre, vehiculo);
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error al mostrar productos:\n\t" + ex);
+            }
+        }
+    }
+    /**
+     * metodo que muestra todos los pedidos en la bd
+     *
+     * @param con conexion a la bd
+     */
+    public static void mostrarPedidos(Connection con) {
+        if (con != null) {
+            try (Statement consulta = con.createStatement()) {
+                String query = "SELECT prod,clien,fecha  FROM pedido";
+                ResultSet resultado;
+                resultado = consulta.executeQuery(query);
+
+                System.out.printf("%-10s%-10s%s\n", "PRODUCTO", "CLIENTE", "FECHA");
+                while (resultado.next()) {
+                    String producto = resultado.getString("prod");
+                    String cliente = resultado.getString("clien");
+                    String fecha = resultado.getString("fecha");
+
+                    System.out.printf("%-10s%-10s%d\n", producto, cliente, fecha);
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error al mostrar productos:\n\t" + ex);
+            }
+        }
+    }
+    /**
+     * metodo que muestra todos los repartos en la bd
+     *
+     * @param con conexion a la bd
+     */
+    public static void mostrarRepartos(Connection con) {
+        if (con != null) {
+            try (Statement consulta = con.createStatement()) {
+                String query = "SELECT repartidor,producto,fecha  FROM reparto";
+                ResultSet resultado;
+                resultado = consulta.executeQuery(query);
+
+                System.out.printf("%-12s%-10s%s\n", "REPARTIDOR", "PRODUCTO", "FECHA");
+                while (resultado.next()) {
+                    String rep = resultado.getString("repartidor");
+                    String prod = resultado.getString("producto");
+                    String fec = resultado.getString("fecha");
+
+                    System.out.printf("%-12s%-10s%d\n", rep, prod, fec);
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error al mostrar productos:\n\t" + ex);
+            }
+        }
+    }
 
     /**
      * metodo que crea un producto en la bd
@@ -190,7 +314,8 @@ public class App {
             try (Connection con = DriverManager.getConnection(URL, USUARIO, PASSWORD)) {
                 //SE CARGAN LAS TABLAS DEL SCRIPT
                 crearTabla(con);
-                mostrarProductos(con);
+
+                
             } catch (SQLException ex) {
                 System.out.println("no se encontro la bd " + ex);
             }

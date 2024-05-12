@@ -39,6 +39,10 @@ public class Cliente {
         }
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
     /**
      * metodo que carga el objeto en la bd
      *

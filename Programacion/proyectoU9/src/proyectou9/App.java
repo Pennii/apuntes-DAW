@@ -96,44 +96,45 @@ public class App {
     }
 
     /**
-     * elimina un producto de la tabla
+     * elimina una entidad de la tabla. Cada una tiene asignado un numero en su
+     * menu, en funcion de ese numero se le asigna un query y se elimina
+     * buscando por su clave primaria
      *
      * @param con conexion a usar
-     * @param codigo codigo del producto a eliminar
+     * @param clav clave primaria de la entidad
+     * @return verdadero si la entidad se borro, falso si no
      */
-    public static void eliminarProducto(Connection con, String codigo) {
-        String query = "DELETE FROM producto WHERE codigo = ?";
+    public static boolean eliminar(Connection con, int ent, String clav) {
+        boolean borrado = false;
+        String query = null;
+        String clave = clav;
+        switch (ent) {
+            case 1:
+                query = "DELETE FROM PROVEEDOR WHERE ID = ?";
+                break;
+            case 2:
+                query = "DELETE FROM CLIENTE WHERE CODIGO = ?";
+                break;
+            case 3:
+                query = "DELETE FROM REPARTIDOR WHERE CODIGO = ?";
+                break;
+            case 4:
+                query = "DELETE FROM PRODUCTO WHERE CODIGO = ?";
+                break;
+            default:
+                query = null;
+        }
 
         try (PreparedStatement consulta = con.prepareStatement(query)) {
-            consulta.setString(1, codigo);
+            consulta.setString(1, clave);
 
             int registrosAfectados = consulta.executeUpdate();
-            if (registrosAfectados > 0) {
-                System.out.println("Producto eliminado");
-            } else {
-                System.out.println("No se ha podido realizar la consulta");
-            }
+            borrado = registrosAfectados > 0;
         } catch (SQLException ex) {
             System.out.println("Error al ejecutar consulta:\n\t" + ex);
 
         }
-    }
-
-    public static void eliminarProv(String id, Connection con) {
-        String query = "DELETE FROM PROVEEDOR WHERE ID = ?";
-        
-        try (PreparedStatement ps = con.prepareStatement(query)) {
-            ps.setString(1, id);
-            
-            int registrosAfectado = ps.executeUpdate();
-            if (registrosAfectado > 0) {
-                System.out.println("Proveedor eliminado");
-            }else{
-                System.out.println("No se encontro al proveedor");
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error al eliminar proveedor");
-        }
+        return borrado;
     }
 
     /**
@@ -363,7 +364,7 @@ public class App {
                         menuProv(con);
                         break;
                     case 2:
-
+                        menuClien(con);
                         break;
                     case 3:
 
@@ -387,7 +388,13 @@ public class App {
         } while (!valido);
     }
 
+    /**
+     * menu de operaciones para proveedor
+     *
+     * @param con conexion de la base de datos
+     */
     private static void menuProv(Connection con) {
+        int ent = 1;
         Scanner teclado = new Scanner(System.in);
         int op;
         boolean valido = false, volver = false;
@@ -417,7 +424,11 @@ public class App {
                     case 3:
                         System.out.println("Ingresa el id del proveedor a eliminar");
                         id = teclado.nextLine();
-                        eliminarProv(id, con);
+                        if (eliminar(con, ent, id)) {
+                            System.out.println("Proveedor eliminado");
+                        } else {
+                            System.out.println("Error al eliminar proveedor");
+                        }
                         break;
                     case 4:
                         volver = true;
@@ -454,6 +465,80 @@ public class App {
                 teclado.nextLine();
             }
 
+        } while (!valido);
+    }
+
+    private static void menuClien(Connection con) {
+        int ent = 2;
+        Scanner teclado = new Scanner(System.in);
+        int op, edad;
+        boolean valido = false, volver = false;
+        String codigo, nombre;
+        System.out.println("BIENVENIDO AL MENU DE CLIENTES");
+        System.out.println("¿QUE DESEAS HACER?");
+        System.out.println("1.Ver clientes 2.Agregar cliente 3.Borrar cliente 4.Volver");
+        do {
+            try {
+                op = teclado.nextInt();
+                teclado.nextLine();
+                valido = true;
+                switch (op) {
+                    case 1:
+                        mostrarClientes(con);
+                        break;
+                    case 2:
+                        System.out.println("Ingresa el codigo, nombre y edad del cliente:");
+                        codigo = teclado.nextLine();
+                        nombre = teclado.nextLine();
+                        edad = teclado.nextInt();
+                        Cliente c = null;
+                        c = new Cliente(codigo, nombre, edad);
+                        if (c.getCodigo() != null) {
+                            System.out.println("Cliente agregado con exito");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Ingresa el codigo del cliente a eliminar:");
+                        codigo = teclado.nextLine();
+                        if (eliminar(con, ent, codigo)) {
+                            System.out.println("Cliente eliminado");
+                        } else {
+                            System.out.println("No se pudo eliminar al cliente");
+                        }
+                        break;
+                    case 4:
+                        menu(con);
+                        volver = true;
+                        break;
+                    default:
+                        System.out.println("Operacion invalida, ingresa una opcion"
+                                + " correcta");
+                        valido = false;
+                }
+                if (!volver) {
+                    System.out.println("1.Continuar operaciones 2.Menu principal");
+                    boolean correcto = false;
+                    while (!correcto) {
+                        op = teclado.nextInt();
+                        switch (op) {
+                            case 1:
+                                menuClien(con);
+                                correcto = true;
+                                break;
+                            case 2:
+                                menu(con);
+                                correcto = true;
+                                break;
+                            default:
+                                System.out.println("op invalida");
+                        }
+                    }
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println("Error al ingresar operacion, por favor "
+                        + "ingresa una opcion valida");
+                teclado.nextLine();
+            }
         } while (!valido);
     }
 }

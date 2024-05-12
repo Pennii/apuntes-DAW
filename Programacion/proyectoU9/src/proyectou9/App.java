@@ -9,12 +9,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 
 /**
  *
@@ -47,7 +47,7 @@ public class App {
             rs.next();
             //si el conteo es mayor a 0 significa que ya lo estan
             if (!(rs.getInt("COUNT(*)") > 0)) {
-                
+
                 String sql = cargarRecurso(ESTRUCTURA);
                 if (sql != null) {
                     /*
@@ -145,6 +145,7 @@ public class App {
             }
         }
     }
+
     /**
      * metodo que muestra todos los proveedores en la bd
      *
@@ -169,6 +170,7 @@ public class App {
             }
         }
     }
+
     /**
      * metodo que muestra todos los clientes en la bd
      *
@@ -194,6 +196,7 @@ public class App {
             }
         }
     }
+
     /**
      * metodo que muestra todos los repartidores en la bd
      *
@@ -219,6 +222,7 @@ public class App {
             }
         }
     }
+
     /**
      * metodo que muestra todos los pedidos en la bd
      *
@@ -244,6 +248,7 @@ public class App {
             }
         }
     }
+
     /**
      * metodo que muestra todos los repartos en la bd
      *
@@ -315,11 +320,93 @@ public class App {
                 //SE CARGAN LAS TABLAS DEL SCRIPT
                 crearTabla(con);
 
-                
+                menu();
             } catch (SQLException ex) {
                 System.out.println("no se encontro la bd " + ex);
             }
         }
 
+    }
+
+    /**
+     * menu principal donde se accedera a los submenu de cada entidad
+     */
+    private static void menu() {
+        Scanner teclado = new Scanner(System.in);
+        int op;
+        boolean valido = false;
+        System.out.println("BIENVENIDO A LA APLICACION DE PRODUCTOS");
+        System.out.println("¿QUE DESEAS HACER?");
+        System.out.println("1.Proveedores 2.Clientes 3.Repartidores 4.Productos 5.Terminar");
+        do {
+            try {
+                op = teclado.nextInt();
+                valido = true;
+                switch (op) {
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+                        valido = true;
+                        break;
+                    default:
+                        System.out.println("Operacion invalida, ingresa una opcion"
+                                + " correcta");
+                        valido = false;
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println("Error al ingresar operacion, por favor "
+                        + "ingresa una opcion valida");
+                teclado.nextLine();
+            }
+
+        } while (!valido);
+    }
+
+    private static void menuProv() {
+        Scanner teclado = new Scanner(System.in);
+        int op;
+        boolean valido = false;
+        System.out.println("BIENVENIDO AL MENU DE PROVEEDORES");
+        System.out.println("¿QUE DESEAS HACER?");
+        System.out.println("1.Ver los proveedores 2.Agregar proveedor 3.Borrar proveedor 4.Volver");
+           do {
+            try {
+                op = teclado.nextInt();
+                valido = true;
+                switch (op) {
+                    case 1:
+                        mostrar
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    default:
+                        System.out.println("Operacion invalida, ingresa una opcion"
+                                + " correcta");
+                        valido = false;
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println("Error al ingresar operacion, por favor "
+                        + "ingresa una opcion valida");
+                teclado.nextLine();
+            }
+
+        } while (!valido);
     }
 }

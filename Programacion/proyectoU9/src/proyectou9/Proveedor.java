@@ -4,11 +4,14 @@
  */
 package proyectou9;
 
-import javax.persistence.Basic;
+import java.util.LinkedList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Persistence;
 
 /**
@@ -17,15 +20,11 @@ import javax.persistence.Persistence;
  */
 @Entity
 public class Proveedor {
-
     @Id
     private String id;
-    @Basic
     private String nombre;
-
-    public Proveedor() {
-
-    }
+    @OneToMany(mappedBy = "prov", orphanRemoval = true, cascade = CascadeType.PERSIST)
+    private List<Producto> prods;
 
     /**
      * constructor de un proveedor. Se comprueba si el proveedor existe en la bd
@@ -44,10 +43,14 @@ public class Proveedor {
 
             this.id = id;
             this.nombre = nombre;
+            this.prods = new LinkedList<>();
             persistir(em, this);
         }
     }
 
+    public Proveedor(){
+        
+    }
     /**
      * metodo que carga el objeto en la bd
      *
@@ -63,16 +66,22 @@ public class Proveedor {
 
     /**
      * metodo que determina si un proveedor existe en la bd
+     *
      * @param id id a buscar
      * @param em controlador de entidad
      * @return verdadero si existe, falso si no
      */
-    private boolean idExiste(String id, EntityManager em) {
+    public static boolean idExiste(String id, EntityManager em) {
         boolean existe;
         Proveedor p = em.find(Proveedor.class, id);
         existe = p != null;
-        em.detach(p);
         return existe;
+    }
+
+    public static Proveedor copia(EntityManager em, String id){
+        em.getTransaction().begin();
+        Proveedor p = em.find(Proveedor.class, id);
+        return p;
     }
     
 //    public boolean proveer(String cod, String nom, int unidades){
@@ -88,4 +97,7 @@ public class Proveedor {
 //        }
 //    }
 
+    public List<Producto> getProds() {
+        return prods;
+    }
 }

@@ -84,4 +84,8 @@ public class Repartidor {
         return existe;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
 }

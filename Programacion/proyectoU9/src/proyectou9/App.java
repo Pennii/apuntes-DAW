@@ -67,7 +67,7 @@ public class App {
             }
 
         } catch (SQLException ex) {
-            System.out.println(ex);;
+            System.out.println(ex);
         }
 
         return creada;
@@ -101,6 +101,7 @@ public class App {
      * buscando por su clave primaria
      *
      * @param con conexion a usar
+     * @param ent valor de entidad asignado a cada entidad en su menu
      * @param clav clave primaria de la entidad
      * @return verdadero si la entidad se borro, falso si no
      */
@@ -258,7 +259,7 @@ public class App {
                     String cliente = resultado.getString("clien");
                     String fecha = resultado.getString("fecha");
 
-                    System.out.printf("%-10s%-10s%d\n", producto, cliente, fecha);
+                    System.out.printf("%-10s%-10s%s\n", producto, cliente, fecha);
                 }
             } catch (SQLException ex) {
                 System.out.println("Error al mostrar productos:\n\t" + ex);
@@ -284,7 +285,7 @@ public class App {
                     String prod = resultado.getString("producto");
                     String fec = resultado.getString("fecha");
 
-                    System.out.printf("%-12s%-10s%d\n", rep, prod, fec);
+                    System.out.printf("%-12s%-10s%s\n", rep, prod, fec);
                 }
             } catch (SQLException ex) {
                 System.out.println("Error al mostrar productos:\n\t" + ex);
@@ -301,7 +302,6 @@ public class App {
      */
     public static void crearProducto(String codigo, String nombre, int unidades) {
         Scanner teclado = new Scanner(System.in);
-        boolean correcto;
         System.out.println("id del proveedor");
         String id = teclado.nextLine();
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("proyectoU9PU");
@@ -367,7 +367,7 @@ public class App {
                         menuClien(con);
                         break;
                     case 3:
-
+                        menuRep(con);
                         break;
                     case 4:
 
@@ -468,6 +468,11 @@ public class App {
         } while (!valido);
     }
 
+    /**
+     * menu de operaciones de clientes
+     *
+     * @param con conexion a la bd
+     */
     private static void menuClien(Connection con) {
         int ent = 2;
         Scanner teclado = new Scanner(System.in);
@@ -523,6 +528,84 @@ public class App {
                         switch (op) {
                             case 1:
                                 menuClien(con);
+                                correcto = true;
+                                break;
+                            case 2:
+                                menu(con);
+                                correcto = true;
+                                break;
+                            default:
+                                System.out.println("op invalida");
+                        }
+                    }
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println("Error al ingresar operacion, por favor "
+                        + "ingresa una opcion valida");
+                teclado.nextLine();
+            }
+        } while (!valido);
+    }
+
+    private static void menuRep(Connection con) {
+        int ent = 3;
+        Scanner teclado = new Scanner(System.in);
+        int op;
+        boolean valido = false, volver = false;
+        String codigo, nombre, vehiculo;
+        System.out.println("BIENVENIDO AL MENU DE REPARTIDORES");
+        System.out.println("¿QUE DESEAS HACER?");
+        System.out.println("1.Ver repartidores 2.Agregar repartidor 3.Borrar "
+                + "repartidor 4.Ver historial de entregas 5.Volver");
+        do {
+            try {
+                op = teclado.nextInt();
+                teclado.nextLine();
+                valido = true;
+                switch (op) {
+                    case 1:
+                        mostrarRepartidores(con);
+                        break;
+                    case 2:
+                        System.out.println("Ingresa el codigo, nombre y vehiculo del repartidor:");
+                        codigo = teclado.nextLine();
+                        nombre = teclado.nextLine();
+                        vehiculo = teclado.nextLine();
+                        Repartidor r = null;
+                        r = new Repartidor(codigo, nombre, vehiculo);
+                        if (r.getCodigo() != null) {
+                            System.out.println("Repartidor agregado con exito");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Ingresa el codigo del repartidor a eliminar:");
+                        codigo = teclado.nextLine();
+                        if (eliminar(con, ent, codigo)) {
+                            System.out.println("Repartidor eliminado");
+                        } else {
+                            System.out.println("No se pudo eliminar al repartidor");
+                        }
+                        break;
+                    case 4:
+                        mostrarRepartos(con);
+                        break;
+                    case 5:
+                        menu(con);
+                        volver = true;
+                        break;
+                    default:
+                        System.out.println("Operacion invalida, ingresa una opcion"
+                                + " correcta");
+                        valido = false;
+                }
+                if (!volver) {
+                    System.out.println("1.Continuar operaciones 2.Menu principal");
+                    boolean correcto = false;
+                    while (!correcto) {
+                        op = teclado.nextInt();
+                        switch (op) {
+                            case 1:
+                                menuRep(con);
                                 correcto = true;
                                 break;
                             case 2:

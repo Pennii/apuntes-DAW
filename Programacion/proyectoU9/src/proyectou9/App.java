@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -146,17 +147,18 @@ public class App {
     public static void mostrarProductos(Connection con) {
         if (con != null) {
             try (Statement consulta = con.createStatement()) {
-                String query = "SELECT codigo,nombre,unidades  FROM producto";
+                String query = "SELECT codigo,nombre,unidades,prov_id  FROM producto";
                 ResultSet resultado;
                 resultado = consulta.executeQuery(query);
 
-                System.out.printf("%-8s%-10s%s\n", "CODIGO", "NOMBRE", "UNIDADES");
+                System.out.printf("%-8s%-10s%-10s%s\n", "CODIGO", "NOMBRE", "UNIDADES", "PROVEEDOR");
                 while (resultado.next()) {
                     String codigo = resultado.getString("codigo");
                     String nombre = resultado.getString("nombre");
                     int unidades = resultado.getInt("unidades");
+                    String prov = resultado.getString("prov_id");
 
-                    System.out.printf("%-8s%-10s%d\n", codigo, nombre, unidades);
+                    System.out.printf("%-8s%-10s%-10d%s\n", codigo, nombre, unidades, prov);
                 }
             } catch (SQLException ex) {
                 System.out.println("Error al mostrar productos:\n\t" + ex);
@@ -300,7 +302,8 @@ public class App {
      * @param nombre nombre del producto
      * @param unidades unidades del producto
      */
-    public static void crearProducto(String codigo, String nombre, int unidades) {
+    public static Producto crearProducto(String codigo, String nombre, int unidades) {
+        Producto p;
         Scanner teclado = new Scanner(System.in);
         System.out.println("id del proveedor");
         String id = teclado.nextLine();
@@ -312,9 +315,89 @@ public class App {
         }
         //actualiza correctamente la lista?
         Proveedor prov = Proveedor.copia(em, id);
-        Producto p = new Producto(codigo, nombre, unidades, prov);
+        p = new Producto(codigo, nombre, unidades, prov);
         prov.getProds().add(p);
+        return p;
+    }
 
+    private static int unidadesProd(Connection con, String cod) {
+        int stock = -1;
+        String query = "SELECT UNIDADES FROM PRODUCTO WHERE CODIGO = ?";
+        try (PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setString(1, cod);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            stock = rs.getInt("unidades");
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return stock;
+    }
+
+    public static boolean pedirProd(String prod, String clien, Connection con) {
+        boolean pedido = false;
+
+        String query1 = "INSERT INTO PEDIDO VALUES(?,?,?)";
+        String query2 = "UPDATE PRODUCTO SET UNIDADES = UNIDADES - ? WHERE CODIGO = ?";
+        int uni, op, insert = 0, ped = 0, stock;
+        Scanner teclado = new Scanner(System.in);
+        boolean ok, pedir = true;
+
+        System.out.println("¿Cuantas unidades del producto se pediran?");
+        uni = teclado.nextInt();
+        stock = unidadesProd(con, prod);
+        ok = uni <= stock;
+        while (!ok) {
+            System.out.println("Quieres pedir mas unidades de las que tenemos, pide menos por favor");
+            System.out.println("Presiona 1 si quieres pedir otra vez, o cualquier otro numero si deseas volver");
+            op = teclado.nextInt();
+            teclado.nextLine();
+            if (op == 1) {
+                uni = teclado.nextInt();
+                ok = uni > unidadesProd(con, prod);
+            } else {
+                ok = true;
+                pedir = false;
+            }
+        }
+        if (pedir) {
+            try (PreparedStatement ps = con.prepareStatement(query1)) {
+                ps.setString(1, prod);
+                ps.setString(2, clien);
+                ps.setString(3, LocalDate.now().toString());
+                insert = ps.executeUpdate();
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            if (insert > 0) {
+                try (PreparedStatement ps = con.prepareStatement(query2)) {
+                    ps.setInt(1, uni);
+                    ps.setString(2, prod);
+
+                    ped = ps.executeUpdate();
+                    pedido = ped > 0;
+                } catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+            }
+            if (pedido) {
+                if (stock - uni == 0) {
+                    agotado(prod, con);
+                }
+            }
+        }
+        return pedido;
+    }
+
+    private static void agotado(String prod, Connection con) {
+        String query = "UPDATE PRODUCTO SET UNIDADES = 50 WHERE CODIGO = ?";
+        try (PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setString(1, prod);
+
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
     }
 
     public static void main(String[] args) {
@@ -370,7 +453,7 @@ public class App {
                         menuRep(con);
                         break;
                     case 4:
-
+                        menuProd(con);
                         break;
                     case 5:
                         break;
@@ -547,6 +630,11 @@ public class App {
         } while (!valido);
     }
 
+    /**
+     * menu de operaciones de los repartidores
+     *
+     * @param con conexion a la bd
+     */
     private static void menuRep(Connection con) {
         int ent = 3;
         Scanner teclado = new Scanner(System.in);
@@ -606,6 +694,99 @@ public class App {
                         switch (op) {
                             case 1:
                                 menuRep(con);
+                                correcto = true;
+                                break;
+                            case 2:
+                                menu(con);
+                                correcto = true;
+                                break;
+                            default:
+                                System.out.println("op invalida");
+                        }
+                    }
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println("Error al ingresar operacion, por favor "
+                        + "ingresa una opcion valida");
+                teclado.nextLine();
+            }
+        } while (!valido);
+    }
+
+    /**
+     * menu de operaciones de productos
+     *
+     * @param con conexion a la bd
+     */
+    private static void menuProd(Connection con) {
+        int ent = 4;
+        Scanner teclado = new Scanner(System.in);
+        int op, unidades;
+        boolean valido = false, volver = false;
+        String codigo, nombre, clien;
+        System.out.println("BIENVENIDO AL MENU DE PRODUCTOS");
+        System.out.println("¿QUE DESEAS HACER?");
+        System.out.println("1.Ver productos 2.Agregar producto 3.Borrar "
+                + "producto 4.Ver historial de pedidos 5.Pedir producto 6.Volver");
+        do {
+            try {
+                op = teclado.nextInt();
+                teclado.nextLine();
+                valido = true;
+                switch (op) {
+                    case 1:
+                        mostrarProductos(con);
+                        break;
+                    case 2:
+                        System.out.println("Ingresa el codigo, nombre y unidades del producto:");
+                        codigo = teclado.nextLine();
+                        nombre = teclado.nextLine();
+                        unidades = teclado.nextInt();
+                        Producto p = null;
+                        p = crearProducto(codigo, nombre, unidades);
+                        if (p.getCodigo() != null) {
+                            System.out.println("Producto agregado con exito");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Ingresa el codigo del producto a eliminar:");
+                        codigo = teclado.nextLine();
+                        if (eliminar(con, ent, codigo)) {
+                            System.out.println("Producto eliminado");
+                        } else {
+                            System.out.println("No se pudo eliminar el producto");
+                        }
+                        break;
+                    case 4:
+                        mostrarPedidos(con);
+                        break;
+                    case 5:
+                        System.out.println("Ingresa el codigo del producto y el codigo de cliente:");
+                        codigo = teclado.nextLine();
+                        clien = teclado.nextLine();
+                        if (pedirProd(codigo, clien, con)) {
+                            System.out.println("Producto pedido con exito");
+                        } else {
+                            System.out.println("Fallo al pedir");
+                        }
+                        break;
+                    case 6:
+                        menu(con);
+                        volver = true;
+                        break;
+                    default:
+                        System.out.println("Operacion invalida, ingresa una opcion"
+                                + " correcta");
+                        valido = false;
+                }
+                if (!volver) {
+                    System.out.println("1.Continuar operaciones 2.Menu principal");
+                    boolean correcto = false;
+                    while (!correcto) {
+                        op = teclado.nextInt();
+                        switch (op) {
+                            case 1:
+                                menuProd(con);
                                 correcto = true;
                                 break;
                             case 2:

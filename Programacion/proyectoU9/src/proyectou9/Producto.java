@@ -79,5 +79,12 @@ public class Producto {
         return existe;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public int getUnidades() {
+        return unidades;
+    }
 
 }

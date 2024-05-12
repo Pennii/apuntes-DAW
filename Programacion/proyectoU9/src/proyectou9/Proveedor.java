@@ -88,18 +88,6 @@ public class Proveedor {
         return p;
     }
     
-//    public boolean proveer(String cod, String nom, int unidades){
-//        boolean provee;
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("proyectoU9PU");
-//        EntityManager em = emf.createEntityManager();
-//        
-//        Producto p = em.find(Producto.class, cod);
-//        if (p != null) {
-//            if (p.getProveedor().equals(this.id)){
-//                p.setCodigo(cod);
-//            }
-//        }
-//    }
 
     public List<Producto> getProds() {
         return prods;

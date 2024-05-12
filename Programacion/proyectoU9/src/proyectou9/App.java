@@ -10,8 +10,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.stream.Collectors;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -320,6 +322,13 @@ public class App {
         return p;
     }
 
+    /**
+     * metodo que devuelve las unidades de un producto en la bd
+     *
+     * @param con conexion a la bd
+     * @param cod codigo de producto
+     * @return stock actual del producto
+     */
     private static int unidadesProd(Connection con, String cod) {
         int stock = -1;
         String query = "SELECT UNIDADES FROM PRODUCTO WHERE CODIGO = ?";
@@ -334,6 +343,14 @@ public class App {
         return stock;
     }
 
+    /**
+     * inserta un registro en pedidos si se puede realizar
+     *
+     * @param prod codigo de producto
+     * @param clien codigo de cliente
+     * @param con conexion a la bd
+     * @return verdadero si el registro se completo, falso si no
+     */
     public static boolean pedirProd(String prod, String clien, Connection con) {
         boolean pedido = false;
 
@@ -379,16 +396,24 @@ public class App {
                 } catch (SQLException ex) {
                     System.out.println(ex);
                 }
+
             }
             if (pedido) {
                 if (stock - uni == 0) {
                     agotado(prod, con);
                 }
+                repartir(con, prod);
             }
         }
         return pedido;
     }
 
+    /**
+     * actualiza las unidades de un producto a 50
+     *
+     * @param prod codigo de producto
+     * @param con conexion a la bd
+     */
     private static void agotado(String prod, Connection con) {
         String query = "UPDATE PRODUCTO SET UNIDADES = 50 WHERE CODIGO = ?";
         try (PreparedStatement ps = con.prepareStatement(query)) {
@@ -398,6 +423,46 @@ public class App {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+    }
+
+    /**
+     * asigna de manera aleatoria un repartidor a entregar un producto un dia 
+     * despues del cual fue pedido
+     * @param con conexion a la bd
+     * @param prod codigo de producto
+     */
+    private static void repartir(Connection con, String prod) {
+        String query = "INSERT INTO REPARTO VALUES(?,?,?)";
+        String repartidores = "SELECT CODIGO FROM REPARTIDOR";
+        int toca, contador = 0;
+        Set<String> cods = new HashSet<>();
+        String reps[];
+
+        try (Statement st = con.createStatement()) {
+            ResultSet rs = st.executeQuery(repartidores);
+            while (rs.next()) {
+                cods.add(rs.getString("codigo"));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        reps = new String[cods.size()];
+        for (String cod : cods) {
+            reps[contador++] = cod;
+        }
+        toca = (int) (Math.random() * reps.length);
+        
+        try(PreparedStatement ps = con.prepareStatement(query)){
+            ps.setString(1, reps[toca]);
+            ps.setString(2, prod);
+            ps.setString(3, LocalDate.now().plusDays(1).toString());
+            ps.executeUpdate();
+        }
+        catch(SQLException ex){
+            System.out.println(ex);
+        }
+        
     }
 
     public static void main(String[] args) {
@@ -466,6 +531,8 @@ public class App {
                 System.out.println("Error al ingresar operacion, por favor "
                         + "ingresa una opcion valida");
                 teclado.nextLine();
+                valido = false;
+
             }
 
         } while (!valido);
@@ -546,6 +613,7 @@ public class App {
                 System.out.println("Error al ingresar operacion, por favor "
                         + "ingresa una opcion valida");
                 teclado.nextLine();
+                valido = false;
             }
 
         } while (!valido);
@@ -626,6 +694,7 @@ public class App {
                 System.out.println("Error al ingresar operacion, por favor "
                         + "ingresa una opcion valida");
                 teclado.nextLine();
+                valido = false;
             }
         } while (!valido);
     }
@@ -709,6 +778,7 @@ public class App {
                 System.out.println("Error al ingresar operacion, por favor "
                         + "ingresa una opcion valida");
                 teclado.nextLine();
+                valido = false;
             }
         } while (!valido);
     }
@@ -802,6 +872,8 @@ public class App {
                 System.out.println("Error al ingresar operacion, por favor "
                         + "ingresa una opcion valida");
                 teclado.nextLine();
+                valido = false;
+
             }
         } while (!valido);
     }

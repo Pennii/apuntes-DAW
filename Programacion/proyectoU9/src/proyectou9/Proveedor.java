@@ -48,6 +48,10 @@ public class Proveedor {
         }
     }
 
+    public String getId() {
+        return id;
+    }
+
     public Proveedor(){
         
     }

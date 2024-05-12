@@ -104,19 +104,35 @@ public class App {
     public static void eliminarProducto(Connection con, String codigo) {
         String query = "DELETE FROM producto WHERE codigo = ?";
 
-        if (con != null) {
-            try (PreparedStatement consulta = con.prepareStatement(query)) {
-                consulta.setString(1, codigo);
+        try (PreparedStatement consulta = con.prepareStatement(query)) {
+            consulta.setString(1, codigo);
 
-                int registrosAfectados = consulta.executeUpdate();
-                if (registrosAfectados > 0) {
-                    System.out.println("Producto eliminado");
-                } else {
-                    System.out.println("No se ha podido realizar la consulta");
-                }
-            } catch (SQLException ex) {
-                System.out.println("Error al ejecutar consulta:\n\t" + ex);
+            int registrosAfectados = consulta.executeUpdate();
+            if (registrosAfectados > 0) {
+                System.out.println("Producto eliminado");
+            } else {
+                System.out.println("No se ha podido realizar la consulta");
             }
+        } catch (SQLException ex) {
+            System.out.println("Error al ejecutar consulta:\n\t" + ex);
+
+        }
+    }
+
+    public static void eliminarProv(String id, Connection con) {
+        String query = "DELETE FROM PROVEEDOR WHERE ID = ?";
+        
+        try (PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setString(1, id);
+            
+            int registrosAfectado = ps.executeUpdate();
+            if (registrosAfectado > 0) {
+                System.out.println("Proveedor eliminado");
+            }else{
+                System.out.println("No se encontro al proveedor");
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al eliminar proveedor");
         }
     }
 
@@ -320,7 +336,7 @@ public class App {
                 //SE CARGAN LAS TABLAS DEL SCRIPT
                 crearTabla(con);
 
-                menu();
+                menu(con);
             } catch (SQLException ex) {
                 System.out.println("no se encontro la bd " + ex);
             }
@@ -331,11 +347,11 @@ public class App {
     /**
      * menu principal donde se accedera a los submenu de cada entidad
      */
-    private static void menu() {
+    private static void menu(Connection con) {
         Scanner teclado = new Scanner(System.in);
         int op;
         boolean valido = false;
-        System.out.println("BIENVENIDO A LA APLICACION DE PRODUCTOS");
+        System.out.println("BIENVENIDO AL MENU PRINCIPAL");
         System.out.println("¿QUE DESEAS HACER?");
         System.out.println("1.Proveedores 2.Clientes 3.Repartidores 4.Productos 5.Terminar");
         do {
@@ -344,7 +360,7 @@ public class App {
                 valido = true;
                 switch (op) {
                     case 1:
-
+                        menuProv(con);
                         break;
                     case 2:
 
@@ -356,7 +372,6 @@ public class App {
 
                         break;
                     case 5:
-                        valido = true;
                         break;
                     default:
                         System.out.println("Operacion invalida, ingresa una opcion"
@@ -372,35 +387,67 @@ public class App {
         } while (!valido);
     }
 
-    private static void menuProv() {
+    private static void menuProv(Connection con) {
         Scanner teclado = new Scanner(System.in);
         int op;
-        boolean valido = false;
+        boolean valido = false, volver = false;
+        String id, nom;
         System.out.println("BIENVENIDO AL MENU DE PROVEEDORES");
         System.out.println("¿QUE DESEAS HACER?");
         System.out.println("1.Ver los proveedores 2.Agregar proveedor 3.Borrar proveedor 4.Volver");
-           do {
+        do {
             try {
                 op = teclado.nextInt();
                 valido = true;
+                teclado.nextLine();
                 switch (op) {
                     case 1:
-                        mostrar
+                        mostrarProveedores(con);
                         break;
                     case 2:
-
+                        System.out.println("Ingresa el id y el nombre del proveedor:");
+                        id = teclado.nextLine();
+                        nom = teclado.nextLine();
+                        Proveedor p = null;
+                        p = new Proveedor(id, nom);
+                        if (p.getId() != null) {
+                            System.out.println("Proveedor agregado con exito");
+                        }
                         break;
                     case 3:
-
+                        System.out.println("Ingresa el id del proveedor a eliminar");
+                        id = teclado.nextLine();
+                        eliminarProv(id, con);
                         break;
                     case 4:
-
+                        volver = true;
+                        menu(con);
                         break;
                     default:
                         System.out.println("Operacion invalida, ingresa una opcion"
                                 + " correcta");
                         valido = false;
                 }
+                if (!volver) {
+                    System.out.println("1.Continuar operaciones 2.Menu principal");
+                    boolean correcto = false;
+                    while (!correcto) {
+                        op = teclado.nextInt();
+                        switch (op) {
+                            case 1:
+                                menuProv(con);
+                                correcto = true;
+                                break;
+                            case 2:
+                                menu(con);
+                                correcto = true;
+                                break;
+                            default:
+                                System.out.println("op invalida");
+                        }
+                    }
+                }
+
             } catch (InputMismatchException ex) {
                 System.out.println("Error al ingresar operacion, por favor "
                         + "ingresa una opcion valida");

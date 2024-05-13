@@ -4,13 +4,17 @@
  */
 package proyectou9;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Persistence;
-
 
 /**
  *
@@ -31,7 +35,9 @@ public class Producto {
     }
 
     /**
-     *constructor de producto que verifica si el producto existe antes de crearlo
+     * constructor de producto que verifica si el producto existe antes de
+     * crearlo
+     *
      * @param cod codigo de producto
      * @param nom nombre del producto
      * @param unidades stock del producto
@@ -87,4 +93,60 @@ public class Producto {
         return unidades;
     }
 
+    /**
+     * metodo que devuelve las unidades de un producto en la bd
+     *
+     * @param con conexion a la bd
+     * @param cod codigo de producto
+     * @return stock actual del producto
+     */
+    protected static int unidadesProd(Connection con, String cod) {
+        int stock = -1;
+        String query = "SELECT UNIDADES FROM PRODUCTO WHERE CODIGO = ?";
+        try (PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setString(1, cod);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            stock = rs.getInt("unidades");
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return stock;
+    }
+
+    /**
+     * actualiza las unidades de un producto a 50
+     *
+     * @param prod codigo de producto
+     * @param con conexion a la bd
+     */
+    protected static void agotado(String prod, Connection con) {
+        String query = "UPDATE PRODUCTO SET UNIDADES = 50 WHERE CODIGO = ?";
+        try (PreparedStatement ps = con.prepareStatement(query)) {
+            ps.setString(1, prod);
+
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    /**
+     * metodo que crea un producto en la bd
+     *
+     * @param codigo codigo del producto
+     * @param nombre nombre del producto
+     * @param unidades unidades del producto
+     * @return un porducto copia
+     */
+    public static Producto crearProducto(String codigo, String nombre, int unidades, String id) {
+        Producto p;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("proyectoU9PU");
+        EntityManager em = emf.createEntityManager();
+        //actualiza correctamente la lista?
+        Proveedor prov = Proveedor.copia(em, id);
+        p = new Producto(codigo, nombre, unidades, prov);
+        prov.getProds().add(p);
+        return p;
+    }
 }

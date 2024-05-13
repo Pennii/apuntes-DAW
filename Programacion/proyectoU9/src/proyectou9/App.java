@@ -298,52 +298,6 @@ public class App {
     }
 
     /**
-     * metodo que crea un producto en la bd
-     *
-     * @param codigo codigo del producto
-     * @param nombre nombre del producto
-     * @param unidades unidades del producto
-     */
-    public static Producto crearProducto(String codigo, String nombre, int unidades) {
-        Producto p;
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("id del proveedor");
-        String id = teclado.nextLine();
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("proyectoU9PU");
-        EntityManager em = emf.createEntityManager();
-        while (!Proveedor.idExiste(id, em)) {
-            System.out.println("Error de id");
-            id = teclado.nextLine();
-        }
-        //actualiza correctamente la lista?
-        Proveedor prov = Proveedor.copia(em, id);
-        p = new Producto(codigo, nombre, unidades, prov);
-        prov.getProds().add(p);
-        return p;
-    }
-
-    /**
-     * metodo que devuelve las unidades de un producto en la bd
-     *
-     * @param con conexion a la bd
-     * @param cod codigo de producto
-     * @return stock actual del producto
-     */
-    private static int unidadesProd(Connection con, String cod) {
-        int stock = -1;
-        String query = "SELECT UNIDADES FROM PRODUCTO WHERE CODIGO = ?";
-        try (PreparedStatement ps = con.prepareStatement(query)) {
-            ps.setString(1, cod);
-            ResultSet rs = ps.executeQuery();
-            rs.next();
-            stock = rs.getInt("unidades");
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-        return stock;
-    }
-
-    /**
      * inserta un registro en pedidos si se puede realizar
      *
      * @param prod codigo de producto
@@ -356,13 +310,13 @@ public class App {
 
         String query1 = "INSERT INTO PEDIDO VALUES(?,?,?)";
         String query2 = "UPDATE PRODUCTO SET UNIDADES = UNIDADES - ? WHERE CODIGO = ?";
-        int uni, op, insert = 0, ped = 0, stock;
+        int uni, op, insert = 0, ped, stock;
         Scanner teclado = new Scanner(System.in);
         boolean ok, pedir = true;
 
         System.out.println("¿Cuantas unidades del producto se pediran?");
         uni = teclado.nextInt();
-        stock = unidadesProd(con, prod);
+        stock = Producto.unidadesProd(con, prod);
         ok = uni <= stock;
         while (!ok) {
             System.out.println("Quieres pedir mas unidades de las que tenemos, pide menos por favor");
@@ -371,7 +325,7 @@ public class App {
             teclado.nextLine();
             if (op == 1) {
                 uni = teclado.nextInt();
-                ok = uni > unidadesProd(con, prod);
+                ok = uni <= stock;
             } else {
                 ok = true;
                 pedir = false;
@@ -400,69 +354,12 @@ public class App {
             }
             if (pedido) {
                 if (stock - uni == 0) {
-                    agotado(prod, con);
+                    Producto.agotado(prod, con);
                 }
-                repartir(con, prod);
+                Repartidor.repartir(con, prod);
             }
         }
         return pedido;
-    }
-
-    /**
-     * actualiza las unidades de un producto a 50
-     *
-     * @param prod codigo de producto
-     * @param con conexion a la bd
-     */
-    private static void agotado(String prod, Connection con) {
-        String query = "UPDATE PRODUCTO SET UNIDADES = 50 WHERE CODIGO = ?";
-        try (PreparedStatement ps = con.prepareStatement(query)) {
-            ps.setString(1, prod);
-
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-    }
-
-    /**
-     * asigna de manera aleatoria un repartidor a entregar un producto un dia 
-     * despues del cual fue pedido
-     * @param con conexion a la bd
-     * @param prod codigo de producto
-     */
-    private static void repartir(Connection con, String prod) {
-        String query = "INSERT INTO REPARTO VALUES(?,?,?)";
-        String repartidores = "SELECT CODIGO FROM REPARTIDOR";
-        int toca, contador = 0;
-        Set<String> cods = new HashSet<>();
-        String reps[];
-
-        try (Statement st = con.createStatement()) {
-            ResultSet rs = st.executeQuery(repartidores);
-            while (rs.next()) {
-                cods.add(rs.getString("codigo"));
-            }
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-        
-        reps = new String[cods.size()];
-        for (String cod : cods) {
-            reps[contador++] = cod;
-        }
-        toca = (int) (Math.random() * reps.length);
-        
-        try(PreparedStatement ps = con.prepareStatement(query)){
-            ps.setString(1, reps[toca]);
-            ps.setString(2, prod);
-            ps.setString(3, LocalDate.now().plusDays(1).toString());
-            ps.executeUpdate();
-        }
-        catch(SQLException ex){
-            System.out.println(ex);
-        }
-        
     }
 
     public static void main(String[] args) {
@@ -812,8 +709,17 @@ public class App {
                         codigo = teclado.nextLine();
                         nombre = teclado.nextLine();
                         unidades = teclado.nextInt();
+                        teclado.nextLine();
+                        System.out.println("id del proveedor");
+                        String id = teclado.nextLine();
+                        EntityManagerFactory emf = Persistence.createEntityManagerFactory("proyectoU9PU");
+                        EntityManager em = emf.createEntityManager();
+                        while (!Proveedor.idExiste(id, em)) {
+                            System.out.println("Error de id");
+                            id = teclado.nextLine();
+                        }
                         Producto p = null;
-                        p = crearProducto(codigo, nombre, unidades);
+                        p = Producto.crearProducto(codigo, nombre, unidades, id);
                         if (p.getCodigo() != null) {
                             System.out.println("Producto agregado con exito");
                         }

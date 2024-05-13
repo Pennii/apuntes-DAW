@@ -4,6 +4,14 @@
  */
 package proyectou9;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -88,4 +96,43 @@ public class Repartidor {
         return codigo;
     }
 
+        /**
+     * asigna de manera aleatoria un repartidor a entregar un producto un dia 
+     * despues del cual fue pedido
+     * @param con conexion a la bd
+     * @param prod codigo de producto
+     */
+    protected static void repartir(Connection con, String prod) {
+        String query = "INSERT INTO REPARTO VALUES(?,?,?)";
+        String repartidores = "SELECT CODIGO FROM REPARTIDOR";
+        int toca, contador = 0;
+        Set<String> cods = new HashSet<>();
+        String reps[];
+
+        try (Statement st = con.createStatement()) {
+            ResultSet rs = st.executeQuery(repartidores);
+            while (rs.next()) {
+                cods.add(rs.getString("codigo"));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        reps = new String[cods.size()];
+        for (String cod : cods) {
+            reps[contador++] = cod;
+        }
+        toca = (int) (Math.random() * reps.length);
+        
+        try(PreparedStatement ps = con.prepareStatement(query)){
+            ps.setString(1, reps[toca]);
+            ps.setString(2, prod);
+            ps.setString(3, LocalDate.now().plusDays(1).toString());
+            ps.executeUpdate();
+        }
+        catch(SQLException ex){
+            System.out.println(ex);
+        }
+        
+    }
 }

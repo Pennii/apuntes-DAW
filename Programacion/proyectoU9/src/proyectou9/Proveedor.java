@@ -4,8 +4,18 @@
  */
 package proyectou9;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
@@ -13,6 +23,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Persistence;
+import static proyectou9.App.crearTabla;
 
 /**
  *
@@ -20,6 +31,7 @@ import javax.persistence.Persistence;
  */
 @Entity
 public class Proveedor {
+
     @Id
     private String id;
     private String nombre;
@@ -52,9 +64,10 @@ public class Proveedor {
         return id;
     }
 
-    public Proveedor(){
-        
+    public Proveedor() {
+
     }
+
     /**
      * metodo que carga el objeto en la bd
      *
@@ -82,14 +95,37 @@ public class Proveedor {
         return existe;
     }
 
-    public static Proveedor copia(EntityManager em, String id){
+    public static Proveedor copia(EntityManager em, String id) {
         em.getTransaction().begin();
         Proveedor p = em.find(Proveedor.class, id);
         return p;
     }
-    
 
     public List<Producto> getProds() {
         return prods;
+    }
+
+    //parametros para realizar la conexion
+    private static final String URL = "jdbc:mysql://localhost:3306/proyU9";
+    private static final String USUARIO = "penni";
+    private static final String PASSWORD = "";
+    //driver de mysql
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    //ruta al script con las tablas
+    private static final String ESTRUCTURA = "/recursos/tablas.sql";
+
+    public static void main(String[] args) {
+
+        InputStream is = App.class.getResourceAsStream(ESTRUCTURA);
+        String recurso = null;
+        if (is != null) {
+            try (InputStreamReader isr = new InputStreamReader(is); BufferedReader bfr = new BufferedReader(isr)) {
+                recurso = bfr.lines().collect(Collectors.joining("\n"));
+            } catch (IOException ex) {
+                System.out.println(ex);
+            }
+        }
+        System.out.println(recurso);
+        
     }
 }

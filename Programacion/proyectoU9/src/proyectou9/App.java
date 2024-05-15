@@ -46,10 +46,9 @@ public class App {
 
         try (Statement st = con.createStatement()) {
             // se comprueba si las tablas y sus valores ya estan cargados
-            ResultSet rs = st.executeQuery("SELECT COUNT(*) FROM CLIENTE");
-            rs.next();
+           
             //si el conteo es mayor a 0 significa que ya lo estan
-            if (!(rs.getInt("COUNT(*)") > 0)) {
+            
 
                 String sql = cargarRecurso(ESTRUCTURA);
                 if (sql != null) {
@@ -64,9 +63,7 @@ public class App {
                         st.execute(sqlDiv[i]);
                     }
                     creada = true;
-                } else {
-                    System.out.println("Problemas al cargar el script");
-                }
+
             }
 
         } catch (SQLException ex) {

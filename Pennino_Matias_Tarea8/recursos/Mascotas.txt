@@ -1,0 +1,9 @@
+Nube;8;Perro;Macho;Mestizo;
+Tana;2;Gato;Hembra;Americano;
+Yuli;5;Perro;Macho;Caniche;
+Zeus;1;Perro;Macho;Labrador;
+Ariel;7;Gato;Macho;Bombay;
+Chispa;8;Gato;Hembra;Angora;
+Milka;6;Perro;Hembra;Boxer;
+Bola;9;Gato;Macho;Azul ruso;
+Estrella;3;Perro;Hembra;Beagle;
